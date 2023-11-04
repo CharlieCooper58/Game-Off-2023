@@ -17,8 +17,12 @@ public class PlayerManager : CharacterManager
         base.Start();
         playerCamera.Initialize();
     }
+    private void Update()
+    {
+        inputHandler.TickInput();
+    }
     private void LateUpdate()
     {
-        playerCamera.UpdateCameraOrientation();
+        inputHandler.TickCameraInput();
     }
 }

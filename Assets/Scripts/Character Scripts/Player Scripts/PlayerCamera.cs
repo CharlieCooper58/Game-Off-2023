@@ -19,10 +19,8 @@ public class PlayerCamera : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-    public void UpdateCameraOrientation()
+    public void UpdateCameraOrientation(Vector2 cameraInput)
     {
-        print("Blah");
-        Vector2 cameraInput = playerManager.inputHandler.GetCameraDirection();
         float lookX = cameraSpeedX*cameraInput.x*Time.deltaTime;
         float lookY = cameraSpeedY * cameraInput.y * Time.deltaTime;
 

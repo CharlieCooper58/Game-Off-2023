@@ -852,10 +852,11 @@ MonoBehaviour:
   inAirMoveSpeed: 5
   groundCheckMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   groundCheckRaycastStart: {fileID: 1163962257}
-  groundCheckRadius: 0.5
-  jumpHeight: 0
+  groundCheckRadius: 0.6
+  jumpHeight: 10
+  isGrounded: 0
 --- !u!114 &1485472502
 MonoBehaviour:
   m_ObjectHideFlags: 0

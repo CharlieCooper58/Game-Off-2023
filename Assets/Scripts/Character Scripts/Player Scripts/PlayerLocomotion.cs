@@ -13,10 +13,8 @@ public class PlayerLocomotion : CharacterLocomotion
         playerManager = GetComponent<PlayerManager>();
     }
 
-    protected override void GetMovementInformation()
+    protected override Vector3 ProcessMovementInput(Vector2 moveInput)
     {
-        Vector2 inputDirection = playerManager.inputHandler.GetMovementDirection();
-
-        moveDirection = transform.forward*inputDirection.y + transform.right*inputDirection.x;
+        return transform.forward * moveInput.y + transform.right * moveInput.x;
     }
 }

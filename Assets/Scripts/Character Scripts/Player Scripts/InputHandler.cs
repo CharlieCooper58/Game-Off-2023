@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
+    PlayerManager playerManager;
     private Vector2 movemementDirection;
     private Vector2 cameraDirection;
     private void OnEnable()
     {
+        playerManager = GetComponent<PlayerManager>();
         PlayerControls inputActions = new PlayerControls();
         inputActions.Enable();
         inputActions.Movement.Movement.performed += x=> movemementDirection = x.ReadValue<Vector2>();
@@ -15,15 +17,23 @@ public class InputHandler : MonoBehaviour
         inputActions.Camera.CameraLook.performed += x=> cameraDirection = x.ReadValue<Vector2>();
     }
 
-    // Takes input and distributes it to other player components
-    public Vector2 GetMovementDirection()
+
+    // Processes input on update and sends it to other components
+    public void TickInput()
     {
-        return movemementDirection.normalized;
-    }
-    public Vector2 GetCameraDirection()
-    {
-        return cameraDirection;
+        playerManager.characterLocomotion.SetMoveDirection(movemementDirection.normalized);
     }
 
-    private void OnJumpPerformed() { }
+    // Pulls input on LateUpdate for camera updates
+    public void TickCameraInput()
+    {
+        playerManager.playerCamera.UpdateCameraOrientation(cameraDirection);
+    }
+
+
+
+    private void OnJumpPerformed() 
+    {
+        playerManager.characterLocomotion.AttemptJump();
+    }
 }

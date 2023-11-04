@@ -13,32 +13,38 @@ public class CharacterLocomotion : MonoBehaviour
 
 
     [Header("Jumping and Falling")]
-    protected float gravity;
+    [SerializeField] private const float gravity = 9.81f;
     protected Vector3 yVelocity;
 
     [SerializeField] LayerMask groundCheckMask;
     [SerializeField] Transform groundCheckRaycastStart;
     [SerializeField] float groundCheckRadius = 1;
     [SerializeField] private int jumpHeight;
-    bool isGrounded;
+    public bool isGrounded;
+    bool isJumping;
 
     // Initialize is called by the CharacterManager
     public virtual void Initialize()
     {
         controller = GetComponent<CharacterController>();
-        groundCheckRadius = controller.radius;
     }
     public void HandleAllMovement()
     {
-        GetMovementInformation();
         GroundedCheck();
-
+        HandleFalling();
         controller.Move((yVelocity + (moveSpeed * moveDirection)) * Time.fixedDeltaTime);
     }
 
     // Gets information about this frame's movement.  For the player this will read from InputHandler, while for enemies it'll read from their AI
-    protected virtual void GetMovementInformation(){}
+    protected virtual Vector3 ProcessMovementInput(Vector2 moveInput)
+    {
+        return moveInput;
+    }
 
+    public virtual void SetMoveDirection(Vector2 moveInput) 
+    {
+        moveDirection = ProcessMovementInput(moveInput);
+    }
 
     #region Jumping and Falling
     private void GroundedCheck()
@@ -60,12 +66,22 @@ public class CharacterLocomotion : MonoBehaviour
     {
         if (!isGrounded)
         {
-            yVelocity.y -= gravity;
+            yVelocity.y -= gravity*Time.deltaTime;
         }
-        else
+        else if (yVelocity.y <= 0)
         {
-            yVelocity.y = 0;
+            yVelocity.y = -2;
         }
+
+    }
+    public void AttemptJump()
+    {
+        if(!isGrounded)
+        {
+            return;
+        }
+        yVelocity.y = jumpHeight;
+
     }
     private void OnDrawGizmosSelected()
     {
