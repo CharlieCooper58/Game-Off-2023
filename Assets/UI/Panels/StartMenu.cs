@@ -14,6 +14,9 @@ namespace UI.Panels
 
         public void OnEnable()
         {
+            UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+            UnityEngine.Cursor.visible = true;
+            
             _document = GetComponent<UIDocument>();
             
             _play = _document.rootVisualElement.Q<Button>("Play");

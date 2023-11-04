@@ -30,6 +30,11 @@ public class CharacterLocomotion : MonoBehaviour
     }
     public void HandleAllMovement()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+        
         GroundedCheck();
         HandleFalling();
         controller.Move((yVelocity + (moveSpeed * moveDirection)) * Time.fixedDeltaTime);
