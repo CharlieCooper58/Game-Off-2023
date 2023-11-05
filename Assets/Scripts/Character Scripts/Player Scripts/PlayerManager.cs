@@ -6,11 +6,13 @@ public class PlayerManager : CharacterManager
 {
     public InputHandler inputHandler;
     public PlayerCamera playerCamera;
+    public PlayerAttacker playerAttacker;
     protected override void Awake()
     {
         base.Awake();
         inputHandler = GetComponent<InputHandler>();
         playerCamera = GetComponent<PlayerCamera>();
+        playerAttacker = GetComponent<PlayerAttacker>();
     }
     protected override void Start()
     {
