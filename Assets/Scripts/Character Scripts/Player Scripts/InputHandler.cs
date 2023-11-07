@@ -12,9 +12,13 @@ public class InputHandler : MonoBehaviour
         playerManager = GetComponent<PlayerManager>();
         PlayerControls inputActions = new PlayerControls();
         inputActions.Enable();
-        inputActions.Movement.Movement.performed += x=> movemementDirection = x.ReadValue<Vector2>();
+        inputActions.Movement.Movement.performed += x => movemementDirection = x.ReadValue<Vector2>();
         inputActions.Movement.Jump.performed += x=>OnJumpPerformed();
+        inputActions.Movement.Dash.performed += x => OnDashPerformed();
+
         inputActions.Camera.CameraLook.performed += x=> cameraDirection = x.ReadValue<Vector2>();
+        inputActions.Combat.Shoot.performed += x=>playerManager.playerAttacker.OnWeaponUsed();
+        inputActions.Combat.Shoot.canceled += x=>playerManager.playerAttacker.OnWeaponReleased();
     }
 
 
@@ -35,5 +39,9 @@ public class InputHandler : MonoBehaviour
     private void OnJumpPerformed() 
     {
         playerManager.characterLocomotion.AttemptJump();
+    }
+    private void OnDashPerformed()
+    {
+        playerManager.characterLocomotion.AttemptDash();
     }
 }
