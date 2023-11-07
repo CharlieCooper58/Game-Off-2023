@@ -1,0 +1,28 @@
+.button {
+    background-color: var(--positive);
+    color: var(--light);
+    padding: 15px 32px;
+    margin: 12px 0;
+    font-size: 28px;
+    
+    border-radius: 5px;
+    border-color: var(--positive);
+    border-width: 4px;
+    
+    -unity-font: resource("Assets/Fonts/Lato-Regular.ttf");
+    
+    transition: scale 0.12s ease-in-out;
+}
+
+.button:hover {
+    background-color: var(--positive-dark);
+    scale: 1.2;
+}
+
+.button:focus {
+    /*border-color: var(--positive-dark);*/
+}
+
+.button:active {
+    scale: 1.4;
+}
