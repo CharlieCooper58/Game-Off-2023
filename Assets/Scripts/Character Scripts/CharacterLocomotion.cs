@@ -40,6 +40,11 @@ public class CharacterLocomotion : MonoBehaviour
     }
     public void HandleAllMovement()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+        
         GroundedCheck();
         HandleFalling();
         HandleDashing();
