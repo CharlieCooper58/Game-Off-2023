@@ -18,6 +18,7 @@ public class PlayerManager : CharacterManager
     {
         base.Start();
         playerCamera.Initialize();
+        playerAttacker.Initialize();
     }
     private void Update()
     {

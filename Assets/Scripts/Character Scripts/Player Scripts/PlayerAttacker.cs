@@ -5,6 +5,73 @@ using UnityEngine.UI;
 public class PlayerAttacker : CharacterAttacker
 {
     public Image crossHair;
+    [SerializeField] List<Weapon> weapons;
+    int currentWeaponIndex;
+
+    public void Initialize()
+    {
+        currentWeaponIndex = 0;
+        SetWeapon(0);
+        for(int i = 1; i < weapons.Count; i++)
+        {
+            weapons[i].gameObject.SetActive(false);
+        }
+    }
+    public void AcquireWeapon(Weapon weapon)
+    {
+        weapons.Add(weapon);
+        SwitchWeapon(weapons.Count - 1);
+    }
+    public void CycleWeapons(int direction = 1)
+    {
+        int newIndex = currentWeaponIndex + direction;
+
+        if (newIndex < 0)
+        {
+            currentWeaponIndex = weapons.Count - 1;
+        }
+        else if (newIndex >= weapons.Count)
+        {
+            currentWeaponIndex = 0;
+        }
+        else
+        {
+            currentWeaponIndex = newIndex;
+        }
+
+        SetWeapon(currentWeaponIndex);
+    }
+    public bool SwitchWeapon(int weaponIndex)
+    {
+        if (weaponIndex >= weapons.Count)
+        {
+            return false;
+        }
+        SetWeapon(weaponIndex);
+        return true;
+    }
+    public void SetWeapon(int weaponIndex)
+    {
+        if (weaponIndex < 0 || weaponIndex >= weapons.Count)
+        {
+            return; // Index out of bounds
+        }
+
+        if (!activeWeapon || activeWeapon != weapons[weaponIndex])
+        {
+            // Disable the current active weapon if it's different from the new one
+            if (activeWeapon != null)
+            {
+                activeWeapon.gameObject.SetActive(false);
+            }
+
+            // Enable the new weapon
+            weapons[weaponIndex].gameObject.SetActive(true);
+
+            // Set the new weapon as the active weapon
+            activeWeapon = weapons[weaponIndex];
+        }
+    }
     public override bool OnWeaponUsed()
     {
         if (base.OnWeaponUsed())

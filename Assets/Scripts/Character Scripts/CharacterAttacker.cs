@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterAttacker : MonoBehaviour
 {
-    [SerializeField] Weapon activeWeapon;
+    [SerializeField] protected Weapon activeWeapon;
 
     public virtual bool OnWeaponUsed()
     {
