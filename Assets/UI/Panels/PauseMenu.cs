@@ -71,7 +71,6 @@ namespace UI.Panels
         {
             ResumeGame();
             SceneManager.LoadScene("StartMenu");
-            SceneManager.UnloadSceneAsync("Gameplay Testing");
         }
     }
 }
