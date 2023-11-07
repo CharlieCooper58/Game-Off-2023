@@ -263,6 +263,33 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Next Weapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4d9735a-c0a3-484c-b96f-ec9cd4ec1b10"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cycle Weapons"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""55510a33-c003-432c-8664-e18013727114"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WeaponByNumber"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd9ddca0-5a8c-47ca-9054-ee6a7f4e4966"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -287,6 +314,127 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04826953-a38c-485d-a2fd-7e8b75336f44"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Next Weapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f07d4daf-dff1-4919-b503-d28052d79aed"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cycle Weapons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cdaf5fe8-c885-4c6a-8516-6e254377a16e"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale"",
+                    ""groups"": """",
+                    ""action"": ""WeaponByNumber"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3161163c-5e03-4d55-aec8-a324ea896093"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": """",
+                    ""action"": ""WeaponByNumber"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9817d88a-125c-40b2-b43e-e02477655b94"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=3)"",
+                    ""groups"": """",
+                    ""action"": ""WeaponByNumber"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1eeb6707-fab8-4742-9a0e-dd3b23dd2031"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=4)"",
+                    ""groups"": """",
+                    ""action"": ""WeaponByNumber"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8f14448-4ee7-4c1c-8be2-1a8397577c3f"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=5)"",
+                    ""groups"": """",
+                    ""action"": ""WeaponByNumber"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07604aa7-934f-48c5-97c0-83ddca9384cb"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=6)"",
+                    ""groups"": """",
+                    ""action"": ""WeaponByNumber"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1d89022-b751-43e4-bab5-4b13602def95"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=7)"",
+                    ""groups"": """",
+                    ""action"": ""WeaponByNumber"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e5eadd5-b618-4fae-909b-a13db28faad3"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=8)"",
+                    ""groups"": """",
+                    ""action"": ""WeaponByNumber"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f290be22-516b-4832-8c80-e6a6397045c8"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=9)"",
+                    ""groups"": """",
+                    ""action"": ""WeaponByNumber"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -304,6 +452,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Shoot = m_Combat.FindAction("Shoot", throwIfNotFound: true);
+        m_Combat_NextWeapon = m_Combat.FindAction("Next Weapon", throwIfNotFound: true);
+        m_Combat_CycleWeapons = m_Combat.FindAction("Cycle Weapons", throwIfNotFound: true);
+        m_Combat_WeaponByNumber = m_Combat.FindAction("WeaponByNumber", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -474,11 +625,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Combat;
     private List<ICombatActions> m_CombatActionsCallbackInterfaces = new List<ICombatActions>();
     private readonly InputAction m_Combat_Shoot;
+    private readonly InputAction m_Combat_NextWeapon;
+    private readonly InputAction m_Combat_CycleWeapons;
+    private readonly InputAction m_Combat_WeaponByNumber;
     public struct CombatActions
     {
         private @PlayerControls m_Wrapper;
         public CombatActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Shoot => m_Wrapper.m_Combat_Shoot;
+        public InputAction @NextWeapon => m_Wrapper.m_Combat_NextWeapon;
+        public InputAction @CycleWeapons => m_Wrapper.m_Combat_CycleWeapons;
+        public InputAction @WeaponByNumber => m_Wrapper.m_Combat_WeaponByNumber;
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -491,6 +648,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @NextWeapon.started += instance.OnNextWeapon;
+            @NextWeapon.performed += instance.OnNextWeapon;
+            @NextWeapon.canceled += instance.OnNextWeapon;
+            @CycleWeapons.started += instance.OnCycleWeapons;
+            @CycleWeapons.performed += instance.OnCycleWeapons;
+            @CycleWeapons.canceled += instance.OnCycleWeapons;
+            @WeaponByNumber.started += instance.OnWeaponByNumber;
+            @WeaponByNumber.performed += instance.OnWeaponByNumber;
+            @WeaponByNumber.canceled += instance.OnWeaponByNumber;
         }
 
         private void UnregisterCallbacks(ICombatActions instance)
@@ -498,6 +664,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @NextWeapon.started -= instance.OnNextWeapon;
+            @NextWeapon.performed -= instance.OnNextWeapon;
+            @NextWeapon.canceled -= instance.OnNextWeapon;
+            @CycleWeapons.started -= instance.OnCycleWeapons;
+            @CycleWeapons.performed -= instance.OnCycleWeapons;
+            @CycleWeapons.canceled -= instance.OnCycleWeapons;
+            @WeaponByNumber.started -= instance.OnWeaponByNumber;
+            @WeaponByNumber.performed -= instance.OnWeaponByNumber;
+            @WeaponByNumber.canceled -= instance.OnWeaponByNumber;
         }
 
         public void RemoveCallbacks(ICombatActions instance)
@@ -528,5 +703,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface ICombatActions
     {
         void OnShoot(InputAction.CallbackContext context);
+        void OnNextWeapon(InputAction.CallbackContext context);
+        void OnCycleWeapons(InputAction.CallbackContext context);
+        void OnWeaponByNumber(InputAction.CallbackContext context);
     }
 }

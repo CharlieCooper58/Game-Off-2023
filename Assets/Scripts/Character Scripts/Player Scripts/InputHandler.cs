@@ -17,8 +17,14 @@ public class InputHandler : MonoBehaviour
         inputActions.Movement.Dash.performed += x => OnDashPerformed();
 
         inputActions.Camera.CameraLook.performed += x=> cameraDirection = x.ReadValue<Vector2>();
+
         inputActions.Combat.Shoot.performed += x=>playerManager.playerAttacker.OnWeaponUsed();
         inputActions.Combat.Shoot.canceled += x=>playerManager.playerAttacker.OnWeaponReleased();
+        inputActions.Combat.NextWeapon.performed += x=> playerManager.playerAttacker.CycleWeapons();
+        // Don't ask me why it's 120, that's just the number that scrolling returns
+        inputActions.Combat.CycleWeapons.performed += x=>playerManager.playerAttacker.CycleWeapons((int)x.ReadValue<float>()/120);
+        inputActions.Combat.WeaponByNumber.performed += x => playerManager.playerAttacker.SwitchWeapon((int)x.ReadValue<float>()-1);
+
     }
 
 

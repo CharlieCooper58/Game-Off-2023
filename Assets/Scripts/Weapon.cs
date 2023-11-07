@@ -7,10 +7,10 @@ public class Weapon:MonoBehaviour
     [SerializeField] protected Transform muzzleEndpoint;
     protected float reloadTimer;
     [SerializeField] protected float reloadTimerMax;
-    [SerializeField] private ParticleSystem weaponParticles;
+    [SerializeField] protected ParticleSystem weaponParticles;
     [SerializeField] protected int weaponDamage;
 
-    private void Update()
+    protected virtual void Update()
     {
         if(reloadTimer > 0)
         {
