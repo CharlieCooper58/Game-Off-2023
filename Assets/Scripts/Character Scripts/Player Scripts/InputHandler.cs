@@ -7,10 +7,12 @@ public class InputHandler : MonoBehaviour
     PlayerManager playerManager;
     private Vector2 movemementDirection;
     private Vector2 cameraDirection;
+
+    PlayerControls inputActions;
     private void OnEnable()
     {
         playerManager = GetComponent<PlayerManager>();
-        PlayerControls inputActions = new PlayerControls();
+        inputActions = new PlayerControls();
         inputActions.Enable();
         inputActions.Movement.Movement.performed += x => movemementDirection = x.ReadValue<Vector2>();
         inputActions.Movement.Jump.performed += x=>OnJumpPerformed();
@@ -25,6 +27,10 @@ public class InputHandler : MonoBehaviour
         inputActions.Combat.CycleWeapons.performed += x=>playerManager.playerAttacker.CycleWeapons((int)x.ReadValue<float>()/120);
         inputActions.Combat.WeaponByNumber.performed += x => playerManager.playerAttacker.SwitchWeapon((int)x.ReadValue<float>()-1);
 
+    }
+    private void OnDestroy()
+    {
+        inputActions.Dispose();
     }
 
 

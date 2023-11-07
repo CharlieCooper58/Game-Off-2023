@@ -23,7 +23,7 @@ public class CharacterLocomotion : MonoBehaviour
 
 
     [Header("Jumping and Falling")]
-    [SerializeField] private const float gravity = 9.81f;
+    [SerializeField] private const float gravity = 13f;
     protected Vector3 yVelocity;
 
     [SerializeField] LayerMask groundCheckMask;
