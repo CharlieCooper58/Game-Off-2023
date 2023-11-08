@@ -24,8 +24,10 @@ public class PlayerManager : CharacterManager
     {
         inputHandler.TickInput();
     }
-    private void LateUpdate()
+    protected override void FixedUpdate()
     {
+        base.FixedUpdate();
         inputHandler.TickCameraInput();
     }
+
 }

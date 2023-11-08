@@ -18,7 +18,7 @@ public class CharacterManager : MonoBehaviour
         //characterHealth.Initialize();
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         characterLocomotion.HandleAllMovement();
     }

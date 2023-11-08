@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CharacterLocomotion : MonoBehaviour
 {
-    private int moveSpeed;
-    [SerializeField] private int groundedMoveSpeed;
-    [SerializeField] private int inAirMoveSpeed;
+    [SerializeField] protected float moveSpeed;
+    [SerializeField] private float inAirMovementDelta;
+
 
     CharacterController controller;
     protected Vector3 moveDirection;
+    protected Vector3 planarMovement;
 
     [Header("Dashing and Charging")]
     float dashCooldownTimer;
@@ -23,15 +24,19 @@ public class CharacterLocomotion : MonoBehaviour
 
 
     [Header("Jumping and Falling")]
-    [SerializeField] private const float gravity = 9.81f;
+    [SerializeField] protected const float gravity = 13f;
     protected Vector3 yVelocity;
 
-    [SerializeField] LayerMask groundCheckMask;
+    [SerializeField] protected LayerMask groundCheckMask;
     [SerializeField] Transform groundCheckRaycastStart;
     [SerializeField] float groundCheckRadius = 1;
     [SerializeField] private int jumpHeight;
     public bool isGrounded;
     bool isJumping;
+
+    [Header("Misc Forces")]
+    protected Vector3 miscForces;
+    [SerializeField] float miscForcesDecaySpeed;
 
     // Initialize is called by the CharacterManager
     public virtual void Initialize()
@@ -47,8 +52,10 @@ public class CharacterLocomotion : MonoBehaviour
         
         GroundedCheck();
         HandleFalling();
+        TickCooldownTimers(Time.fixedDeltaTime);
         HandleDashing();
-        controller.Move((yVelocity + (moveSpeed * moveDirection)+dashVelocity) * Time.fixedDeltaTime);
+        HandleMiscForces();
+        controller.Move((yVelocity + planarMovement+miscForces) * Time.fixedDeltaTime);
     }
 
 
@@ -60,25 +67,69 @@ public class CharacterLocomotion : MonoBehaviour
 
     public virtual void SetMoveDirection(Vector2 moveInput) 
     {
+        if(dashTimer > 0)
+        {
+            return;
+        }
         moveDirection = ProcessMovementInput(moveInput);
+        if (isGrounded)
+        {
+            planarMovement = moveSpeed*moveDirection.normalized;
+        }
+        else
+        {
+            Accelerate(moveDirection);
+            //planarMovement += inAirMovementDelta * moveDirection * Time.deltaTime;
+            //if(planarMovement.sqrMagnitude > moveSpeed*moveSpeed)
+            //{
+            //    planarMovement = moveSpeed*planarMovement.normalized;
+            //}
+        }
     }
 
+    private void Accelerate(Vector3 direction)
+    {
+        if (direction == Vector3.zero)
+        {
+            return;
+        }
+        Vector3 desiredVelocity = moveSpeed * direction.normalized;
+        Vector3 acceleration = new Vector3(desiredVelocity.x - planarMovement.x, 0, desiredVelocity.z - planarMovement.z) / Time.deltaTime;
+        if (acceleration.sqrMagnitude > inAirMovementDelta * inAirMovementDelta)
+        {
+            acceleration = acceleration.normalized * inAirMovementDelta;
+        }
+        planarMovement += acceleration;
+    }
+
+    // Decrements dash cooldown.  This is entirely here so that PlayerLocomotion doesn't have to have its own update function or override HandleAllMovement
+    protected virtual void TickCooldownTimers(float tickLength)
+    {
+        if (dashCooldownTimer > 0)
+        {
+            dashCooldownTimer -= tickLength;
+        }
+    }
 
     #region Dashing and Charging
-    public void AttemptDash()
+    public void AttemptDash(Vector3 direction)
     {
         if(dashTimer > 0 || dashCooldownTimer > 0)
         {
             return;
         }
         dashTimer = dashTimerMax;
-        dashDirection = moveDirection;
+        dashDirection = (direction != null)? (ProcessMovementInput(direction)): moveDirection;
+        if (!isGrounded)
+        {
+            moveDirection = dashDirection;
+        }
     }
     private void HandleDashing()
     {
         if(dashTimer > 0)
         {
-            dashVelocity = dashSpeed * dashCurve.Evaluate(dashTimer / dashTimerMax) * dashDirection;
+            planarMovement = dashSpeed * dashCurve.Evaluate(dashTimer / dashTimerMax) * dashDirection;
             dashTimer -= Time.deltaTime;
             if(dashTimer <= 0)
             {
@@ -86,10 +137,7 @@ public class CharacterLocomotion : MonoBehaviour
                 dashCooldownTimer = dashCooldownTimerMax;
             }
         }
-        else if (dashCooldownTimer > 0)
-        {
-            dashCooldownTimer -= Time.deltaTime;
-        }
+
     }
     #endregion
 
@@ -99,17 +147,15 @@ public class CharacterLocomotion : MonoBehaviour
         if (Physics.CheckSphere(groundCheckRaycastStart.position, groundCheckRadius, groundCheckMask))
         {
             isGrounded = true;
-            moveSpeed = groundedMoveSpeed;
         }
         else
         {
             isGrounded = false;
-            moveSpeed = inAirMoveSpeed;
         }
 
     }
 
-    private void HandleFalling()
+    protected virtual void HandleFalling()
     {
         if (!isGrounded)
         {
@@ -117,11 +163,11 @@ public class CharacterLocomotion : MonoBehaviour
         }
         else if (yVelocity.y <= 0)
         {
-            yVelocity.y = -2;
+            yVelocity.y = -15;
         }
 
     }
-    public void AttemptJump()
+    public virtual void AttemptJump()
     {
         if(!isGrounded)
         {
@@ -136,4 +182,8 @@ public class CharacterLocomotion : MonoBehaviour
     }
     #endregion
 
+    void HandleMiscForces()
+    {
+        miscForces = miscForces * miscForcesDecaySpeed;
+    }
 }
