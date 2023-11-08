@@ -16,7 +16,8 @@ public class InputHandler : MonoBehaviour
         inputActions.Enable();
         inputActions.Movement.Movement.performed += x => movemementDirection = x.ReadValue<Vector2>();
         inputActions.Movement.Jump.performed += x=>OnJumpPerformed();
-        inputActions.Movement.Dash.performed += x => OnDashPerformed();
+        inputActions.Movement.Dash.performed += x => playerManager.characterLocomotion.AttemptDash(movemementDirection.normalized);
+
 
         inputActions.Camera.CameraLook.performed += x=> cameraDirection = x.ReadValue<Vector2>();
 
@@ -52,8 +53,5 @@ public class InputHandler : MonoBehaviour
     {
         playerManager.characterLocomotion.AttemptJump();
     }
-    private void OnDashPerformed()
-    {
-        playerManager.characterLocomotion.AttemptDash();
-    }
+
 }
