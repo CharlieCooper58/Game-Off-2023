@@ -9,6 +9,14 @@ public class CharacterLocomotion : MonoBehaviour
 
 
     CharacterController controller;
+    float controllerTopOffset;
+    float controllerLateralOffset;
+    protected bool isCollidingUp;
+    protected bool isCollidingLeft;
+    protected bool isCollidingRight;
+    protected bool isCollidingForward;
+    protected bool isCollidingBackward;
+
     protected Vector3 moveDirection;
     protected Vector3 planarMovement;
 
@@ -31,18 +39,21 @@ public class CharacterLocomotion : MonoBehaviour
     [SerializeField] Transform groundCheckRaycastStart;
     [SerializeField] float groundCheckRadius = 1;
     [SerializeField] private int jumpHeight;
+    [SerializeField] float frictionModifier;
     public bool isGrounded;
     bool isJumping;
 
     //[Header("Misc Forces")]
-    protected Vector3 miscForce;
     float miscForceTimer;
-    float airResistance;
+    [SerializeField] float airResistance;
 
     // Initialize is called by the CharacterManager
     public virtual void Initialize()
     {
         controller = GetComponent<CharacterController>();
+        controllerTopOffset = controller.height/2;
+        controllerLateralOffset = controller.radius;
+
     }
     public void HandleAllMovement()
     {
@@ -56,7 +67,7 @@ public class CharacterLocomotion : MonoBehaviour
         TickCooldownTimers(Time.deltaTime);
         HandleDashing();
         HandleMiscForces();
-        controller.Move((yVelocity*transform.up + planarMovement) * Time.deltaTime);
+        controller.Move((yVelocity * transform.up + planarMovement) * Time.deltaTime);
     }
 
 
@@ -143,7 +154,7 @@ public class CharacterLocomotion : MonoBehaviour
     #endregion
 
     #region Jumping and Falling
-    private void GroundedCheck()
+    protected virtual void GroundedCheck()
     {
         if (Physics.CheckSphere(groundCheckRaycastStart.position, groundCheckRadius, groundCheckMask))
         {
@@ -156,15 +167,31 @@ public class CharacterLocomotion : MonoBehaviour
 
     }
 
-    protected virtual void HandleFalling()
+    private void HandleFalling()
     {
         if (!isGrounded)
         {
             yVelocity -= gravity*Time.deltaTime;
+
+            // Somewhat costly collision detection.  Used for wall jumps, canceling velocity, and sliding
+            isCollidingForward = CheckCollisionDirection(transform.forward);
+            isCollidingBackward = CheckCollisionDirection(-transform.forward);
+            isCollidingRight = CheckCollisionDirection(transform.right);
+            isCollidingLeft = CheckCollisionDirection(-transform.right);
+            isCollidingUp = CheckCollisionDirection(transform.up);
+
+            if(isCollidingBackward || isCollidingForward || isCollidingLeft || isCollidingRight)
+            {
+                yVelocity -= yVelocity * frictionModifier*Time.deltaTime;
+            }
         }
-        else if (yVelocity <= 0)
+        else
         {
-            yVelocity = -15;
+            isCollidingForward = isCollidingBackward = isCollidingRight = isCollidingLeft = isCollidingUp = false;
+            if (yVelocity <= 0)
+            {
+                yVelocity = -15;
+            }
         }
 
     }
@@ -187,29 +214,71 @@ public class CharacterLocomotion : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheckRaycastStart.position, groundCheckRadius);
     }
     #endregion
-    public void ApplyMiscForce(Vector3 miscForce, float duration, AnimationCurve falloff)
+    public void ApplyMiscForce(Vector3 miscForce, float duration)
     {
-        //yComponent = 
-        this.miscForce = miscForce;
+        print(miscForce);
+        float yComponent = Vector3.Dot(miscForce, Vector3.up);
+        ApplyYVelocity(yComponent);
+
+        planarMovement = miscForce - yComponent * Vector3.up;
         miscForceTimer = duration;
-        planarMovement = miscForce;
+        print(planarMovement);
     }
     void HandleMiscForces()
     {
         if(miscForceTimer > 0)
         {
-            planarMovement -= planarMovement * airResistance;
+            print(planarMovement);
+            planarMovement -= planarMovement * airResistance*Time.deltaTime;
             miscForceTimer -= Time.deltaTime;
         }
     }
 
+    protected bool CheckCollisionDirection(Vector3 direction)
+    {
+        if(direction.y != 0)
+        {
+            return Physics.Raycast(transform.position+direction*controllerTopOffset, direction, 0.2f, groundCheckMask);
+        }
+        else
+        {
+            return Physics.Raycast(transform.position + direction * controllerLateralOffset, direction, 0.2f, groundCheckMask);
+        }
+    }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // X
+        if (planarMovement.x != 0)
+        {
+            if(Vector3.Dot(planarMovement, transform.right) > 0 && isCollidingRight || (Vector3.Dot(planarMovement, -transform.right) > 0 && isCollidingLeft))
+            {
+                planarMovement.x = 0;
+            }
+        }
+
+        // Z
+        if (planarMovement.z != 0)
+        {
+            if (Vector3.Dot(planarMovement, transform.forward) > 0 && isCollidingForward || (Vector3.Dot(planarMovement, -transform.forward) > 0 && isCollidingBackward))
+            {
+                planarMovement.z = 0;
+            }
+        }
+
+        // Y
+        if (yVelocity > 0 && isCollidingUp)
+        {
+            yVelocity = 0;
+        }
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         BouncePad bouncePad = other.GetComponent<BouncePad>();
         if(bouncePad != null)
         {
-            ApplyYVelocity(bouncePad.bounciness);
+            ApplyMiscForce(bouncePad.bounciness*bouncePad.transform.up, bouncePad.bounceDuration);
         }
     }
 }

@@ -5,4 +5,5 @@ using UnityEngine;
 public class BouncePad : MonoBehaviour
 {
     public float bounciness;
+    public float bounceDuration;
 }

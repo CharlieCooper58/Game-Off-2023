@@ -7,7 +7,6 @@ public class PlayerLocomotion : CharacterLocomotion
     private PlayerManager playerManager;
 
     [Header("Wall Jumping and Sliding")]
-    [SerializeField] float frictionModifier;
     [SerializeField] float wallCheckRaycastDistance;
     Vector3 wallJumpDirection;
     [SerializeField] float wallJumpVelocityUp;
@@ -35,36 +34,14 @@ public class PlayerLocomotion : CharacterLocomotion
             wallJumpCooldownTimer = Mathf.Max(0, wallJumpCooldownTimer - tickLength);
         }
     }
-    protected override void HandleFalling()
+    protected override void GroundedCheck()
     {
-        base.HandleFalling();
-        if (!isGrounded)
-        {
-            wallJumpDirection = Vector3.zero;
-            if (Physics.Raycast(transform.position, transform.forward, wallCheckRaycastDistance, groundCheckMask))
-            {
-                wallJumpDirection -= transform.forward;
-            }
-            else if (Physics.Raycast(transform.position, -transform.forward, wallCheckRaycastDistance, groundCheckMask))
-            {
-                wallJumpDirection += transform.forward;
-            }
-            if (Physics.Raycast(transform.position, transform.right, wallCheckRaycastDistance, groundCheckMask))
-            {
-                wallJumpDirection -= transform.right;
-            }
-            else if (Physics.Raycast(transform.position, -transform.right, wallCheckRaycastDistance, groundCheckMask))
-            {
-                wallJumpDirection += transform.right;
-            }
-
-        }
-        else
+        base.GroundedCheck();
+        if (isGrounded)
         {
             wallJumpCooldownTimer = 0;
             wallJumpsPerformed = 0;
-           
-        }    
+        }
     }
 
     public override void AttemptJump()
@@ -84,8 +61,26 @@ public class PlayerLocomotion : CharacterLocomotion
         {
             return;
         }
-        
-        if(wallJumpDirection != Vector3.zero)
+        wallJumpDirection = Vector3.zero;
+        if (isCollidingForward)
+        {
+            wallJumpDirection -= transform.forward;
+        }
+        if (isCollidingBackward)
+        {
+            wallJumpDirection += transform.forward;
+        }
+        if (isCollidingRight)
+        {
+            wallJumpDirection -= transform.right;
+        }
+        if (isCollidingLeft)
+        {
+            wallJumpDirection += transform.right;
+        }
+
+
+        if (wallJumpDirection != Vector3.zero)
         {
             yVelocity = wallJumpVelocityUp;
             planarMovement = moveSpeed*wallJumpDirection.normalized;
