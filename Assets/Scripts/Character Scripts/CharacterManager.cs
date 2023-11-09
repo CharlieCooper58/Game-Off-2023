@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
 {
-    public CharacterLocomotion characterLocomotion;
     public CharacterHealth characterHealth;
+    public AnimationHandler animationHandler;
     protected virtual void Awake()
     {
-        characterLocomotion = GetComponent<CharacterLocomotion>();
         characterHealth = GetComponent<CharacterHealth>();
+        animationHandler = GetComponentInChildren<AnimationHandler>();
     }
 
     protected virtual void Start()
     {
-        characterLocomotion.Initialize();
         //characterHealth.Initialize();
+        animationHandler.Initialize();
     }
 
     protected virtual void FixedUpdate()
     {
-        characterLocomotion.HandleAllMovement();
     }
 }

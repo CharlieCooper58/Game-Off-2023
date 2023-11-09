@@ -16,7 +16,7 @@ public class InputHandler : MonoBehaviour
         inputActions.Enable();
         inputActions.Movement.Movement.performed += x => movemementDirection = x.ReadValue<Vector2>();
         inputActions.Movement.Jump.performed += x=>OnJumpPerformed();
-        inputActions.Movement.Dash.performed += x => playerManager.characterLocomotion.AttemptDash(movemementDirection.normalized);
+        inputActions.Movement.Dash.performed += x => playerManager.playerLocomotion.AttemptDash(movemementDirection.normalized);
 
 
         inputActions.Camera.CameraLook.performed += x=> cameraDirection = x.ReadValue<Vector2>();
@@ -38,7 +38,7 @@ public class InputHandler : MonoBehaviour
     // Processes input on update and sends it to other components
     public void TickInput()
     {
-        playerManager.characterLocomotion.SetMoveDirection(movemementDirection.normalized);
+        playerManager.playerLocomotion.SetMoveDirection(movemementDirection.normalized);
     }
 
     // Pulls input on LateUpdate for camera updates
@@ -51,7 +51,7 @@ public class InputHandler : MonoBehaviour
 
     private void OnJumpPerformed() 
     {
-        playerManager.characterLocomotion.AttemptJump();
+        playerManager.playerLocomotion.AttemptJump();
     }
 
 }
