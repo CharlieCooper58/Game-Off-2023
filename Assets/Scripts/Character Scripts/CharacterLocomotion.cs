@@ -25,7 +25,7 @@ public class CharacterLocomotion : MonoBehaviour
 
     [Header("Jumping and Falling")]
     [SerializeField] protected const float gravity = 13f;
-    protected Vector3 yVelocity;
+    protected float yVelocity;
 
     [SerializeField] protected LayerMask groundCheckMask;
     [SerializeField] Transform groundCheckRaycastStart;
@@ -34,9 +34,10 @@ public class CharacterLocomotion : MonoBehaviour
     public bool isGrounded;
     bool isJumping;
 
-    [Header("Misc Forces")]
-    protected Vector3 miscForces;
-    [SerializeField] float miscForcesDecaySpeed;
+    //[Header("Misc Forces")]
+    protected Vector3 miscForce;
+    float miscForceTimer;
+    float airResistance;
 
     // Initialize is called by the CharacterManager
     public virtual void Initialize()
@@ -52,10 +53,10 @@ public class CharacterLocomotion : MonoBehaviour
         
         GroundedCheck();
         HandleFalling();
-        TickCooldownTimers(Time.fixedDeltaTime);
+        TickCooldownTimers(Time.deltaTime);
         HandleDashing();
         HandleMiscForces();
-        controller.Move((yVelocity + planarMovement+miscForces) * Time.fixedDeltaTime);
+        controller.Move((yVelocity*transform.up + planarMovement) * Time.deltaTime);
     }
 
 
@@ -67,7 +68,7 @@ public class CharacterLocomotion : MonoBehaviour
 
     public virtual void SetMoveDirection(Vector2 moveInput) 
     {
-        if(dashTimer > 0)
+        if(dashTimer > 0 || miscForceTimer > 0)
         {
             return;
         }
@@ -114,7 +115,7 @@ public class CharacterLocomotion : MonoBehaviour
     #region Dashing and Charging
     public void AttemptDash(Vector3 direction)
     {
-        if(dashTimer > 0 || dashCooldownTimer > 0)
+        if(dashTimer > 0 || dashCooldownTimer > 0 || miscForceTimer > 0)
         {
             return;
         }
@@ -159,11 +160,11 @@ public class CharacterLocomotion : MonoBehaviour
     {
         if (!isGrounded)
         {
-            yVelocity.y -= gravity*Time.deltaTime;
+            yVelocity -= gravity*Time.deltaTime;
         }
-        else if (yVelocity.y <= 0)
+        else if (yVelocity <= 0)
         {
-            yVelocity.y = -15;
+            yVelocity = -15;
         }
 
     }
@@ -173,17 +174,42 @@ public class CharacterLocomotion : MonoBehaviour
         {
             return;
         }
-        yVelocity.y = jumpHeight;
+        yVelocity = jumpHeight;
 
+    }
+
+    public void ApplyYVelocity(float newYVelocity)
+    {
+        yVelocity = newYVelocity;
     }
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(groundCheckRaycastStart.position, groundCheckRadius);
     }
     #endregion
-
+    public void ApplyMiscForce(Vector3 miscForce, float duration, AnimationCurve falloff)
+    {
+        //yComponent = 
+        this.miscForce = miscForce;
+        miscForceTimer = duration;
+        planarMovement = miscForce;
+    }
     void HandleMiscForces()
     {
-        miscForces = miscForces * miscForcesDecaySpeed;
+        if(miscForceTimer > 0)
+        {
+            planarMovement -= planarMovement * airResistance;
+            miscForceTimer -= Time.deltaTime;
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        BouncePad bouncePad = other.GetComponent<BouncePad>();
+        if(bouncePad != null)
+        {
+            ApplyYVelocity(bouncePad.bounciness);
+        }
     }
 }
