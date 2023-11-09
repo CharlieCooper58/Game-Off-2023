@@ -2611,6 +2611,71 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.019166667, y: 0.018476786, z: 0.030303197}
   m_Center: {x: -0.009884205, y: -3.9497633e-10, z: -0.013030434}
+--- !u!1001 &1194728548
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1134412754109830860, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: bounciness
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830860, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: bounceDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_RootOrder
+      value: 54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3884064
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -42.959354
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.94235986
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.33460113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 39.097
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830867, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_Name
+      value: Bounce Pad (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
 --- !u!1 &1200485142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2256357977811703112, guid: def3cf268e4c7883f8fa5e462967ca6b, type: 3}
@@ -3834,7 +3899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8379547644769444518, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: frictionModifier
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8379547644769444518, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: groundCheckRadius
@@ -3846,11 +3911,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8379547644769444518, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: inAirMovementDelta
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8379547644769444518, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: wallJumpVelocityUp
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379547644769444518, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: wallJumpVelocitySide
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8379547644769444518, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: groundCheckMask.m_Bits
@@ -4955,6 +5024,71 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.019166667, y: 0.018476786, z: 0.030303203}
   m_Center: {x: -0.00988421, y: -6.067769e-11, z: -0.013030312}
+--- !u!1001 &1799781338
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1134412754109830860, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: bounciness
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830860, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: bounceDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_RootOrder
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.487469
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -43.05344
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8072551
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5902027
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 72.343
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830867, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_Name
+      value: Bounce Pad (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
 --- !u!1 &1819755587
 GameObject:
   m_ObjectHideFlags: 0
@@ -6209,3 +6343,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1134412754539470972
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1134412754109830860, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: bounciness
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830860, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: bounceDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_RootOrder
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.902854
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -42.849434
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9858794
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.16745703
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 19.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830861, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134412754109830867, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
+      propertyPath: m_Name
+      value: Bounce Pad
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e72c108101af2e47ba4a301bf1d8ea9, type: 3}
