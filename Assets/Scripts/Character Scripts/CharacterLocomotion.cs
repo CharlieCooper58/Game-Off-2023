@@ -32,7 +32,7 @@ public class CharacterLocomotion : MonoBehaviour
 
 
     [Header("Jumping and Falling")]
-    [SerializeField] protected const float gravity = 13f;
+    [SerializeField] protected float gravity = 13f;
     protected float yVelocity;
 
     [SerializeField] protected LayerMask groundCheckMask;
@@ -50,6 +50,7 @@ public class CharacterLocomotion : MonoBehaviour
     // Initialize is called by the CharacterManager
     public virtual void Initialize()
     {
+        gravity = Mathf.Abs(GameHandler.instance.gravity);
         controller = GetComponent<CharacterController>();
         controllerTopOffset = controller.height/2;
         controllerLateralOffset = controller.radius;

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     protected EnemyManager enemyManager;
-    NavMeshAgent navMeshAgent;
+    protected NavMeshAgent navMeshAgent;
     NavMeshPath pathToDestination;
     protected PlayerManager target;
     Vector3 nextTargetLocation;
