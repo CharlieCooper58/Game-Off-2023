@@ -87,7 +87,7 @@ public class PlayerLocomotion : CharacterLocomotion
         
         if(wallJumpDirection != Vector3.zero)
         {
-            yVelocity = new Vector3(0, wallJumpVelocityUp, 0);
+            yVelocity = wallJumpVelocityUp;
             planarMovement = moveSpeed*wallJumpDirection.normalized;
             wallJumpCooldownTimer = wallJumpCooldownTimerMax;
             wallJumpsPerformed++;
