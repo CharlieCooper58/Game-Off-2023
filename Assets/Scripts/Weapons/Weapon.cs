@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Weapon:MonoBehaviour
 {
-    [SerializeField] protected Transform muzzleEndpoint;
+    [SerializeField] public Transform muzzleEndpoint;
     protected float reloadTimer;
     [SerializeField] protected float reloadTimerMax;
     [SerializeField] protected ParticleSystem weaponParticles;
-    [SerializeField] protected int weaponDamage;
+    [SerializeField] public int weaponDamage;
 
     protected virtual void Update()
     {
