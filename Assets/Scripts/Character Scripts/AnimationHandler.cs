@@ -14,13 +14,15 @@ public class AnimationHandler : MonoBehaviour
         m_animator = GetComponent<Animator>();
     }
 
-    public void PlayTargetAnimation(string animName, int statePriority)
+    public bool PlayTargetAnimation(string animName, int statePriority)
     {
         if(statePriority > animationStatePriority)
         {
             animationStatePriority = statePriority;
             m_animator.Play(animName);
+            return true;
         }
+        return false;
     }
 
     public void ResetStatePriority()

@@ -22,6 +22,8 @@ public class ChargerAI : EnemyAI
         base.Initialize();
         rb = GetComponent<Rigidbody>();
         contactDamage = 0;
+        rb.isKinematic = true;
+        rb.useGravity = false;
     }
     public override void MakeStateDecisions()
     {
@@ -36,11 +38,15 @@ public class ChargerAI : EnemyAI
                     contactDamage = attackDamage;
                     Vector3 newVelocity = CalculateJumpVelocity();
                     rb.velocity = newVelocity;
+                    rb.isKinematic = false;
+                    rb.useGravity = true;
                 }
                 break;
             case AIState.attack:
                 if(rb.velocity.y <= 0 && Physics.CheckSphere(groundCheckPoint.position, groundCheckRadius, groundCheckMask))
                 {
+                    rb.isKinematic = true;
+                    rb.useGravity = false;
                     navMeshAgent.enabled=true;
                     state = AIState.move;
                     contactDamage = 0;
