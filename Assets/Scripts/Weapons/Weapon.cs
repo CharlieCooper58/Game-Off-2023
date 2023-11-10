@@ -21,5 +21,9 @@ public class Weapon:MonoBehaviour
     {
         return true;
     }
+    public virtual bool OnTriggerPressed(Vector3 direction)
+    {
+        return true;
+    }
     public virtual void OnTriggerReleased() { }
 }

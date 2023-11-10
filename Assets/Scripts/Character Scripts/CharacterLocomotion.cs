@@ -32,7 +32,7 @@ public class CharacterLocomotion : MonoBehaviour
 
 
     [Header("Jumping and Falling")]
-    [SerializeField] protected const float gravity = 13f;
+    [SerializeField] protected float gravity = 13f;
     protected float yVelocity;
 
     [SerializeField] protected LayerMask groundCheckMask;
@@ -50,6 +50,7 @@ public class CharacterLocomotion : MonoBehaviour
     // Initialize is called by the CharacterManager
     public virtual void Initialize()
     {
+        gravity = Mathf.Abs(GameHandler.instance.gravity);
         controller = GetComponent<CharacterController>();
         controllerTopOffset = controller.height/2;
         controllerLateralOffset = controller.radius;
@@ -61,7 +62,7 @@ public class CharacterLocomotion : MonoBehaviour
         {
             return;
         }
-        
+
         GroundedCheck();
         HandleFalling();
         TickCooldownTimers(Time.deltaTime);
@@ -77,16 +78,16 @@ public class CharacterLocomotion : MonoBehaviour
         return moveInput;
     }
 
-    public virtual void SetMoveDirection(Vector2 moveInput) 
+    public virtual void SetMoveDirection(Vector2 moveInput)
     {
-        if(dashTimer > 0 || miscForceTimer > 0)
+        if (dashTimer > 0 || miscForceTimer > 0)
         {
             return;
         }
         moveDirection = ProcessMovementInput(moveInput);
         if (isGrounded)
         {
-            planarMovement = moveSpeed*moveDirection.normalized;
+            planarMovement = moveSpeed * moveDirection.normalized;
         }
         else
         {
@@ -126,12 +127,12 @@ public class CharacterLocomotion : MonoBehaviour
     #region Dashing and Charging
     public void AttemptDash(Vector3 direction)
     {
-        if(dashTimer > 0 || dashCooldownTimer > 0 || miscForceTimer > 0)
+        if (dashTimer > 0 || dashCooldownTimer > 0 || miscForceTimer > 0)
         {
             return;
         }
         dashTimer = dashTimerMax;
-        dashDirection = (direction != null)? (ProcessMovementInput(direction)): moveDirection;
+        dashDirection = (direction != null) ? (ProcessMovementInput(direction)) : moveDirection;
         if (!isGrounded)
         {
             moveDirection = dashDirection;
@@ -139,11 +140,11 @@ public class CharacterLocomotion : MonoBehaviour
     }
     private void HandleDashing()
     {
-        if(dashTimer > 0)
+        if (dashTimer > 0)
         {
             planarMovement = dashSpeed * dashCurve.Evaluate(dashTimer / dashTimerMax) * dashDirection;
             dashTimer -= Time.deltaTime;
-            if(dashTimer <= 0)
+            if (dashTimer <= 0)
             {
                 dashVelocity = Vector3.zero;
                 dashCooldownTimer = dashCooldownTimerMax;
@@ -197,7 +198,7 @@ public class CharacterLocomotion : MonoBehaviour
     }
     public virtual void AttemptJump()
     {
-        if(!isGrounded)
+        if (!isGrounded)
         {
             return;
         }
@@ -226,7 +227,7 @@ public class CharacterLocomotion : MonoBehaviour
     }
     void HandleMiscForces()
     {
-        if(miscForceTimer > 0)
+        if (miscForceTimer > 0)
         {
             print(planarMovement);
             planarMovement -= planarMovement * airResistance*Time.deltaTime;
@@ -276,7 +277,7 @@ public class CharacterLocomotion : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         BouncePad bouncePad = other.GetComponent<BouncePad>();
-        if(bouncePad != null)
+        if (bouncePad != null)
         {
             ApplyMiscForce(bouncePad.bounciness*bouncePad.transform.up, bouncePad.bounceDuration);
         }
