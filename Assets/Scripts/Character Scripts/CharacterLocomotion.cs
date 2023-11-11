@@ -22,6 +22,8 @@ public class CharacterLocomotion : MonoBehaviour
 
     [Header("Dashing and Charging")]
     float dashCooldownTimer;
+    [SerializeField] int maxDashes;
+    int dashesUsed;
     [SerializeField] float dashCooldownTimerMax;
     [SerializeField] private float dashTimerMax;
     private float dashTimer;
@@ -121,16 +123,26 @@ public class CharacterLocomotion : MonoBehaviour
         if (dashCooldownTimer > 0)
         {
             dashCooldownTimer -= tickLength;
+            if(dashCooldownTimer <= 0)
+            {
+                dashesUsed--;
+                if(dashesUsed > 0)
+                {
+                    dashCooldownTimer = dashCooldownTimerMax;
+                }
+            }
         }
     }
 
     #region Dashing and Charging
     public void AttemptDash(Vector3 direction)
     {
-        if (dashTimer > 0 || dashCooldownTimer > 0 || miscForceTimer > 0)
+        if (dashTimer > 0 || dashesUsed >= maxDashes)
         {
             return;
         }
+        // Add sounds here
+        dashesUsed++;
         dashTimer = dashTimerMax;
         dashDirection = (direction != null) ? (ProcessMovementInput(direction)) : moveDirection;
         if (!isGrounded)
