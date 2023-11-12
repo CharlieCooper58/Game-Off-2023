@@ -99,7 +99,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  attackDamage: 5
+  attackDamage: 1
   attackRange: 5
   contactDamage: 0
   jumpTime: 1
