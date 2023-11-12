@@ -411,6 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   inAirMovementDelta: 0.75
+  maxDashes: 3
   dashCooldownTimerMax: 0.5
   dashTimerMax: 0.2
   dashSpeed: 30

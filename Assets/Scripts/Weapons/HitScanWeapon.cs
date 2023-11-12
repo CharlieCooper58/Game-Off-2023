@@ -14,8 +14,10 @@ public class HitScanWeapon : Weapon
         {
             reloadTimer = reloadTimerMax;
             RaycastHit hit;
-            if(Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, shootMask))
+            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, 100f, layerMask:shootMask))
             {
+                print(shootMask.value);
+                print(hit.collider.gameObject.layer);
                 shotTracerRenderer.enabled = true;
                 shotTracerRenderer.positionCount = 2;
                 shotTracerRenderer.SetPosition(0, muzzleEndpoint.position);

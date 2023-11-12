@@ -11,5 +11,6 @@ public class GameHandler : MonoBehaviour
     {
         instance = this;
         Physics.gravity = new Vector3(0, -gravity, 0);
+        playerManager = FindObjectOfType<PlayerManager>();
     }
 }
