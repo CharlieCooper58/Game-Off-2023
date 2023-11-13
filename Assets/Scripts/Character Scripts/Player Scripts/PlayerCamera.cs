@@ -28,19 +28,6 @@ public class PlayerCamera : MonoBehaviour
         Cursor.visible = false;
         cameraRotationHelper.localRotation = transform.rotation;
     }
-    //public void UpdateCameraOrientation(Vector2 cameraInput)
-    //{
-    //    float lookX = cameraSpeedX*cameraInput.x*Time.deltaTime;
-    //    float lookY = cameraSpeedY * cameraInput.y * Time.deltaTime;
-
-    //    cameraXAxisRotation = Mathf.Clamp(cameraXAxisRotation - lookY, -90f, 90f);
-
-    //    transform.Rotate(Vector3.up * lookX);
-    //    cameraPivot.localRotation = Quaternion.Euler(cameraXAxisRotation, 0, 0);
-
-
-        
-    //}
     public void UpdateCameraOrientation(Vector2 cameraInput)
     {
         float lookX = cameraSpeedX * cameraInput.x * Time.deltaTime;
@@ -51,12 +38,20 @@ public class PlayerCamera : MonoBehaviour
         cameraRotationHelper.Rotate(Vector3.up * lookX);// = transform.eulerAngles.y + lookX;
         //cameraRotationHelper.localRotation.x = targetCameraXAxisRotation;
 
-        // Use SmoothDampAngle to interpolate the camera rotations smoothly
-        //cameraXAxisRotation = Mathf.SmoothDampAngle(cameraXAxisRotation, targetCameraXAxisRotation, ref cameraXRotationVelocity, smoothTime);
-        //targetCameraYAxisRotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetCameraYRotation, ref cameraYRotationVelocity, smoothTime);
-
         // Update the camera pivot and player's transform rotation
         cameraPivot.localRotation = Quaternion.Euler(Mathf.SmoothDampAngle(cameraPivot.localEulerAngles.x, targetCameraXAxisRotation, ref cameraXAngularVelocity, cameraSmoothTime), 0, 0);
         transform.rotation = Quaternion.Euler(0, Mathf.SmoothDampAngle(transform.eulerAngles.y, cameraRotationHelper.localEulerAngles.y, ref cameraYAngularVelocity, cameraSmoothTime), 0);
+    }
+
+    private void OnDisable()
+    {
+        camera.Priority = 0;
+    }
+    private void OnEnable()
+    {
+        if(camera != null)
+        {
+            camera.Priority = 10;
+        }
     }
 }

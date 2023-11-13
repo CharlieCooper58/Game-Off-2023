@@ -8,20 +8,59 @@ public class PlayerManager : CharacterManager
     public PlayerCamera playerCamera;
     public PlayerAttacker playerAttacker;
     public PlayerLocomotion playerLocomotion;
+
+    public bool isLittle;
+    public static PlayerManager littlePlayerInstance;
+    public static PlayerManager bigPlayerInstance;
+
+
     protected override void Awake()
     {
+        if (isLittle)
+        {
+            if (littlePlayerInstance == null)
+            {
+                littlePlayerInstance = this;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        else
+        {
+            if (bigPlayerInstance == null)
+            {
+                bigPlayerInstance = this;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
         base.Awake();
         inputHandler = GetComponent<InputHandler>();
         playerCamera = GetComponent<PlayerCamera>();
         playerAttacker = GetComponent<PlayerAttacker>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
+        
     }
     protected override void Start()
     {
         base.Start();
         playerCamera.Initialize();
-        playerAttacker.Initialize();
         playerLocomotion.Initialize();
+
+        if (isLittle)
+        {
+            playerAttacker.Initialize();
+        }
+        else
+        {
+
+        }
+
+
     }
     private void Update()
     {
