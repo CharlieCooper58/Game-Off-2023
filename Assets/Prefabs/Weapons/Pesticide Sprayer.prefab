@@ -57,7 +57,7 @@ MonoBehaviour:
   damageMask:
     serializedVersion: 2
     m_Bits: 128
-  damageRadius: 1
+  damageRadius: 2
 --- !u!1 &3124324455359534899
 GameObject:
   m_ObjectHideFlags: 0
