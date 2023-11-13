@@ -45,6 +45,10 @@ public class GameHandler : MonoBehaviour
     public void SetActivePlayer(bool little)
     {
         playerIsLittle = little;
+        if(bigPlayerManager == null)
+        {
+            return;
+        }
         littlePlayerManager.gameObject.SetActive(little);
         bigPlayerManager.gameObject.SetActive(!little);
     }
