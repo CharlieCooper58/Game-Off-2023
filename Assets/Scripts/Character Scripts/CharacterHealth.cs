@@ -7,6 +7,7 @@ public class CharacterHealth : MonoBehaviour
     [SerializeField] int maxHP;
     [SerializeField] int currentHP;
 
+
     public event EventHandler OnCharacterDeath;
     public void Start()
     {

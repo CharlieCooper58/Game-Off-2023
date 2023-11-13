@@ -15,7 +15,8 @@ public class CharacterManager : MonoBehaviour
     protected virtual void Start()
     {
         //characterHealth.Initialize();
-        animationHandler.Initialize();
+        if(animationHandler != null)
+            animationHandler.Initialize();
     }
 
     protected virtual void FixedUpdate()
