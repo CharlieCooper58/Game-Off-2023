@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour
     {
         enemyManager = GetComponent<EnemyManager>();
         navMeshAgent = GetComponent<NavMeshAgent>();
-        target = GameHandler.instance.playerManager;
+        target = GameHandler.instance.littlePlayerManager;
         state = AIState.move;
 
         //playerLayer = LayerMask.NameToLayer("Player");

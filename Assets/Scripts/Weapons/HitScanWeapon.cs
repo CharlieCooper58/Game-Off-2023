@@ -6,7 +6,7 @@ public class HitScanWeapon : Weapon
 {
     // A hitscan weapon is a weapon that raycasts from the barrel to the target and sees if anything hits
 
-    [SerializeField] LineRenderer shotTracerRenderer;
+    [SerializeField] HitScanLine shotTracerLinePrefab;
     [SerializeField] LayerMask shootMask;
     public override bool OnTriggerPressed()
     {
@@ -16,13 +16,8 @@ public class HitScanWeapon : Weapon
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, 100f, layerMask:shootMask))
             {
-                print(shootMask.value);
-                print(hit.collider.gameObject.layer);
-                shotTracerRenderer.enabled = true;
-                shotTracerRenderer.positionCount = 2;
-                shotTracerRenderer.SetPosition(0, muzzleEndpoint.position);
-                shotTracerRenderer.SetPosition(1, hit.point);
-                StartCoroutine("DisableShotTracer");
+                HitScanLine newShotLine = Instantiate(shotTracerLinePrefab);
+                newShotLine.CreateLine(muzzleEndpoint.position, hit.point);
                 CharacterHealth damaged = hit.transform.GetComponent<CharacterHealth>();
                 if(damaged != null)
                 {
@@ -35,36 +30,12 @@ public class HitScanWeapon : Weapon
                 Vector3 raycastEndpoint = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 1.0f));
                 Vector3 pointToDraw = raycastEndpoint + Camera.main.transform.forward * 100f;
 
-                shotTracerRenderer.enabled = true;
-                shotTracerRenderer.positionCount = 2;
-                shotTracerRenderer.SetPosition(0, muzzleEndpoint.position);
-                shotTracerRenderer.SetPosition(1, pointToDraw);
-                StartCoroutine("DisableShotTracer");
+                HitScanLine newShotLine = Instantiate(shotTracerLinePrefab);
+                newShotLine.CreateLine(muzzleEndpoint.position, pointToDraw);
             }
             return true;
         }
         return false;
-    }
-
-    IEnumerator DisableShotTracer()
-    {
-        float elapsedTime = 0.0f;
-        Color newColor = shotTracerRenderer.startColor;
-
-        while (elapsedTime < 0.3f)
-        {
-            // Calculate the new color with reduced alpha
-            newColor.a = 1.0f - (elapsedTime / .3f);
-
-            // Set the LineRenderer color
-            shotTracerRenderer.startColor = newColor;
-            shotTracerRenderer.endColor = newColor;
-
-            elapsedTime += Time.deltaTime;
-            yield return null; // Wait for the next frame
-        }
-
-        shotTracerRenderer.enabled = false;
     }
 }
 

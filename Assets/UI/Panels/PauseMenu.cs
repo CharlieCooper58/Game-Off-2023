@@ -30,18 +30,15 @@ namespace UI.Panels
             _main.style.display = DisplayStyle.None;
         }
 
-        public void Update()
+        public void TogglePauseState()
         {
-            if (Input.GetButtonDown("Cancel"))
+            if (Time.timeScale == 0)
             {
-                if (Time.timeScale == 0)
-                {
-                    ResumeGame();
-                }
-                else
-                {
-                    PauseGame();
-                }
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
             }
         }
 
