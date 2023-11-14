@@ -33,7 +33,7 @@ namespace UI.Panels
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             UnityEngine.Cursor.visible = false;
 
-            SceneManager.LoadScene("Gameplay Testing");
+            SceneManager.LoadScene("Tutorial-Map 1");
         }
         
         private static void OpenOptions()
