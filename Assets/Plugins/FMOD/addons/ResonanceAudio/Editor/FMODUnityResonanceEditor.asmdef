@@ -1,8 +1,7 @@
 {
     "name": "FMODUnityResonanceEditor",
     "references": [
-        "FMODUnityResonance",
-        "FMODUnity"
+        "FMODUnityResonance"
     ],
     "includePlatforms": [
         "Editor"

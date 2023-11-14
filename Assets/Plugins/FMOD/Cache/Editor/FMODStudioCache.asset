@@ -1,6 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7977682974907264466
+--- !u!114 &-2217183635837774857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638348233238496403
+  FileSizes:
+  - Name: Desktop
+    Value: 712
+  Exists: 1
+--- !u!114 &-404902668304639526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,7 +35,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638348773647769715
+  lastModified: 638348233238487704
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -33,33 +53,13 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 4654398754390218243}
-  - {fileID: -7977682974907264466}
+  - {fileID: -2217183635837774857}
+  - {fileID: -404902668304639526}
   EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: -7977682974907264466}
+  - {fileID: -404902668304639526}
   StringsBanks:
-  - {fileID: 4654398754390218243}
-  cacheTime: 638348773647807832
-  cacheVersion: 131608
---- !u!114 &4654398754390218243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638348773647807832
-  FileSizes:
-  - Name: Desktop
-    Value: 712
-  Exists: 1
+  - {fileID: -2217183635837774857}
+  cacheTime: 638348233238496403
+  cacheVersion: 131609
