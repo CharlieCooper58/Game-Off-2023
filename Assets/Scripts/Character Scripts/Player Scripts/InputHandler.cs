@@ -33,6 +33,11 @@ public class InputHandler : MonoBehaviour
                 // Don't ask me why it's 120, that's just the number that scrolling returns
                 inputActions.Combat.CycleWeapons.performed += x => playerManager.playerAttacker.CycleWeapons((int)x.ReadValue<float>() / 120);
                 inputActions.Combat.WeaponByNumber.performed += x => playerManager.playerAttacker.SwitchWeapon((int)x.ReadValue<float>() - 1);
+                inputActions.Combat.Melee.performed += x => playerManager.animationHandler.PlayTargetAnimation("Melee", 1);
+            }
+            else
+            {
+                inputActions.Combat.Shoot.performed += x => playerManager.playerInteractor.InteractWithObject();
             }
         }
         inputActions.Enable();

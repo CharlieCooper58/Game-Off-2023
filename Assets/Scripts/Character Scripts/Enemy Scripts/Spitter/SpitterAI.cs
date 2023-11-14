@@ -16,36 +16,40 @@ public class SpitterAI : EnemyAI
     public override void MakeStateDecisions()
     {
         playerDirection = target.transform.position - spitPoint.muzzleEndpoint.position;
-        switch (state)
+        base.MakeStateDecisions();
+    }
+    protected override void OnAIStateMove()
+    {
+        base.OnAIStateMove();
+        if (SightCast())
         {
-            case AIState.move:
-                if (SightCast())
-                {
-                    navMeshAgent.SetDestination(transform.position);
-                    state = AIState.attack;
-                }
-                else
-                {
-                    TickMovementTimer();
-                }
-                break;
-            case AIState.attack:
-                if (isAttacking)
-                {
-                    break;
-                }
-                else if (SightCast())
-                {
-                    if(enemyManager.animationHandler.PlayTargetAnimation("SpitterAttack", 1))
-                    {
-                        isAttacking = true;
-                    }
-                }
-                else
-                {
-                    state = AIState.move;
-                }
-                break;
+            navMeshAgent.SetDestination(transform.position);
+            state = AIState.attack;
+        }
+        else
+        {
+            TickMovementTimer();
+        }
+    }
+    protected override void OnAIStateAttack()
+    {
+        base.OnAIStateAttack();
+        Quaternion targetRotation = Quaternion.LookRotation(new Vector3(playerDirection.x, 0, playerDirection.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+        if (isAttacking)
+        {
+            return;
+        }
+        else if (SightCast())
+        {
+            if (enemyManager.animationHandler.PlayTargetAnimation("SpitterAttack", 1))
+            {
+                isAttacking = true;
+            }
+        }
+        else
+        {
+            state = AIState.move;
         }
     }
 

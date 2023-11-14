@@ -9,49 +9,39 @@ public class ChargerAI : EnemyAI
     [SerializeField] float jumpTime;
     [SerializeField] Transform meleeDamagePoint;
     [SerializeField] float meleeDamageRadius;
-    Rigidbody rb;
     //[SerializeField] BoxCollide
 
 
-    [Header("Grounded Check")]
-    [SerializeField] float groundCheckRadius;
-    [SerializeField] LayerMask groundCheckMask;
-    [SerializeField] Transform groundCheckPoint;
+
     public override void Initialize()
     {
         base.Initialize();
-        rb = GetComponent<Rigidbody>();
         contactDamage = 0;
-        rb.isKinematic = true;
-        rb.useGravity = false;
+
     }
-    public override void MakeStateDecisions()
+    protected override void OnAIStateMove()
     {
-        switch (state)
+        base.OnAIStateMove();
+        TickMovementTimer();
+        if (Vector3.SqrMagnitude(target.transform.position - transform.position) < attackRange * attackRange)
         {
-            case AIState.move:
-                TickMovementTimer();
-                if(Vector3.SqrMagnitude(target.transform.position-transform.position) < attackRange * attackRange)
-                {
-                    state = AIState.attack;
-                    navMeshAgent.enabled = false;
-                    contactDamage = attackDamage;
-                    Vector3 newVelocity = CalculateJumpVelocity();
-                    rb.velocity = newVelocity;
-                    rb.isKinematic = false;
-                    rb.useGravity = true;
-                }
-                break;
-            case AIState.attack:
-                if(rb.velocity.y <= 0 && Physics.CheckSphere(groundCheckPoint.position, groundCheckRadius, groundCheckMask))
-                {
-                    rb.isKinematic = true;
-                    rb.useGravity = false;
-                    navMeshAgent.enabled=true;
-                    state = AIState.move;
-                    contactDamage = 0;
-                }
-                break;
+            state = AIState.attack;
+            navMeshAgent.enabled = false;
+            contactDamage = attackDamage;
+            Vector3 newVelocity = CalculateJumpVelocity();
+            rb.velocity = newVelocity;
+            rb.isKinematic = false;
+            rb.useGravity = true;
+        }
+    }
+    protected override void OnAIStateAttack()
+    {
+        base.OnAIStateAttack();
+        if (CheckRigidbodyShouldBeInactive())
+        {
+            DisableRigidbody();
+            state = AIState.move;
+            contactDamage = 0;
         }
     }
     public void CheckDamage()
@@ -89,8 +79,5 @@ public class ChargerAI : EnemyAI
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(groundCheckPoint.position, groundCheckRadius);
-    }
+
 }

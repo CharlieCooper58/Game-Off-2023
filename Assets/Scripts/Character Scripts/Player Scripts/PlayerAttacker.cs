@@ -8,6 +8,11 @@ public class PlayerAttacker : CharacterAttacker
     [SerializeField] List<Weapon> weapons;
     int currentWeaponIndex;
 
+    [SerializeField] Transform meleeDamagePoint;
+    [SerializeField] Vector3 meleeDamageDimensions;
+    [SerializeField] int meleeDamage;
+    [SerializeField] float meleeKnockback;
+    [SerializeField] LayerMask enemyMask;
     public void Initialize()
     {
         currentWeaponIndex = 0;
@@ -82,6 +87,20 @@ public class PlayerAttacker : CharacterAttacker
         return false;
     }
 
+    public void MeleeAttack()
+    {
+        Vector3 damageDirection = meleeDamagePoint.TransformDirection(Vector3.forward);
+        Collider[] enemiesHit = Physics.OverlapBox(meleeDamagePoint.position, meleeDamageDimensions, meleeDamagePoint.rotation, enemyMask);
+        foreach(Collider c in enemiesHit)
+        {
+            EnemyAI enemy = c.GetComponent<EnemyAI>();
+            if(enemy != null)
+            {
+                enemy.TakeMeleeAttack(damageDirection, meleeKnockback, meleeDamage);
+            }
+        }
+    }
+
     IEnumerator ShrinkCrosshair()
     {
         Vector3 crosshairSize = new Vector3(0.35f, 0.35f, 1);
@@ -97,5 +116,10 @@ public class PlayerAttacker : CharacterAttacker
         }
 
         crossHair.rectTransform.localScale = Vector3.one;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireCube(meleeDamagePoint.position, meleeDamageDimensions);
     }
 }

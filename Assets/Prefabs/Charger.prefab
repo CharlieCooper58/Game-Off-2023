@@ -97,6 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6480412315ad01b47aff6042c0a241ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheckRadius: 0.3
+  groundCheckMask:
+    serializedVersion: 2
+    m_Bits: 65
+  groundCheckPoint: {fileID: 4724973773316255982}
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -106,11 +111,6 @@ MonoBehaviour:
   jumpTime: 1
   meleeDamagePoint: {fileID: 0}
   meleeDamageRadius: 3
-  groundCheckRadius: 0.3
-  groundCheckMask:
-    serializedVersion: 2
-    m_Bits: 65
-  groundCheckPoint: {fileID: 4724973773316255982}
 --- !u!114 &3332981003698024820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,11 +155,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3332981003698024822}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.2, z: 1.2}
-  m_Center: {x: 0, y: 0.2, z: 0.0660038}
+  m_Size: {x: 1.2, y: 0.8993146, z: 1.2}
+  m_Center: {x: 0, y: 0.35034278, z: 0.0660038}
 --- !u!54 &8564982756468237867
 Rigidbody:
   m_ObjectHideFlags: 0
