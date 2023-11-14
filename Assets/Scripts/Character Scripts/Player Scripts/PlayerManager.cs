@@ -8,6 +8,7 @@ public class PlayerManager : CharacterManager
     public PlayerCamera playerCamera;
     public PlayerAttacker playerAttacker;
     public PlayerLocomotion playerLocomotion;
+    public PlayerInteractor playerInteractor;
 
     public bool isLittle;
     public static PlayerManager littlePlayerInstance;
@@ -43,6 +44,7 @@ public class PlayerManager : CharacterManager
         playerCamera = GetComponent<PlayerCamera>();
         playerAttacker = GetComponent<PlayerAttacker>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
+        playerInteractor = GetComponent<PlayerInteractor>();
         
     }
     protected override void Start()
