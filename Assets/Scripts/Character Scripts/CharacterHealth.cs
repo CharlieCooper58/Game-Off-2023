@@ -4,27 +4,30 @@ using UnityEngine;
 using System;
 public class CharacterHealth : MonoBehaviour
 {
-    [SerializeField] int maxHP;
-    [SerializeField] int currentHP;
+    [SerializeField] protected int maxHP;
+    [SerializeField] protected int currentHP;
 
-
-    public event EventHandler OnCharacterDeath;
-    public void Start()
+    public class CharacterDeathEventArgs: EventArgs
+    {
+        public bool isBrutal;
+    }
+    public event EventHandler<CharacterDeathEventArgs> OnCharacterDeath;
+    public virtual void Initialize()
     {
         currentHP = maxHP;
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage, bool brutal = false)
     {
         currentHP -= damage;
         if(currentHP <= 0)
         {
-            Die();
+            Die(brutal);
         }
     }
-    protected virtual void Die()
+    protected virtual void Die(bool brutal = false)
     {
-        OnCharacterDeath?.Invoke(this, EventArgs.Empty);
+        OnCharacterDeath?.Invoke(this, new CharacterDeathEventArgs { isBrutal=brutal});
         Destroy(gameObject);
     }
 }

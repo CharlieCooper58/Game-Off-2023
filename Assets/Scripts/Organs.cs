@@ -17,7 +17,7 @@ public class Organs : MonoBehaviour
         if (rb != null)
         {
             float randomAngle = Random.Range(-maxAngle, maxAngle);
-            Vector3 randomDirection = Quaternion.Euler(0, Random.Range(0f, 360f), 0) * Quaternion.Euler(randomAngle, 0, 0) * Vector3.up;
+            Vector3 randomDirection = Quaternion.Euler(0, Random.Range(-90, 90), 0)*(-transform.forward) + Quaternion.Euler(Mathf.Abs(randomAngle), 0, 0) * Vector3.up;
             float randomSpeed = Random.Range(minSpeed, maxSpeed);
 
             // Apply force with a random direction and speed

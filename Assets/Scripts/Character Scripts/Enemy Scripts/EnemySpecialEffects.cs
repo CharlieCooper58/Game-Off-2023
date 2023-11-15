@@ -15,10 +15,12 @@ public class EnemySpecialEffects : MonoBehaviour
         manager.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
     }
 
-    private void CharacterHealth_OnCharacterDeath(object sender, System.EventArgs e)
+    private void CharacterHealth_OnCharacterDeath(object sender, CharacterHealth.CharacterDeathEventArgs e)
     {
-        int num_organs = Random.Range(1, 4);
-        for(int i = 0; i < num_organs; i++)
+        int numOrgans;
+        numOrgans = e.isBrutal? Random.Range(5, 8):0;
+        print(numOrgans);
+        for(int i = 0; i < numOrgans; i++)
         {
             Instantiate(organs[Random.Range(0, organs.Length)], transform.position, Quaternion.identity);
         }
