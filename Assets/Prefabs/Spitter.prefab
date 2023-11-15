@@ -87,6 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterHealth: {fileID: 0}
   animationHandler: {fileID: 0}
+  enemyAI: {fileID: 0}
 --- !u!114 &5387369867345000652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +122,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 321
+  stunTimerMax: 5
   attackDamage: 3
 --- !u!195 &5387369867345000653
 NavMeshAgent:
@@ -556,6 +558,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -93.99399
       objectReference: {fileID: 0}
+    - target: {fileID: -2440692934268931442, guid: ca055cc501973b74ab547d9251ded931, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2440692934268931442, guid: ca055cc501973b74ab547d9251ded931, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67c47f99a0588e34ca0d0a6056650f6e, type: 2}
     - target: {fileID: -1770458020962371067, guid: ca055cc501973b74ab547d9251ded931, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -1.6311263e-14

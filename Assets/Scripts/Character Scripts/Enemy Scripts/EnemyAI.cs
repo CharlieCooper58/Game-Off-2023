@@ -6,9 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     protected EnemyManager enemyManager;
     protected NavMeshAgent navMeshAgent;
-    NavMeshPath pathToDestination;
     protected PlayerManager target;
-    Vector3 nextTargetLocation;
 
     [Header("Grounded Check")]
     [SerializeField] float groundCheckRadius;
@@ -21,7 +19,10 @@ public class EnemyAI : MonoBehaviour
     protected Rigidbody rb;
     [SerializeField] protected LayerMask playerLayer;
 
-    float knockbackTimer;
+    [SerializeField] float stunTimerMax;
+    float stunTimer;
+    bool nearDeathStunned = false;
+    bool beenNearDeath = false;
 
     [SerializeField] protected int attackDamage;
 
@@ -72,14 +73,19 @@ public class EnemyAI : MonoBehaviour
     protected virtual void OnAIStateMove() { }
     protected virtual void OnAIStateAttack() { }
     protected virtual void OnAIStateStun() {
-        if (knockbackTimer > 0)
+        if (stunTimer > 0)
         {
-            knockbackTimer -= Time.deltaTime;
+            stunTimer -= Time.deltaTime;
         }
         if (CheckRigidbodyShouldBeInactive())
         {
             DisableRigidbody();
             state = prevState;
+            if (nearDeathStunned)
+            {
+                nearDeathStunned = false;
+                enemyManager.animationHandler.SetAnimationTrigger("StunTriggerStop");
+            }
         }
     }
 
@@ -100,7 +106,7 @@ public class EnemyAI : MonoBehaviour
         {
             return true;
         }
-        return rb.velocity.y <= 0 && Physics.CheckSphere(groundCheckPoint.position, groundCheckRadius, groundCheckMask) && knockbackTimer <= 0;
+        return rb.velocity.y <= 0 && Physics.CheckSphere(groundCheckPoint.position, groundCheckRadius, groundCheckMask) && stunTimer <= 0;
     }
     private void OnDrawGizmosSelected()
     {
@@ -110,12 +116,37 @@ public class EnemyAI : MonoBehaviour
     {
         EnableRigidbody();
         rb.velocity = force * direction.normalized;
-        enemyManager.characterHealth.TakeDamage(damage);
-        knockbackTimer = .3f;
+        if (nearDeathStunned)
+        {
+            enemyManager.characterHealth.TakeDamage(1000, true);
+        }
+        else
+        {
+            enemyManager.characterHealth.TakeDamage(damage);
+        }
+        stunTimer = Mathf.Max(stunTimer, .3f);
         if(state != AIState.stun)
         {
             prevState = state;
         }
+        state = AIState.stun;
+    }
+
+    public void SetLowHealthStun()
+    {
+        if (beenNearDeath)
+        {
+            return;
+        }
+        beenNearDeath = true;
+        EnableRigidbody();
+        enemyManager.animationHandler.SetAnimationTrigger("StunTrigger");
+        stunTimer = Mathf.Max(stunTimer, stunTimerMax);
+        if (state != AIState.stun)
+        {
+            prevState = state;
+        }
+        nearDeathStunned = true;
         state = AIState.stun;
     }
 

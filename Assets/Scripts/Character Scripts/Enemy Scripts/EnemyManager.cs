@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyManager : CharacterManager
 {
     // Start is called before the first frame update
-    EnemyAI enemyAI;
+    public EnemyAI enemyAI;
     EnemySpecialEffects specialEffects;
     protected override void Awake()
     {

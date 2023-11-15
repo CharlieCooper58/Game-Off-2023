@@ -24,6 +24,11 @@ public class AnimationHandler : MonoBehaviour
         }
         return false;
     }
+    public void SetAnimationTrigger(string trigger)
+    {
+        print(trigger);
+        m_animator.SetTrigger(trigger);
+    }
 
     public void ResetStatePriority()
     {

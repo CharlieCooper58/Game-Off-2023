@@ -42,11 +42,11 @@ GameObject:
   - component: {fileID: 3332981003698026120}
   - component: {fileID: 3332981003698026122}
   - component: {fileID: 1656126345}
-  - component: {fileID: 3332981003698024820}
   - component: {fileID: 3332981003698024821}
   - component: {fileID: 3332981003698026127}
   - component: {fileID: 8564982756468237867}
   - component: {fileID: 7902414218103464064}
+  - component: {fileID: -5274337835099515657}
   m_Layer: 7
   m_Name: Charger
   m_TagString: Untagged
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterHealth: {fileID: 0}
   animationHandler: {fileID: 0}
+  enemyAI: {fileID: 0}
 --- !u!114 &1656126345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,26 +106,13 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  stunTimerMax: 5
   attackDamage: 1
   attackRange: 5
   contactDamage: 0
   jumpTime: 1
   meleeDamagePoint: {fileID: 0}
   meleeDamageRadius: 3
---- !u!114 &3332981003698024820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3332981003698024822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfd20ff65a5ade448fb86aca3fad06e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 5
-  currentHP: 0
 --- !u!195 &3332981003698024821
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -193,6 +181,20 @@ MonoBehaviour:
   - {fileID: 8724449295435555802, guid: c258e1755fb2fd8488e8cf46372c496d, type: 3}
   - {fileID: 8724449295435555802, guid: b9095a53e79d68742b666d9a92dbf933, type: 3}
   splatter: {fileID: 5050555587078368133, guid: 1b8b5d345e8f16c48add7361d3ff249a, type: 3}
+--- !u!114 &-5274337835099515657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332981003698024822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d0127803c1b96459dd967dc27e9e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 20
+  currentHP: 0
 --- !u!1001 &3332981002477360931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -309,9 +311,17 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -2440692934268931442, guid: 469a4814025bfad4fbea964f42cec06f, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2440692934268931442, guid: 469a4814025bfad4fbea964f42cec06f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 68ae37a900d2fe24196e6016932a7e1a, type: 2}
+    - target: {fileID: -2440692934268931442, guid: 469a4814025bfad4fbea964f42cec06f, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67c47f99a0588e34ca0d0a6056650f6e, type: 2}
     - target: {fileID: -1800358221360499035, guid: 469a4814025bfad4fbea964f42cec06f, type: 3}
       propertyPath: m_Layer
       value: 7

@@ -25,9 +25,13 @@ public class GameHandler : MonoBehaviour
     {
         littlePlayerManager = PlayerManager.littlePlayerInstance;
         bigPlayerManager = PlayerManager.bigPlayerInstance;
-        SetActivePlayer(little:false);
+        StartCoroutine("GameStart");
     }
-    
+    IEnumerator GameStart()
+    {
+        yield return null;
+        SetActivePlayer(little: false);
+    }
     private void OnEnable()
     {
         if(metaControls == null)

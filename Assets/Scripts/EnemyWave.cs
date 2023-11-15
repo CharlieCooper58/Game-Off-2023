@@ -16,7 +16,6 @@ public class EnemyWave : MonoBehaviour
         EnemyManager[] enemies = GetComponentsInChildren<EnemyManager>();
         foreach (EnemyManager enemy in enemies)
         {
-            print("Enemy");
             n_enemies++;
             enemy.gameObject.SetActive(true);
             enemy.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
@@ -26,7 +25,6 @@ public class EnemyWave : MonoBehaviour
 
     private void CharacterHealth_OnCharacterDeath(object sender, EventArgs e)
     {
-        print("Died");
         n_enemies--;
         if(n_enemies == 0)
         {
