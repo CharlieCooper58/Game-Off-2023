@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638356718913030049
+  lastModified: 638357375476931120
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -43,7 +43,7 @@ MonoBehaviour:
   - {fileID: -7977682974907264466}
   StringsBanks:
   - {fileID: 4654398754390218243}
-  cacheTime: 638356718913482974
+  cacheTime: 638357375477338479
   cacheVersion: 131608
 --- !u!114 &1518764097025988996
 MonoBehaviour:
@@ -60,10 +60,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638356718913482974
+  lastModified: 638357375477338479
   FileSizes:
   - Name: Desktop
-    Value: 26528
+    Value: 26240
   Exists: 1
 --- !u!114 &2014032104748940709
 MonoBehaviour:
@@ -86,7 +86,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 1518764097025988996}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -107,7 +107,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638356718913037539
+  lastModified: 638357375476938040
   FileSizes:
   - Name: Desktop
     Value: 802
