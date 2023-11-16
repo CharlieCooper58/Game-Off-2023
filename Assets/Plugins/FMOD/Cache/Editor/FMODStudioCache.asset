@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638350900882928439
+  lastModified: 638356718913030049
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -35,14 +35,63 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 4654398754390218243}
   - {fileID: -7977682974907264466}
-  EditorEvents: []
+  - {fileID: 1518764097025988996}
+  EditorEvents:
+  - {fileID: 2014032104748940709}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7977682974907264466}
   StringsBanks:
   - {fileID: 4654398754390218243}
-  cacheTime: 638350900882928439
+  cacheTime: 638356718913482974
   cacheVersion: 131608
+--- !u!114 &1518764097025988996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod GameOff2023/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638356718913482974
+  FileSizes:
+  - Name: Desktop
+    Value: 26528
+  Exists: 1
+--- !u!114 &2014032104748940709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Gunshot
+  m_EditorClassIdentifier: 
+  Path: event:/Gunshot
+  Guid:
+    Data1: 124999270
+    Data2: 1187401444
+    Data3: -1662477671
+    Data4: 1650860617
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4654398754390218243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,8 +107,8 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638350900882928439
+  lastModified: 638356718913037539
   FileSizes:
   - Name: Desktop
-    Value: 712
+    Value: 802
   Exists: 1
