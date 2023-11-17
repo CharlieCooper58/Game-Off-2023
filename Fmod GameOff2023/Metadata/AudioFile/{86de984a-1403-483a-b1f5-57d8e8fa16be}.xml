@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{86de984a-1403-483a-b1f5-57d8e8fa16be}">
+		<property name="assetPath">
+			<value>SFX/Weapons/Small Gunshot 1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.43897959183673468</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3b251b29-60bf-4bfb-8581-d757e6118b2e}</destination>
+		</relationship>
+	</object>
+</objects>

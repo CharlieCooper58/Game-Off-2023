@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ab9cd70b-042a-44ed-90e9-ae1b6716089e}">
+		<property name="assetPath">
+			<value>SFX/Player Actions/Footsteps/Gravel Sand Dirt/Gravel Dirt Sand Footsteps Fast 5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.49866666666666665</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3b251b29-60bf-4bfb-8581-d757e6118b2e}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class EnemySpecialEffects : MonoBehaviour
 {
+    [SerializeField] private EventReference BugDeath;
     [SerializeField] Organs[] organs;
     [SerializeField] SplatterEffect splatter;
 
@@ -24,6 +26,8 @@ public class EnemySpecialEffects : MonoBehaviour
         {
             Instantiate(organs[Random.Range(0, organs.Length)], transform.position, Quaternion.identity);
         }
+        AudioManager.instance.PlayOneShot(BugDeath, this.transform.position);
         Instantiate(splatter, transform.position, Quaternion.identity);
+
     }
 }
