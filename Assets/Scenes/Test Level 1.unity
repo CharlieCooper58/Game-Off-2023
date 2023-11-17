@@ -5577,6 +5577,26 @@ PrefabInstance:
       propertyPath: <music>k__BackingField.Guid.Data4
       value: -1359594247
       objectReference: {fileID: 0}
+    - target: {fileID: -846468608818270935, guid: 31454e3ee7cdf4183acd2865db7ee5e7, type: 3}
+      propertyPath: <playerFootsteps>k__BackingField.Path
+      value: event:/SFX/Player Sounds/Footsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: -846468608818270935, guid: 31454e3ee7cdf4183acd2865db7ee5e7, type: 3}
+      propertyPath: <playerFootsteps>k__BackingField.Guid.Data1
+      value: -1555465439
+      objectReference: {fileID: 0}
+    - target: {fileID: -846468608818270935, guid: 31454e3ee7cdf4183acd2865db7ee5e7, type: 3}
+      propertyPath: <playerFootsteps>k__BackingField.Guid.Data2
+      value: 1092864746
+      objectReference: {fileID: 0}
+    - target: {fileID: -846468608818270935, guid: 31454e3ee7cdf4183acd2865db7ee5e7, type: 3}
+      propertyPath: <playerFootsteps>k__BackingField.Guid.Data3
+      value: 214010798
+      objectReference: {fileID: 0}
+    - target: {fileID: -846468608818270935, guid: 31454e3ee7cdf4183acd2865db7ee5e7, type: 3}
+      propertyPath: <playerFootsteps>k__BackingField.Guid.Data4
+      value: 451205538
+      objectReference: {fileID: 0}
     - target: {fileID: 4596364063785138140, guid: 31454e3ee7cdf4183acd2865db7ee5e7, type: 3}
       propertyPath: m_Name
       value: AudioManager
