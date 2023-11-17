@@ -7,6 +7,7 @@ namespace UI.Panels
 {
     public class PauseMenu : MonoBehaviour
     {
+
         private Button _resume;
         private Button _options;
         private Button _quit;
@@ -14,11 +15,13 @@ namespace UI.Panels
         private UIDocument _document;
         private VisualElement _main;
 
-        public void OnEnable()
+        [SerializeField] private SettingsMenu _settingsMenu;
+
+        public void Awake()
         {
             _document = GetComponent<UIDocument>();
             _main = _document.rootVisualElement.Q<VisualElement>("Main");
-            
+
             _resume = _document.rootVisualElement.Q<Button>("Resume");
             _options = _document.rootVisualElement.Q<Button>("Options");
             _quit = _document.rootVisualElement.Q<Button>("Quit");
@@ -27,6 +30,17 @@ namespace UI.Panels
             _options.clicked += OpenOptions;
             _quit.clicked += QuitGame;
 
+
+
+            _main.style.display = DisplayStyle.None;
+        }
+
+        public void OpenDisplay()
+        {
+            _main.style.display = DisplayStyle.Flex;
+        }
+        public void CloseDisplay()
+        {
             _main.style.display = DisplayStyle.None;
         }
 
@@ -48,6 +62,7 @@ namespace UI.Panels
             UnityEngine.Cursor.visible = false;
 
             Time.timeScale = 1;
+            _settingsMenu.CloseDisplay();
             _main.style.display = DisplayStyle.None;
         }
 
@@ -61,7 +76,7 @@ namespace UI.Panels
         
         private void OpenOptions()
         {
-            throw new System.NotImplementedException();
+            _settingsMenu.OpenDisplay();
         }
         
         private void QuitGame()

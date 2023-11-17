@@ -1,16 +1,28 @@
+.topTabButton {
+    background-color: rgba(19, 19, 19, 255);
+    flex-grow: 1;
+    min-height: 40px;
+    font-size: 19px;
+}
+
+.topTabButton:hover {
+    background-color: rgba(29, 29, 29, 255);
+}
+
+.topTabButton:active {
+    background-color: rgba(94, 94, 94, 255);
+}
+
 .button {
     background-color: var(--positive);
     color: var(--light);
     padding: 15px 32px;
     margin: 12px 0;
     font-size: 28px;
-    
     border-radius: 5px;
     border-color: var(--positive);
     border-width: 4px;
-    
-    -unity-font: resource("Assets/Fonts/Lato-Regular.ttf");
-    
+    -unity-font: resource('Assets/Fonts/Lato-Regular.ttf');
     transition: scale 0.12s ease-in-out;
 }
 
@@ -20,7 +32,6 @@
 }
 
 .button:focus {
-    /*border-color: var(--positive-dark);*/
 }
 
 .button:active {

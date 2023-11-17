@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Stylesheets/general.uss?fileID=7433441132597879392&amp;guid=8a746f0266cb494bab9ba507d8394e6e&amp;type=3#general" />
+    <Style src="project://database/Assets/UI/Stylesheets/buttons.uss?fileID=7433441132597879392&amp;guid=0a66ba6e2acf5a5eea1d0b3023f763f3&amp;type=3#buttons" />
+    <Style src="project://database/Assets/UI/Stylesheets/CustomSliders.uss?fileID=7433441132597879392&amp;guid=43ee18ff46b455c4ba3f9eba27967ba4&amp;type=3#CustomSliders" />
+    <ui:VisualElement name="Main" style="height: 449px;">
+        <ui:VisualElement name="TopBar" style="flex-direction: row;">
+            <ui:Button text="Gameplay" display-tooltip-when-elided="true" name="Gameplay" class="topTabButton" />
+            <ui:Button text="Display" display-tooltip-when-elided="true" name="Display" class="topTabButton" />
+            <ui:Button text="Audio" display-tooltip-when-elided="true" name="Audio" class="topTabButton" />
+        </ui:VisualElement>
+        <ui:VisualElement name="OptionsSpace" style="flex-grow: 1; padding-top: 24px; padding-right: 24px; padding-bottom: 24px; padding-left: 24px; justify-content: center; align-items: center; background-color: rgba(5, 17, 16, 0.87);">
+            <ui:Slider picking-mode="Ignore" label="Music Volume" value="42" high-value="100" name="MusicVolumeSlider" style="width: 522px;" />
+            <ui:Slider picking-mode="Ignore" label="SFX Volume" value="42" high-value="100" name="SFXVolumeSlider" style="width: 522px;" />
+            <ui:Slider picking-mode="Ignore" label="Horizontal Look Sensitivity" value="42" high-value="100" name="HorizontalLook" style="width: 522px;" />
+            <ui:Slider picking-mode="Ignore" label="Vertical Look Sensitivity" value="42" high-value="100" name="VerticalLook" style="width: 522px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="BottomBar">
+            <ui:Button text="Back" display-tooltip-when-elided="true" name="BackButton" class="button" style="left: auto; position: relative; right: auto; height: 78px; width: 20%; align-items: center; justify-content: center; margin-right: 40%; margin-left: 40%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

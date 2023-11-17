@@ -122,7 +122,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 321
-  stunTimerMax: 5
+  stunTimerMax: 0
   attackDamage: 3
 --- !u!195 &5387369867345000653
 NavMeshAgent:

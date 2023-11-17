@@ -190,6 +190,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1641fd0f3f7e5e4b8800132a2467265, type: 3}
   m_PrefabInstance: {fileID: 2013380944}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &188733192 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1014168327560435737, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
+  m_PrefabInstance: {fileID: 7994458452254019875}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab738652c278464b873f0e70db5051d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &261311795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2264,8 +2275,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822206465}
-  m_LocalRotation: {x: 0, y: -0.96549404, z: 0, w: 0.26042524}
-  m_LocalPosition: {x: 318.7691, y: 105.014, z: 219.25716}
+  m_LocalRotation: {x: 0, y: -0.80473834, z: 0, w: 0.59362966}
+  m_LocalPosition: {x: 54.7691, y: 1.7000008, z: 246.25716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2908,6 +2919,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 643394425}
     m_Modifications:
+    - target: {fileID: 6877153556774835537, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
+      propertyPath: _settingsMenu
+      value: 
+      objectReference: {fileID: 188733192}
     - target: {fileID: 7994458451931205173, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
       propertyPath: m_RootOrder
       value: 2

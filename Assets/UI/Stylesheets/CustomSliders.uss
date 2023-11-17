@@ -1,0 +1,46 @@
+Slider {
+}
+
+Label {
+    flex-grow: 1;
+    font-size: 24px;
+    width: 20%;
+}
+
+#unity-dragger {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    flex-grow: 1;
+    width: 20px;
+    height: 100%;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+#unity-drag-container {
+    background-color: rgb(0, 0, 0);
+    background-image: url('project://database/Assets/Art/volume%20bar.png?fileID=21300000&guid=c0ef3854dfc8b5d43aeb1e2b817fe2a8&type=3#volume bar');
+    flex-grow: 1;
+    width: 80%;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+#unity-tracker {
+    background-color: rgba(125, 125, 125, 255);
+    flex-grow: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-right: 2px;
+    margin-left: 2px;
+    background-image: url('project://database/Assets/Art/volume%20bar.png?fileID=21300000&guid=c0ef3854dfc8b5d43aeb1e2b817fe2a8&type=3#volume bar');
+    -unity-background-image-tint-color: rgba(0, 0, 0, 255);
+}

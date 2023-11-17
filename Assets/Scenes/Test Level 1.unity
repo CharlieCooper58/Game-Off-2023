@@ -3281,10 +3281,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.07
       objectReference: {fileID: 0}
-    - target: {fileID: 1281342149995572268, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
-      propertyPath: reloadTimerMax
-      value: 0.0625
-      objectReference: {fileID: 0}
     - target: {fileID: 1346693337656581974, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: m_IsActive
       value: 0
