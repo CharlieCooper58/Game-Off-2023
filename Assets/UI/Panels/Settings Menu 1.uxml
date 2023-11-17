@@ -14,6 +14,8 @@
             <ui:Slider picking-mode="Ignore" label="Horizontal Look Sensitivity" value="42" high-value="100" name="HorizontalLook" style="width: 522px;" />
             <ui:Slider picking-mode="Ignore" label="Vertical Look Sensitivity" value="42" high-value="100" name="VerticalLook" style="width: 522px;" />
         </ui:VisualElement>
-        <ui:Button text="Back" display-tooltip-when-elided="true" name="BackButton" class="button" style="left: auto; position: relative; right: auto; height: 78px; width: 20%; align-items: center; justify-content: center; margin-right: 40%; margin-left: 40%;" />
+        <ui:VisualElement name="BottomBar">
+            <ui:Button text="Back" display-tooltip-when-elided="true" name="BackButton" class="button" style="left: auto; position: relative; right: auto; height: 78px; width: 20%; align-items: center; justify-content: center; margin-right: 40%; margin-left: 40%;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

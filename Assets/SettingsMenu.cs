@@ -10,14 +10,23 @@ namespace UI.Panels
         
         [SerializeField] private VisualTreeAsset _audioOptions;
         private VisualElement _audioOptionsPanel;
+        //private Slider _masterVolumeSlider;
+        //private Slider _sfxVolumeSlider;
+        //private Slider _musicVolumeSlider;
         [SerializeField] private VisualTreeAsset _displayOptions;
         private VisualElement _displayOptionsPanel;
         [SerializeField] private VisualTreeAsset _gameplayOptions;
         private VisualElement _gameplayOptionsPanel;
-
-
+        private enum CurrentOpenPanel
+        {
+            audio,
+            display,
+            gameplay
+        }
+        private CurrentOpenPanel _currentOpenPanel;
         private VisualElement _main;
         private Button _backButton;
+        private Button _applyButton;
         private Button _audioButton;
         private Button _displayButton;
         private Button _gameplayButton;
@@ -28,7 +37,7 @@ namespace UI.Panels
 
         StartMenu startMenu;
         PauseMenu pauseMenu;
-        private void Awake()
+        private void Start()
         {
             _document = GetComponent<UIDocument>();
             _main = _document.rootVisualElement.Q<VisualElement>("Main");
@@ -36,13 +45,22 @@ namespace UI.Panels
 
             _backButton = _document.rootVisualElement.Q<Button>("BackButton");
             _backButton.clicked += _backButton_clicked;
+            _applyButton = _document.rootVisualElement.Q<Button>("ApplyButton");
 
             _audioButton = _document.rootVisualElement.Q<Button>("Audio");
             _audioButton.clicked += _audioButton_clicked;
             _audioOptionsPanel = _audioOptions.CloneTree();
-            var masterVolumeSlider = _audioOptionsPanel.Q<Slider>("MasterVolumeSlider");
+            Slider masterVolumeSlider = _audioOptionsPanel.Q<Slider>("MasterVolumeSlider");
+            masterVolumeSlider.value = GameSettings.instance.masterVolume;
+            masterVolumeSlider.RegisterValueChangedCallback(v =>GameSettings.instance.ChangeSettingByName("MasterVolume", masterVolumeSlider.value));
+
             var musicVolumeSlider = _audioOptionsPanel.Q<Slider>("MusicVolumeSlider");
+            musicVolumeSlider.value = GameSettings.instance.musicVolume;
+            musicVolumeSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName("MusicVolume", musicVolumeSlider.value));
+
             var sfxVolumeSlider = _audioOptionsPanel.Q<Slider>("SFXVolumeSlider");
+            sfxVolumeSlider.value = GameSettings.instance.sfxVolume;
+            sfxVolumeSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName("SFXVolume", sfxVolumeSlider.value));
 
 
             _displayButton = _document.rootVisualElement.Q<Button>("Display");
@@ -53,8 +71,13 @@ namespace UI.Panels
             _gameplayButton = _document.rootVisualElement.Q<Button>("Gameplay");
             _gameplayButton.clicked += _gameplayButton_clicked;
             _gameplayOptionsPanel = _gameplayOptions.CloneTree();
-            var cameraLookXSlider = _gameplayOptionsPanel.Q<Slider>("horizontalLookSlider");
-            var cameraLookYSlider = _gameplayOptionsPanel.Q<Slider>("verticalLookSlider");
+            var cameraLookXSlider = _gameplayOptionsPanel.Q<Slider>("HorizontalLook");
+            cameraLookXSlider.value = GameSettings.instance.horizontalLookSensitivity;
+            cameraLookXSlider.RegisterValueChangedCallback(v=> GameSettings.instance.ChangeSettingByName("HorizontalLookSensitivity", cameraLookXSlider.value));
+            var cameraLookYSlider = _gameplayOptionsPanel.Q<Slider>("VerticalLook");
+            cameraLookYSlider.value = GameSettings.instance.verticalLookSensitivity;
+            cameraLookYSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName("VerticalLookSensitivity", cameraLookYSlider.value));
+
 
             _main.style.display = DisplayStyle.None;
 
@@ -77,18 +100,21 @@ namespace UI.Panels
         {
             _optionsDisplayPanel.Clear();
             _optionsDisplayPanel.Add(_gameplayOptionsPanel);
+            _currentOpenPanel = CurrentOpenPanel.gameplay;
         }
 
         private void _displayButton_clicked()
         {
             _optionsDisplayPanel.Clear();
             _optionsDisplayPanel.Add(_displayOptionsPanel);
+            _currentOpenPanel = CurrentOpenPanel.display;
         }
 
         private void _audioButton_clicked()
         {
             _optionsDisplayPanel.Clear();
             _optionsDisplayPanel.Add(_audioOptionsPanel);
+            _currentOpenPanel = CurrentOpenPanel.audio;
         }
 
         private void _backButton_clicked()

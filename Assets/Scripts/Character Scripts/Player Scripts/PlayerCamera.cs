@@ -5,10 +5,8 @@ using Cinemachine;
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] Transform cameraPivot;
-    CinemachineVirtualCamera camera;
+    CinemachineVirtualCamera vcam;
     PlayerManager playerManager;
-
-    float cameraXAxisRotation;
 
     [SerializeField] Transform cameraRotationHelper;
     float targetCameraXAxisRotation;
@@ -17,12 +15,9 @@ public class PlayerCamera : MonoBehaviour
     float cameraYAngularVelocity;
 
     [SerializeField] float cameraSmoothTime;
-
-    [SerializeField] float cameraSpeedX;
-    [SerializeField] float cameraSpeedY;
     public void Initialize()
     {
-        camera = GetComponentInChildren<CinemachineVirtualCamera>();
+        vcam = GetComponentInChildren<CinemachineVirtualCamera>();
         playerManager = GetComponent<PlayerManager>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -30,8 +25,8 @@ public class PlayerCamera : MonoBehaviour
     }
     public void UpdateCameraOrientation(Vector2 cameraInput)
     {
-        float lookX = cameraSpeedX * cameraInput.x * Time.deltaTime;
-        float lookY = cameraSpeedY * cameraInput.y * Time.deltaTime;
+        float lookX = GameSettings.instance.horizontalLookSensitivity * cameraInput.x * Time.deltaTime;
+        float lookY = GameSettings.instance.verticalLookSensitivity * cameraInput.y * Time.deltaTime;
 
         // Adjust the target camera rotation based on input
         targetCameraXAxisRotation = Mathf.Clamp(targetCameraXAxisRotation - lookY, -90f, 90f);
@@ -45,13 +40,13 @@ public class PlayerCamera : MonoBehaviour
 
     private void OnDisable()
     {
-        camera.Priority = 0;
+        vcam.Priority = 0;
     }
     private void OnEnable()
     {
-        if(camera != null)
+        if(vcam != null)
         {
-            camera.Priority = 10;
+            vcam.Priority = 10;
         }
     }
 }
