@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="ParameterPreset" id="{a34c0630-b838-4b86-a8dc-c6391a5ca135}">
+	<object class="ParameterPreset" id="{79bea4a6-47ea-4f2d-99f6-789081ff87c0}">
 		<property name="name">
-			<value>FootstepsMaterial</value>
+			<value>SprayGun</value>
 		</property>
 		<relationship name="folder">
 			<destination>{78a3032d-04ba-43f6-ac50-ce3c7bf4c157}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{d7324b1c-1897-4106-ba63-f398142d1317}</destination>
+			<destination>{65b9765d-e3bc-49ab-8998-d8cac0e94b2c}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{d7324b1c-1897-4106-ba63-f398142d1317}">
+	<object class="GameParameter" id="{65b9765d-e3bc-49ab-8998-d8cac0e94b2c}">
 		<property name="parameterType">
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>3</value>
+			<value>2</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>Concrete</value>
-			<value>Dirt</value>
-			<value>Wood</value>
+			<value>Looping</value>
+			<value>End</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
-		</property>
-		<property name="seekSpeedAsymmetric">
-			<value>true</value>
 		</property>
 	</object>
 </objects>

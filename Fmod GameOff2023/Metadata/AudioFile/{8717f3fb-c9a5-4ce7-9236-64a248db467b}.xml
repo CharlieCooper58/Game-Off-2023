@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{7951a017-fc04-4e3c-915a-cb8c58dd27df}">
+	<object class="AudioFile" id="{8717f3fb-c9a5-4ce7-9236-64a248db467b}">
 		<property name="assetPath">
-			<value>SFX/Bug Sounds/Bug Attack 6.wav</value>
+			<value>SFX/Bug Sounds/Charger Attack 6.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
