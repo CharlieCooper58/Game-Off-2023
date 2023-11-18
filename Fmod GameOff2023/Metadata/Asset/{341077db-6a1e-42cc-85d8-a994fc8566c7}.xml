@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{341077db-6a1e-42cc-85d8-a994fc8566c7}">
+		<property name="assetPath">
+			<value>SFX/Player Actions/Footsteps/Gravel Sand Dirt/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3b251b29-60bf-4bfb-8581-d757e6118b2e}</destination>
+		</relationship>
+	</object>
+</objects>

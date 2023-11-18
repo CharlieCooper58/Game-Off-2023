@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class HitScanWeapon : Weapon
 {
     // A hitscan weapon is a weapon that raycasts from the barrel to the target and sees if anything hits
+
+    [SerializeField] private EventReference GunshotSound;
 
     [SerializeField] HitScanLine shotTracerLinePrefab;
     [SerializeField] LayerMask shootMask;
@@ -12,6 +15,8 @@ public class HitScanWeapon : Weapon
     {
         if(reloadTimer == 0)
         {
+            AudioManager.instance.PlayOneShot(GunshotSound, this.transform.position);
+
             reloadTimer = reloadTimerMax;
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, 100f, layerMask:shootMask))

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerLocomotion : CharacterLocomotion
-{
+{ 
     private PlayerManager playerManager;
 
     [Header("Wall Jumping and Sliding")]
@@ -88,9 +88,12 @@ public class PlayerLocomotion : CharacterLocomotion
             wallJumpsPerformed++;
         }
         
-    }
+    
+   }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawLine(transform.position, wallCheckRaycastDistance * transform.forward);
     }
+
 }
