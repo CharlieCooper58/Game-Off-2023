@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1134412753684138147}
+  - component: {fileID: 3578900227855863943}
   m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 1134412754109830861}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3578900227855863943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134412753684138146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.7943115, y: 6.737563, z: 8.0755005}
+  m_Center: {x: -1.6405233, y: 2.8687816, z: 1.0848694}
 --- !u!1 &1134412754109830867
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounciness: 50
+  bounceDuration: 0
 --- !u!65 &446114428720268571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90,8 +105,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12, y: 16, z: 12}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 17.805408, y: 6.8251357, z: 17.853397}
+  m_Center: {x: -1.1473482, y: 10.480837, z: 0.9308898}
 --- !u!1001 &3026517878351251609
 PrefabInstance:
   m_ObjectHideFlags: 0

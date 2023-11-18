@@ -26,12 +26,10 @@ public class ChargerAI : EnemyAI
         if (Vector3.SqrMagnitude(target.transform.position - transform.position) < attackRange * attackRange)
         {
             state = AIState.attack;
-            navMeshAgent.enabled = false;
+            EnableRigidbody();
             contactDamage = attackDamage;
             Vector3 newVelocity = CalculateJumpVelocity();
             rb.velocity = newVelocity;
-            rb.isKinematic = false;
-            rb.useGravity = true;
         }
     }
     protected override void OnAIStateAttack()

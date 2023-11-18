@@ -12,7 +12,7 @@ public class EnemyWave : MonoBehaviour
     public event EventHandler OnWaveComplete;
     public void SpawnWave()
     {
-        transform.position = wavePosition;
+        transform.localPosition = wavePosition;
         EnemyManager[] enemies = GetComponentsInChildren<EnemyManager>();
         foreach (EnemyManager enemy in enemies)
         {

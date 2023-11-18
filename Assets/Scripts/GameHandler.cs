@@ -53,6 +53,14 @@ public class GameHandler : MonoBehaviour
         {
             return;
         }
+        if (!little)
+        {
+            bigPlayerManager.transform.position = littlePlayerManager.transform.position;
+        }
+        else
+        {
+            littlePlayerManager.transform.position = bigPlayerManager.transform.position;
+        }
         littlePlayerManager.gameObject.SetActive(little);
         bigPlayerManager.gameObject.SetActive(!little);
     }

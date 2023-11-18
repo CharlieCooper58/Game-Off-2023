@@ -64,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 5387369867345000654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.39, y: 0, z: -36.19}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2822653896737070516}
@@ -124,6 +124,7 @@ MonoBehaviour:
     m_Bits: 321
   stunTimerMax: 0
   attackDamage: 3
+  state: 0
 --- !u!195 &5387369867345000653
 NavMeshAgent:
   m_ObjectHideFlags: 0
