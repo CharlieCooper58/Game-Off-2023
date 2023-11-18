@@ -14,7 +14,7 @@ public class Arena : MonoBehaviour
         }
         else
         {
-            currentWave = Instantiate(waves[waveCount]);
+            currentWave = Instantiate(waves[waveCount], transform);
             currentWave.SpawnWave();
             waveCount++;
             currentWave.OnWaveComplete += NewWave_OnWaveComplete;

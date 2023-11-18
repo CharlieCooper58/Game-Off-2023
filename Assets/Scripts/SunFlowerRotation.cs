@@ -18,7 +18,7 @@ public class SunFlowerRotation : MonoBehaviour
 
     void Update()
     {
-        RotateSunflower();
+        //RotateSunflower();
     }
 
     void RotateSunflower()

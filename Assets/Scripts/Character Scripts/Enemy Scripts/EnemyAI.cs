@@ -31,14 +31,16 @@ public class EnemyAI : MonoBehaviour
         enemyManager = GetComponent<EnemyManager>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         target = PlayerManager.littlePlayerInstance;
-        state = AIState.move;
+        stunTimer = 0.5f;
+        prevState = AIState.move;
+        state = AIState.stun;
 
         rb = GetComponent<Rigidbody>();
-        DisableRigidbody();
+        EnableRigidbody();
 
         //playerLayer = LayerMask.NameToLayer("Player");
     }
-    protected enum AIState
+    public enum AIState
     {
         idle,
         move,
@@ -46,7 +48,7 @@ public class EnemyAI : MonoBehaviour
         stun
     }
 
-    protected AIState state;
+    public AIState state;
     AIState prevState;
 
 

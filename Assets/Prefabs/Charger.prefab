@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442182616416509140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3332981003698026127}
   - component: {fileID: 8564982756468237867}
   - component: {fileID: 7902414218103464064}
+  - component: {fileID: 2795052294409986988}
   m_Layer: 7
   m_Name: Charger
   m_TagString: Untagged
@@ -62,8 +63,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3332981003698024822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.902854, y: 0, z: -33.08}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: -2.902854, y: -0.39, z: -33.08}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3011670020782862536}
@@ -108,9 +109,10 @@ MonoBehaviour:
     m_Bits: 256
   stunTimerMax: 0
   attackDamage: 1
-  attackRange: 5
+  state: 0
+  attackRange: 10
   contactDamage: 0
-  jumpTime: 1
+  jumpTime: 0.5
   meleeDamagePoint: {fileID: 0}
   meleeDamageRadius: 3
 --- !u!114 &3332981003698024820
@@ -125,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfd20ff65a5ade448fb86aca3fad06e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 25
+  maxHP: 10
   currentHP: 0
 --- !u!195 &3332981003698024821
 NavMeshAgent:
@@ -137,10 +139,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
-  m_Acceleration: 8
+  m_Speed: 25
+  m_Acceleration: 25
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 1080
   m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -202,6 +204,52 @@ MonoBehaviour:
   - {fileID: 8724449295435555802, guid: c258e1755fb2fd8488e8cf46372c496d, type: 3}
   - {fileID: 8724449295435555802, guid: b9095a53e79d68742b666d9a92dbf933, type: 3}
   splatter: {fileID: 5050555587078368133, guid: 1b8b5d345e8f16c48add7361d3ff249a, type: 3}
+--- !u!114 &2795052294409986988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332981003698024822}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c5647c7ee026a4caafb12d08eb2e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Method: 3
+  m_Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.9546202
+      outSlope: 1.9546202
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.49999136
+      value: 0.97729325
+      inSlope: 0.008414507
+      outSlope: 0.008414507
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.00838089
+      inSlope: -1.9377912
+      outSlope: -1.9377912
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &3332981002477360931
 PrefabInstance:
   m_ObjectHideFlags: 0
