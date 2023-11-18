@@ -268,17 +268,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1641fd0f3f7e5e4b8800132a2467265, type: 3}
   m_PrefabInstance: {fileID: 2013380944}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &188733192 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1014168327560435737, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
-  m_PrefabInstance: {fileID: 7994458452254019875}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eab738652c278464b873f0e70db5051d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &242419993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3779,7 +3768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1731717075
 Transform:
   m_ObjectHideFlags: 0
@@ -3887,9 +3876,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1822206468}
   - component: {fileID: 1822206467}
-  - component: {fileID: 1822206466}
   - component: {fileID: 1822206469}
   - component: {fileID: 1822206470}
+  - component: {fileID: 1822206471}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3897,14 +3886,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1822206466
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822206465}
-  m_Enabled: 1
 --- !u!20 &1822206467
 Camera:
   m_ObjectHideFlags: 0
@@ -4030,6 +4011,19 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1822206471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822206465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1832092603
 GameObject:
   m_ObjectHideFlags: 0
@@ -7038,10 +7032,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 643394425}
     m_Modifications:
-    - target: {fileID: 6877153556774835537, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
-      propertyPath: _settingsMenu
-      value: 
-      objectReference: {fileID: 188733192}
     - target: {fileID: 7994458451931205173, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7089,18 +7079,6 @@ PrefabInstance:
     - target: {fileID: 7994458451931205175, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
       propertyPath: m_Name
       value: GameHandler
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994458453321857819, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
-      propertyPath: m_VoxelSize
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 7994458453321857819, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 0dbdf232ee786b3489547a073ab7f83f, type: 2}
-    - target: {fileID: 7994458453321857819, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
-      propertyPath: m_LayerMask.m_Bits
-      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c34085be10968f47955d3f01c948cf5, type: 3}
