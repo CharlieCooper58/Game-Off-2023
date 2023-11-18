@@ -81,6 +81,13 @@ MonoBehaviour:
   reloadTimerMax: 0.2
   weaponParticles: {fileID: 0}
   weaponDamage: 5
+  GunshotSound:
+    Guid:
+      Data1: 124999270
+      Data2: 1187401444
+      Data3: -1662477671
+      Data4: 1650860617
+    Path: event:/SFX/Weapon Sounds/Gunshot
   shotTracerLinePrefab: {fileID: 2690023336857780729, guid: 950797e229bb4f84b8108989d0438bd7, type: 3}
   shootMask:
     serializedVersion: 2

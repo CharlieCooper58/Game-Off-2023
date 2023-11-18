@@ -15,11 +15,85 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638348773647769715
+  lastModified: 638357452188044678
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-7805677123528464742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/Footsteps
+  Guid:
+    Data1: -1555465439
+    Data2: 1092864746
+    Data3: 214010798
+    Data4: 451205538
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1281
+--- !u!114 &-2784683444985170862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod GameOff2023/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638357452189403817
+  FileSizes:
+  - Name: Desktop
+    Value: 2096640
+  Exists: 1
+--- !u!114 &-2073384516861067708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Background Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Background Music
+  Guid:
+    Data1: 1442582566
+    Data2: 1125951617
+    Data3: 785533362
+    Data4: -1359594247
+  Banks:
+  - {fileID: -2784683444985170862}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 145648
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,14 +109,40 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 4654398754390218243}
   - {fileID: -7977682974907264466}
-  EditorEvents: []
+  - {fileID: 1518764097025988996}
+  - {fileID: -2784683444985170862}
+  EditorEvents:
+  - {fileID: 7935593844353088424}
+  - {fileID: 8691129900715602551}
+  - {fileID: -2073384516861067708}
+  - {fileID: -7805677123528464742}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7977682974907264466}
   StringsBanks:
   - {fileID: 4654398754390218243}
-  cacheTime: 638348773647807832
+  cacheTime: 638357452189403817
   cacheVersion: 131608
+--- !u!114 &1518764097025988996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod GameOff2023/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638357452189216863
+  FileSizes:
+  - Name: Desktop
+    Value: 223648
+  Exists: 1
 --- !u!114 &4654398754390218243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,8 +158,62 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638348773647807832
+  lastModified: 638357452188052630
   FileSizes:
   - Name: Desktop
-    Value: 712
+    Value: 1052
   Exists: 1
+--- !u!114 &7935593844353088424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/Bug Death
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/Bug Death
+  Guid:
+    Data1: -1326438872
+    Data2: 1099589899
+    Data3: 1732187543
+    Data4: -1207343719
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8691129900715602551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Weapon Sounds/Gunshot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Weapon Sounds/Gunshot
+  Guid:
+    Data1: 124999270
+    Data2: 1187401444
+    Data3: -1662477671
+    Data4: 1650860617
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
