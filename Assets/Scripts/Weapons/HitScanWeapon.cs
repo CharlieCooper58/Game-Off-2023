@@ -19,7 +19,7 @@ public class HitScanWeapon : Weapon
 
             reloadTimer = reloadTimerMax;
             RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, 100f, layerMask:shootMask))
+            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, 1000f, layerMask:shootMask))
             {
                 HitScanLine newShotLine = Instantiate(shotTracerLinePrefab);
                 newShotLine.CreateLine(muzzleEndpoint.position, hit.point);

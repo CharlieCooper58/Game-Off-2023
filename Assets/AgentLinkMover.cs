@@ -10,7 +10,7 @@ public enum OffMeshLinkMoveMethod
     Curve
 }
 
-[RequireComponent(typeof(NavMeshAgent))]
+//[RequireComponent(typeof(NavMeshAgent))]
 public class AgentLinkMover : MonoBehaviour
 {
     public OffMeshLinkMoveMethod m_Method = OffMeshLinkMoveMethod.Parabola;
@@ -22,9 +22,14 @@ public class AgentLinkMover : MonoBehaviour
         agent.autoTraverseOffMeshLink = false;
         while (true)
         {
+            if(agent.enabled == false)
+            {
+                yield return null;
+            }
             if (agent.isOnOffMeshLink)
             {
-                agent.updateRotation = false;
+                Vector3 newEulerAngles = Vector3.zero;
+                newEulerAngles.y = agent.transform.eulerAngles.y;
                 if (m_Method == OffMeshLinkMoveMethod.NormalSpeed)
                     yield return StartCoroutine(NormalSpeed(agent));
                 else if (m_Method == OffMeshLinkMoveMethod.Parabola)
@@ -32,10 +37,10 @@ public class AgentLinkMover : MonoBehaviour
                 else if (m_Method == OffMeshLinkMoveMethod.Curve)
                     yield return StartCoroutine(Curve(agent, 0.5f));
                 agent.CompleteOffMeshLink();
+
             }
             else
             {
-                agent.updateRotation = true;
             }
             yield return null;
         }
@@ -75,9 +80,15 @@ public class AgentLinkMover : MonoBehaviour
         float normalizedTime = 0.0f;
         while (normalizedTime < 1.0f)
         {
+            Vector3 newEulerAngles = Vector3.zero;
+            newEulerAngles.y = agent.transform.eulerAngles.y;
+            agent.transform.rotation = Quaternion.Euler(newEulerAngles);
+
             float yOffset = m_Curve.Evaluate(normalizedTime);
+            //print(yOffset);
             agent.transform.position = Vector3.Lerp(startPos, endPos, normalizedTime) + yOffset * Vector3.up;
             normalizedTime += Time.deltaTime / duration;
+            //print(transform.rotation);
             yield return null;
         }
     }

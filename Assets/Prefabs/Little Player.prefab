@@ -612,8 +612,6 @@ MonoBehaviour:
   cameraPivot: {fileID: 8379547645197449955}
   cameraRotationHelper: {fileID: 271064257}
   cameraSmoothTime: 0.03
-  cameraSpeedX: 60
-  cameraSpeedY: 60
 --- !u!114 &8379547644769444523
 MonoBehaviour:
   m_ObjectHideFlags: 0

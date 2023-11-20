@@ -6,7 +6,11 @@ public class EnemyAI : MonoBehaviour
 {
     protected EnemyManager enemyManager;
     protected NavMeshAgent navMeshAgent;
-    protected PlayerManager target;
+    protected NavMeshPath path;
+
+    protected GameObject target;
+    public GameObject plantTarget;
+    protected PlayerManager playerTarget;
 
     [Header("Grounded Check")]
     [SerializeField] float groundCheckRadius;
@@ -28,9 +32,11 @@ public class EnemyAI : MonoBehaviour
 
     public virtual void Initialize()
     {
+        print("Called");
         enemyManager = GetComponent<EnemyManager>();
         navMeshAgent = GetComponent<NavMeshAgent>();
-        target = PlayerManager.littlePlayerInstance;
+        playerTarget = PlayerManager.littlePlayerInstance;
+        if(target == null) target = plantTarget;
         stunTimer = 0.5f;
         prevState = AIState.move;
         state = AIState.stun;
@@ -51,13 +57,17 @@ public class EnemyAI : MonoBehaviour
     public AIState state;
     AIState prevState;
 
-
+    public void TargetPlayer()
+    {
+        target = GameHandler.instance.littlePlayerManager.gameObject;
+    }
     public virtual void MakeStateDecisions()
     {
         if(Time.timeScale == 0)
         {
             return;
         }
+
         switch (state)
         {
             case AIState.move:

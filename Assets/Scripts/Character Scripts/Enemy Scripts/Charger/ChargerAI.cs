@@ -46,7 +46,7 @@ public class ChargerAI : EnemyAI
     {
         if(Physics.OverlapSphere(meleeDamagePoint.position, meleeDamageRadius, playerLayer).Length > 0)
         {
-            target.characterHealth.TakeDamage(attackDamage);
+            playerTarget.characterHealth.TakeDamage(attackDamage);
         }
     }
 
