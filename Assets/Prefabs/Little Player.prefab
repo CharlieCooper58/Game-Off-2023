@@ -997,7 +997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3997906742409146556, guid: 6af5a680493daba4bb7a147b4a65809e, type: 3}
       propertyPath: GunshotSound.Path
-      value: event:/SFX/Weapon Sounds/Gunshot
+      value: event:/SFX/Weapon Sounds/SmallGunshot
       objectReference: {fileID: 0}
     - target: {fileID: 3997906742409146559, guid: 6af5a680493daba4bb7a147b4a65809e, type: 3}
       propertyPath: m_Name

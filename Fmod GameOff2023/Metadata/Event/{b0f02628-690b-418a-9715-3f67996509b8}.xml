@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{b0f02628-690b-418a-9715-3f67996509b8}">
 		<property name="name">
-			<value>Bug Death</value>
+			<value>BugDeath</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -134,7 +134,6 @@
 		</property>
 	</object>
 	<object class="MultiSound" id="{94b1cacb-a44c-43e6-a5a9-45fbbf6eef63}">
-		<property name="name" />
 		<relationship name="modulators">
 			<destination>{0909e9c3-4441-441c-927b-5046745d14e6}</destination>
 		</relationship>
@@ -157,10 +156,10 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>58</value>
+			<value>92</value>
 		</property>
 		<property name="minimumExtent">
-			<value>220</value>
+			<value>174</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{0909e9c3-4441-441c-927b-5046745d14e6}">

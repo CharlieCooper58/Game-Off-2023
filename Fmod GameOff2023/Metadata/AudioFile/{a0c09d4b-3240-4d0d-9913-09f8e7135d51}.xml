@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a0c09d4b-3240-4d0d-9913-09f8e7135d51}">
+		<property name="assetPath">
+			<value>SFX/Bug Sounds/Charger Attack 7.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.84478458049886618</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3b251b29-60bf-4bfb-8581-d757e6118b2e}</destination>
+		</relationship>
+	</object>
+</objects>

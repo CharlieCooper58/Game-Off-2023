@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028353, g: 0.22571383, b: 0.30692253, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3364,7 +3364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8379547646006929073, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: GunshotSound.Path
-      value: event:/SFX/Weapon Sounds/Gunshot
+      value: event:/SFX/Weapon Sounds/SmallGunshot
       objectReference: {fileID: 0}
     - target: {fileID: 8379547646006929073, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: GunshotSound.Guid.Data1
@@ -4346,7 +4346,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 4f504a6ab6dff69438381b442a5f3f22, type: 2}
   m_BuildHeightMesh: 0
@@ -5555,7 +5555,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -846468608818270935, guid: 31454e3ee7cdf4183acd2865db7ee5e7, type: 3}
       propertyPath: <music>k__BackingField.Path
-      value: event:/Music/Background Music
+      value: event:/Music/In-GameMusic
       objectReference: {fileID: 0}
     - target: {fileID: -846468608818270935, guid: 31454e3ee7cdf4183acd2865db7ee5e7, type: 3}
       propertyPath: <music>k__BackingField.Guid.Data1
