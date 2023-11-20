@@ -205,6 +205,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecaf02a48b65231408c86a98cb0944c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BugDeath:
+    Guid:
+      Data1: -1326438872
+      Data2: 1099589899
+      Data3: 1732187543
+      Data4: -1207343719
+    Path: event:/SFX/Enemy Sounds/BugDeath
   organs:
   - {fileID: 8724449295435555802, guid: 0886f0f41df0a8c4da230f7ebb94493e, type: 3}
   - {fileID: 8724449295435555802, guid: c258e1755fb2fd8488e8cf46372c496d, type: 3}
