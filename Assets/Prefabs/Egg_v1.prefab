@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348379171288476209}
-  m_LocalRotation: {x: -0.00000006322028, y: -0.7071068, z: -0.00000006322028, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -9.8, y: 13.2, z: -36.9}
-  m_LocalScale: {x: 129.99997, y: 130.00002, z: 129.99998}
+  m_LocalScale: {x: 65, y: 65, z: 65}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 12745556360574217}
@@ -39,7 +39,7 @@ Transform:
   - {fileID: 2914589914532563778}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &582328653858625380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65,11 +65,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560ce199a7f3e5a47bd4eb31cab74f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnemies: 4
-  minEnemies: 2
-  enemySpawnTimerMax: 1.5
+  maxEnemies: 3
+  minEnemies: 1
+  enemySpawnTimerMax: 3
   spawnableEnemies:
-  - {fileID: 3332981003698026122, guid: 75f749711f627b2439e15fdf2e065d99, type: 3}
+  - {fileID: 5387369867345002290, guid: a57c911b07725e142863541dab32771c, type: 3}
   plantTarget: {fileID: 0}
 --- !u!114 &582328653858625381
 MonoBehaviour:
