@@ -20,6 +20,219 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1036
   Exists: 1
+<<<<<<< Updated upstream
+=======
+--- !u!114 &-7805677123528464742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/Footsteps
+  Guid:
+    Data1: -1555465439
+    Data2: 1092864746
+    Data3: 214010798
+    Data4: 451205538
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 9019504588626904662}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7536664400640101144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/Dash
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/Dash
+  Guid:
+    Data1: 19132503
+    Data2: 1304660182
+    Data3: -1330879569
+    Data4: 1878826909
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7218665985956560467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/BugDeath
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/BugDeath
+  Guid:
+    Data1: -1326438872
+    Data2: 1099589899
+    Data3: 1732187543
+    Data4: -1207343719
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6072863760459092836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/BugBurnedLow
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/BugBurnedLow
+  Guid:
+    Data1: 1595772518
+    Data2: 1129840024
+    Data3: 1692938114
+    Data4: -1555745382
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2784683444985170862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod GameOff2023/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638360467483741216
+  FileSizes:
+  - Name: Desktop
+    Value: 4189888
+  Exists: 1
+--- !u!114 &-2716697718385526762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/BugBurnedHigh
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/BugBurnedHigh
+  Guid:
+    Data1: 1409089122
+    Data2: 1103291305
+    Data3: -582148455
+    Data4: 1851238124
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1780355508969784254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/BabyBugAttack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/BabyBugAttack
+  Guid:
+    Data1: -1525348016
+    Data2: 1240478992
+    Data3: -1982495817
+    Data4: -1884528174
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1414968584501738551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Weapon Sounds/SmallGunshot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Weapon Sounds/SmallGunshot
+  Guid:
+    Data1: 124999270
+    Data2: 1187401444
+    Data3: -1662477671
+    Data4: 1650860617
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+>>>>>>> Stashed changes
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,8 +254,142 @@ MonoBehaviour:
   - {fileID: -7977682974907264466}
   StringsBanks:
   - {fileID: 4654398754390218243}
+<<<<<<< Updated upstream
   cacheTime: 638350900882928439
   cacheVersion: 131608
+=======
+  cacheTime: 638360467483761210
+  cacheVersion: 131608
+--- !u!114 &429106335766323002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/ChargerAttack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/ChargerAttack
+  Guid:
+    Data1: -81874265
+    Data2: 1134392241
+    Data3: 2098662278
+    Data4: -1298057058
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &627223872702302020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SprayGun/SprayGun
+  m_EditorClassIdentifier: 
+  Name: SprayGun
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 322713353
+    data2: 3150154124
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Looping
+  - End
+  Exists: 1
+--- !u!114 &1288698928367884904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/In-GameMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/In-GameMusic
+  Guid:
+    Data1: 1442582566
+    Data2: 1125951617
+    Data3: 785533362
+    Data4: -1359594247
+  Banks:
+  - {fileID: -2784683444985170862}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8350759821550884697}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1518764097025988996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Fmod GameOff2023/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638360467483761210
+  FileSizes:
+  - Name: Desktop
+    Value: 622208
+  Exists: 1
+--- !u!114 &3037485503034803647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Weapon Sounds/SprayGun
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Weapon Sounds/SprayGun
+  Guid:
+    Data1: 1131114165
+    Data2: 1276525110
+    Data3: -1191485020
+    Data4: -242469096
+  Banks:
+  - {fileID: 1518764097025988996}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 627223872702302020}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7222
+>>>>>>> Stashed changes
 --- !u!114 &4654398754390218243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,7 +405,11 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 638350900882928439
+=======
+  lastModified: 638360467483386125
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 712
