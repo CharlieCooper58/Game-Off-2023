@@ -9,6 +9,7 @@ public class CharacterHealth : MonoBehaviour
 
     public class CharacterDeathEventArgs: EventArgs
     {
+        public CharacterManager manager;
         public bool isBrutal;
     }
     public event EventHandler<CharacterDeathEventArgs> OnCharacterDeath;
@@ -27,7 +28,7 @@ public class CharacterHealth : MonoBehaviour
     }
     protected virtual void Die(bool brutal = false)
     {
-        OnCharacterDeath?.Invoke(this, new CharacterDeathEventArgs { isBrutal=brutal});
+        OnCharacterDeath?.Invoke(this, new CharacterDeathEventArgs { manager = GetComponent<CharacterManager>(), isBrutal=brutal});
         Destroy(gameObject);
     }
 }

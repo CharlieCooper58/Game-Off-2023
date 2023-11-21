@@ -21,7 +21,6 @@ public class EnemySpecialEffects : MonoBehaviour
     {
         int numOrgans;
         numOrgans = e.isBrutal? Random.Range(5, 8):0;
-        print(numOrgans);
         for(int i = 0; i < numOrgans; i++)
         {
             Instantiate(organs[Random.Range(0, organs.Length)], transform.position, Quaternion.identity);
