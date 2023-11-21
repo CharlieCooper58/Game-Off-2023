@@ -28,8 +28,8 @@ public class AgentLinkMover : MonoBehaviour
             }
             if (agent.isOnOffMeshLink)
             {
-                Vector3 newEulerAngles = Vector3.zero;
-                newEulerAngles.y = agent.transform.eulerAngles.y;
+                //Vector3 newEulerAngles = Vector3.zero;
+                //newEulerAngles.y = agent.transform.eulerAngles.y;
                 if (m_Method == OffMeshLinkMoveMethod.NormalSpeed)
                     yield return StartCoroutine(NormalSpeed(agent));
                 else if (m_Method == OffMeshLinkMoveMethod.Parabola)
@@ -80,9 +80,9 @@ public class AgentLinkMover : MonoBehaviour
         float normalizedTime = 0.0f;
         while (normalizedTime < 1.0f)
         {
-            Vector3 newEulerAngles = Vector3.zero;
-            newEulerAngles.y = agent.transform.eulerAngles.y;
-            agent.transform.rotation = Quaternion.Euler(newEulerAngles);
+            //Vector3 newEulerAngles = Vector3.zero;
+            //newEulerAngles.y = agent.transform.eulerAngles.y;
+            //agent.transform.rotation = Quaternion.Euler(newEulerAngles);
 
             float yOffset = m_Curve.Evaluate(normalizedTime);
             //print(yOffset);

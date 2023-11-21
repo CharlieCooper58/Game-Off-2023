@@ -22,6 +22,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         enemies = new List<EnemyManager>();
+        wave = GetComponentInParent<EnemyWave>();
         //foreach(EnemyManager enemy in enemies)
         //{
         //    enemy.gameObject.SetActive(true);
@@ -67,11 +68,7 @@ public class Spawner : MonoBehaviour
     {
         EnemyManager newEnemy = Instantiate(spawnableEnemies[Random.Range(0, spawnableEnemies.Length)], transform.position, Quaternion.identity);
         enemies.Add(newEnemy);
+        wave.AddNewEnemy(newEnemy);
         newEnemy.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
-        newEnemy.enemyAI.plantTarget = plantTarget;
-        if (targetingPlayer)
-        {
-            newEnemy.enemyAI.TargetPlayer();
-        }
     }
 }

@@ -9,11 +9,12 @@ public class EnemyAI : MonoBehaviour
     protected NavMeshPath path;
 
     protected GameObject target;
-    public GameObject plantTarget;
+    public Plant plantTarget;
     protected PlayerManager playerTarget;
 
     [Header("Grounded Check")]
     [SerializeField] float groundCheckRadius;
+    Vector3 groundCheckBounds;
     [SerializeField] LayerMask groundCheckMask;
     [SerializeField] Transform groundCheckPoint;
 
@@ -35,12 +36,15 @@ public class EnemyAI : MonoBehaviour
         print("Called");
         enemyManager = GetComponent<EnemyManager>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        plantTarget = FindObjectOfType<Plant>();
         playerTarget = PlayerManager.littlePlayerInstance;
-        if(target == null) target = plantTarget;
+        if (target == null) target = plantTarget.gameObject;
         stunTimer = 0.5f;
         prevState = AIState.move;
         state = AIState.stun;
-
+        groundCheckBounds = GetComponent<BoxCollider>().bounds.extents;
+        groundCheckBounds.y = groundCheckRadius;
         rb = GetComponent<Rigidbody>();
         EnableRigidbody();
 
@@ -63,10 +67,22 @@ public class EnemyAI : MonoBehaviour
     }
     public virtual void MakeStateDecisions()
     {
-        if(Time.timeScale == 0)
+        if (Time.timeScale == 0)
         {
             return;
         }
+        if (navMeshAgent.enabled && navMeshAgent.velocity != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(navMeshAgent.velocity, Vector3.up), Vector3.up);
+        else if(rb.velocity != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(rb.velocity, Vector3.up), Vector3.up);
+        }
+        else if(transform.up != Vector3.up)
+        {
+            transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
+        }
+        
+
 
         switch (state)
         {
@@ -84,7 +100,8 @@ public class EnemyAI : MonoBehaviour
 
     protected virtual void OnAIStateMove() { }
     protected virtual void OnAIStateAttack() { }
-    protected virtual void OnAIStateStun() {
+    protected virtual void OnAIStateStun()
+    {
         if (stunTimer > 0)
         {
             stunTimer -= Time.deltaTime;
@@ -105,6 +122,7 @@ public class EnemyAI : MonoBehaviour
     {
         navigationTimer -= Time.deltaTime;
 
+
         // Check if it's time to set a new destination
         if (navigationTimer <= 0f)
         {
@@ -118,12 +136,9 @@ public class EnemyAI : MonoBehaviour
         {
             return true;
         }
-        return rb.velocity.y <= 0 && Physics.CheckSphere(groundCheckPoint.position, groundCheckRadius, groundCheckMask) && stunTimer <= 0;
+        return rb.velocity.y <= 0 && Physics.CheckBox(groundCheckPoint.position, groundCheckBounds, Quaternion.identity, groundCheckMask) && stunTimer <= 0;
     }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(groundCheckPoint.position, groundCheckRadius);
-    }
+
     public void TakeMeleeAttack(Vector3 direction, float force, int damage)
     {
         EnableRigidbody();
@@ -137,7 +152,7 @@ public class EnemyAI : MonoBehaviour
             enemyManager.characterHealth.TakeDamage(damage);
         }
         stunTimer = Mathf.Max(stunTimer, .3f);
-        if(state != AIState.stun)
+        if (state != AIState.stun)
         {
             prevState = state;
         }
@@ -174,5 +189,11 @@ public class EnemyAI : MonoBehaviour
         rb.isKinematic = true;
         rb.useGravity = false;
         rb.velocity = Vector3.zero;
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireCube(groundCheckPoint.position, groundCheckBounds);
     }
 }

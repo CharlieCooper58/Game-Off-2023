@@ -61,8 +61,8 @@ public class EnemyWave : MonoBehaviour
         }
         foreach (Spawner spawner in spawners)
         {
-            spawner.gameObject.SetActive(true);
-            spawner.SetEnemyTargets();
+            spawner?.gameObject.SetActive(true);
+            spawner?.SetEnemyTargets();
         }
     }
 
@@ -70,6 +70,16 @@ public class EnemyWave : MonoBehaviour
     private void CharacterHealth_OnCharacterDeath(object sender, CharacterHealth.CharacterDeathEventArgs e)
     {
         enemies.Remove(e.manager as EnemyManager);
+    }
+
+    public void AddNewEnemy(EnemyManager newEnemy)
+    {
+        enemies.Add(newEnemy);
+        newEnemy.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
+        if (waveState == WaveState.attacking)
+        {
+            newEnemy.enemyAI.TargetPlayer();
+        }
     }
 
     public void OnPlayerEnter()
@@ -81,6 +91,7 @@ public class EnemyWave : MonoBehaviour
         }
         else
         {
+            waveState = WaveState.attacking;
             TargetPlayer();
         }        
     }
