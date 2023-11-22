@@ -593,7 +593,7 @@ MonoBehaviour:
   isGrounded: 0
   airResistance: 0
   wallCheckRaycastDistance: 0.6
-  wallJumpVelocityUp: 10
+  wallJumpVelocityUp: 20
   wallJumpVelocitySide: 20
   wallJumpCooldownTimerMax: 0.2
   maxWallJumps: 3
