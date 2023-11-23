@@ -200,6 +200,13 @@ MonoBehaviour:
       Data3: 1732187543
       Data4: -1207343719
     Path: event:/SFX/Enemy Sounds/BugDeath
+  BugHurt:
+    Guid:
+      Data1: -1941699854
+      Data2: 1304251554
+      Data3: 2094281136
+      Data4: -859899393
+    Path: event:/SFX/Enemy Sounds/BugHurt
   organs:
   - {fileID: 8724449295435555802, guid: 0886f0f41df0a8c4da230f7ebb94493e, type: 3}
   - {fileID: 8724449295435555802, guid: c258e1755fb2fd8488e8cf46372c496d, type: 3}
