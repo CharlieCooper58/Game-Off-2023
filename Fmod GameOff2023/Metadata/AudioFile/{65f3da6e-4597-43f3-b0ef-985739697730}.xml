@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{65f3da6e-4597-43f3-b0ef-985739697730}">
 		<property name="assetPath">
-			<value>SFX/Player Actions/Jump 3.wav</value>
+			<value>SFX/Player Actions/MushroomBounce3.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

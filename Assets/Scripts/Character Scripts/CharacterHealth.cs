@@ -13,6 +13,7 @@ public class CharacterHealth : MonoBehaviour
         public bool isBrutal;
     }
     public event EventHandler<CharacterDeathEventArgs> OnCharacterDeath;
+    public event EventHandler OnCharacterHit;
     public virtual void Initialize()
     {
         currentHP = maxHP;
@@ -20,6 +21,7 @@ public class CharacterHealth : MonoBehaviour
 
     public virtual void TakeDamage(int damage, bool brutal = false)
     {
+        OnCharacterHit?.Invoke(this, new EventArgs());
         currentHP -= damage;
         if(currentHP <= 0)
         {

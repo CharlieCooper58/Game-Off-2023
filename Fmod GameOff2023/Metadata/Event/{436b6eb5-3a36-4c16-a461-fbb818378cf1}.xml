@@ -195,7 +195,6 @@
 		<property name="length">
 			<value>2.9999999999999991</value>
 		</property>
-		<property name="name" />
 		<relationship name="timeline">
 			<destination>{cb6f2355-563b-4f6d-aac6-968c559799f3}</destination>
 		</relationship>

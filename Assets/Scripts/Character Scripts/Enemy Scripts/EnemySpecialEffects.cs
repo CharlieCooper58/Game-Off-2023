@@ -6,6 +6,7 @@ using FMODUnity;
 public class EnemySpecialEffects : MonoBehaviour
 {
     [SerializeField] private EventReference BugDeath;
+    [SerializeField] private EventReference BugHurt;
     [SerializeField] Organs[] organs;
     [SerializeField] SplatterEffect splatter;
 
@@ -15,6 +16,11 @@ public class EnemySpecialEffects : MonoBehaviour
     {
         manager = GetComponent<EnemyManager>();
         manager.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
+        manager.characterHealth.OnCharacterHit += CharacterHealth_OnCharacterHit;
+    }
+
+    private void CharacterHealth_OnCharacterHit(object sender, System.EventArgs e) {
+        AudioManager.instance.PlayOneShot(BugHurt, this.transform.position);
     }
 
     private void CharacterHealth_OnCharacterDeath(object sender, CharacterHealth.CharacterDeathEventArgs e)

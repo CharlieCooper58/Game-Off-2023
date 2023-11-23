@@ -66,6 +66,7 @@ public class Spawner : MonoBehaviour
     }
     private void SpawnEnemy()
     {
+        GetComponent<ParticleSystem>().Play();
         EnemyManager newEnemy = Instantiate(spawnableEnemies[Random.Range(0, spawnableEnemies.Length)], transform.position, Quaternion.identity);
         enemies.Add(newEnemy);
         wave.AddNewEnemy(newEnemy);
