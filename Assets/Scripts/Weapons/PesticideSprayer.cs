@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using FMODUnity;
 
 public class PesticideSprayer : Weapon
 {
@@ -18,7 +19,7 @@ public class PesticideSprayer : Weapon
 
     [SerializeField] LayerMask damageMask;
     [SerializeField] float damageRadius;
-
+    [SerializeField] private EventReference GunshotSound;
     private void Start()
     {
         mainModule = weaponParticles.main;
@@ -38,6 +39,7 @@ public class PesticideSprayer : Weapon
     {
         firing = true;
         weaponParticles.Play();
+        AudioManager.instance.PlayOneShot(GunshotSound, this.transform.position);
         return true;
     }
     public override void OnTriggerReleased()
