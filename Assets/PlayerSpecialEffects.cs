@@ -12,7 +12,7 @@ public class PlayerSpecialEffects : MonoBehaviour
 
 
     PlayerManager manager;
-    public void Initialize() {
+    private void Start() {
         manager = GetComponent<PlayerManager>();
         manager.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
         manager.characterHealth.OnCharacterHit += CharacterHealth_OnCharacterHit;
