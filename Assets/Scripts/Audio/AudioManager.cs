@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
 {
@@ -19,11 +20,17 @@ public class AudioManager : MonoBehaviour
 
 
 
+    //A simple function to play once. I strongly recommend using Play() instead to keep track of your sounds.
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
-
+    public EventInstance Play(EventReference sound, Vector3 worldPos) { 
+        var evi = RuntimeManager.CreateInstance(sound);
+        evi.set3DAttributes(RuntimeUtils.To3DAttributes(worldPos));
+        evi.start();
+        return evi;
+    }
     public EventInstance CreateInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);

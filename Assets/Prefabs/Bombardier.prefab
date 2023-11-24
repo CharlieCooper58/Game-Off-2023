@@ -43,11 +43,11 @@ GameObject:
   - component: {fileID: 5387369867345002290}
   - component: {fileID: 5387369867345000652}
   - component: {fileID: 5387369867345000653}
-  - component: {fileID: 5387369867345002294}
   - component: {fileID: 5387369867345002296}
   - component: {fileID: 5387369867345002299}
   - component: {fileID: 8592614047219356282}
   - component: {fileID: 2078610911660304889}
+  - component: {fileID: 2048453572072096782}
   m_Layer: 7
   m_Name: Bombardier
   m_TagString: Untagged
@@ -124,23 +124,6 @@ NavMeshAgent:
   m_BaseOffset: 0.05
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5387369867345002294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5387369867345000654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ceae508f37971c4fa01e0d1ad78d54e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  muzzleEndpoint: {fileID: 4292451275151304732}
-  reloadTimerMax: 1
-  weaponParticles: {fileID: 0}
-  weaponDamage: 0
-  proj: {fileID: 5176585705194027165, guid: 7ab63ec97b5954e4da3d8dff5ce560d8, type: 3}
 --- !u!65 &5387369867345002296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -225,6 +208,24 @@ MonoBehaviour:
   stunTimerMax: 0
   attackDamage: 10
   state: 0
+--- !u!114 &2048453572072096782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5387369867345000654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88df467d1d70a742bfc574dc4b801b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzleEndpoint: {fileID: 4292451275151304732}
+  reloadTimerMax: 1
+  weaponParticles: {fileID: 0}
+  weaponDamage: 0
+  proj: {fileID: 5176585705194027165, guid: 7ab63ec97b5954e4da3d8dff5ce560d8, type: 3}
+  height: 10
 --- !u!1 &5945293819005227894
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,18 +345,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1452253487962378372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679851122879221184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 071cfdee46e26fc41aa82fa6b31b009a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1717774559479943670
 MonoBehaviour:
   m_ObjectHideFlags: 0

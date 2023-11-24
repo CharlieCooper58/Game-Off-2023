@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using FMODUnity;
+using FMOD.Studio;
 
 public class PesticideSprayer : Weapon
 {
@@ -18,13 +20,17 @@ public class PesticideSprayer : Weapon
 
     [SerializeField] LayerMask damageMask;
     [SerializeField] float damageRadius;
+    [SerializeField] private EventReference weaponSound;
 
+    EventInstance weaponSoundEvent;
     private void Start()
     {
         mainModule = weaponParticles.main;
         baseParticleLifetime = weaponParticles.main.startLifetime.constant;
         particleSystemDistance = baseParticleLifetime * weaponParticles.main.startSpeed.constant;
         weaponParticles.Stop();
+        weaponSoundEvent = AudioManager.instance.Play(weaponSound, this.transform.position);
+        weaponSoundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
     protected override void Update()
     {
@@ -38,12 +44,14 @@ public class PesticideSprayer : Weapon
     {
         firing = true;
         weaponParticles.Play();
+        weaponSoundEvent.start();
         return true;
     }
     public override void OnTriggerReleased()
     {
         firing = false;
         weaponParticles.Stop();
+        weaponSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         base.OnTriggerReleased();
     }
 

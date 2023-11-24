@@ -58,6 +58,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   damageRadius: 2
+  weaponSound:
+    Guid:
+      Data1: 1131114165
+      Data2: 1276525110
+      Data3: -1191485020
+      Data4: -242469096
+    Path: event:/SFX/Weapon Sounds/SprayGun
 --- !u!1 &3124324455359534899
 GameObject:
   m_ObjectHideFlags: 0
