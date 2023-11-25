@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638361700958348905
+  lastModified: 638363414090750374
   FileSizes:
   - Name: Desktop
-    Value: 622208
+    Value: 1084512
   Exists: 1
 --- !u!114 &-8572842629266677782
 MonoBehaviour:
@@ -129,6 +129,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7760030888940216537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/BugChatter2
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/BugChatter2
+  Guid:
+    Data1: 2079991309
+    Data2: 1157885214
+    Data3: -1821754459
+    Data4: 981440923
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &-7222176570130108707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +231,60 @@ MonoBehaviour:
   - Name: Desktop
     Value: 4189888
   Exists: 1
+--- !u!114 &-6396518944279779343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/DoorOpen
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/DoorOpen
+  Guid:
+    Data1: -1659676834
+    Data2: 1077418662
+    Data3: -309791564
+    Data4: -1638710176
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5318543734564457905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/BugChatter3
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/BugChatter3
+  Guid:
+    Data1: -617716355
+    Data2: 1186219357
+    Data3: -658471034
+    Data4: 1093174050
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8141
 --- !u!114 &-5304237580905327408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +305,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-4934273819083783909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Weapon Sounds/LazerGun
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Weapon Sounds/LazerGun
+  Guid:
+    Data1: -1616112609
+    Data2: 1166161865
+    Data3: 986596756
+    Data4: -1083024938
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4538750021767792707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +399,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/SFX/Player Sounds/Jump
   Guid:
+    Data1: 1868752707
+    Data2: 1292961190
+    Data3: -1044846668
+    Data4: 535149951
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-835824505182714661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/MushroomBounce
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/MushroomBounce
+  Guid:
     Data1: 849613187
     Data2: 1283579856
     Data3: 2140652181
@@ -319,10 +454,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638361700958028866
+  lastModified: 638363414090692995
   FileSizes:
   - Name: Desktop
-    Value: 1690
+    Value: 2068
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -356,13 +491,49 @@ MonoBehaviour:
   - {fileID: 7957302878942109220}
   - {fileID: -7222176570130108707}
   - {fileID: 2432104012462696922}
+  - {fileID: -7760030888940216537}
+  - {fileID: -4934273819083783909}
+  - {fileID: 8465784839611650899}
+  - {fileID: 6414875622716616738}
+  - {fileID: 8460356281212580663}
+  - {fileID: -6396518944279779343}
+  - {fileID: 770140288123108961}
+  - {fileID: -5318543734564457905}
+  - {fileID: -835824505182714661}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5304237580905327408}
   StringsBanks:
   - {fileID: -626962777086003362}
-  cacheTime: 638361700958348905
+  cacheTime: 638363414090750374
   cacheVersion: 131608
+--- !u!114 &770140288123108961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/PlayerHurt
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/PlayerHurt
+  Guid:
+    Data1: 712392815
+    Data2: 1128282788
+    Data3: 684274089
+    Data4: -81179095
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1325534502903595128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,6 +696,33 @@ MonoBehaviour:
   - Looping
   - End
   Exists: 1
+--- !u!114 &6414875622716616738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/BugChatter1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/BugChatter1
+  Guid:
+    Data1: 61619511
+    Data2: 1169117524
+    Data3: 1056861614
+    Data4: 887468413
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7402
 --- !u!114 &7037766520153600397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +768,60 @@ MonoBehaviour:
     Data2: 1134392241
     Data3: 2098662278
     Data4: -1298057058
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8460356281212580663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/ClimbJump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/ClimbJump
+  Guid:
+    Data1: -1270319805
+    Data2: 1175229275
+    Data3: -497337941
+    Data4: 1577375636
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8465784839611650899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/DoorClose
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/DoorClose
+  Guid:
+    Data1: 2066669092
+    Data2: 1208176354
+    Data3: 2036094889
+    Data4: 813038450
   Banks:
   - {fileID: -9016909816982812062}
   IsStream: 0
