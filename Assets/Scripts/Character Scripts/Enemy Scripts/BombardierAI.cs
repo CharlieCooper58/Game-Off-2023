@@ -47,8 +47,11 @@ public class BombardierAI : EnemyAI
     }
 
     public void Attack() {
-        mortarWeapon.OnTriggerPressed(target.transform.position);
-        mortarWeapon.OnTriggerPressed(target.transform.position+target.GetComponent<CharacterController>().velocity*mortarWeapon.height/(70));
+        //mortarWeapon.OnTriggerPressed(target.transform.position);
+        if (playerTarget != null)
+        {
+            mortarWeapon.OnTriggerPressed(target.transform.position + target.GetComponent<CharacterController>().velocity * mortarWeapon.height / (90));
+        }
         isAttacking = false;
     }
 

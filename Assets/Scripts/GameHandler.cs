@@ -51,14 +51,19 @@ public class GameHandler : MonoBehaviour
         playerIsLittle = little;
         if(bigPlayerManager == null)
         {
+            AudioManager.instance.SetFMODParameter("MusicPlayerSize", 1);
             return;
         }
         if (!little)
         {
+            AudioManager.instance.SetFMODParameter("MusicPlayerSize", 0);
+
             bigPlayerManager.transform.position = littlePlayerManager.transform.position;
         }
         else
         {
+            AudioManager.instance.SetFMODParameter("MusicPlayerSize", 1);
+
             littlePlayerManager.transform.position = bigPlayerManager.transform.position;
         }
         littlePlayerManager.gameObject.SetActive(little);

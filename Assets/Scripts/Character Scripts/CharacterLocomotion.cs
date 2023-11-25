@@ -32,6 +32,8 @@ public class CharacterLocomotion : MonoBehaviour
     Vector3 dashDirection;
     Vector3 dashVelocity;
 
+    public Vector3 reasonableAverageVelocity;
+
 
     [Header("Jumping and Falling")]
     [SerializeField] protected float gravity = 13f;

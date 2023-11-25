@@ -44,4 +44,8 @@ public class AudioManager : MonoBehaviour
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
         return eventInstance;
     }
+    public void SetFMODParameter(string parameterName, float parameterValue)
+    {
+        RuntimeManager.StudioSystem.setParameterByName(parameterName, parameterValue);
+    }
 }
