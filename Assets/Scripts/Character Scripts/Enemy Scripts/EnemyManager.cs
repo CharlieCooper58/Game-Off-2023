@@ -17,7 +17,6 @@ public class EnemyManager : CharacterManager
     {
         base.Start();
         enemyAI.Initialize();
-        specialEffects.Initialize();
     }
 
     void Update()

@@ -678,18 +678,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerDeath:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 712392815
+      Data2: 1128282788
+      Data3: 684274089
+      Data4: -81179095
+    Path: event:/SFX/Player Sounds/PlayerHurt
   PlayerHurt:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 712392815
+      Data2: 1128282788
+      Data3: 684274089
+      Data4: -81179095
+    Path: event:/SFX/Player Sounds/PlayerHurt
   organs: []
   splatter: {fileID: 0}
 --- !u!1 &8379547644973516739
@@ -1106,8 +1106,28 @@ PrefabInstance:
       value: Pesticide Sprayer
       objectReference: {fileID: 0}
     - target: {fileID: 7314443699292701787, guid: 53817c7da377ecc4186b83058faa4794, type: 3}
+      propertyPath: GunshotSound.Path
+      value: event:/SFX/Weapon Sounds/SprayGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314443699292701787, guid: 53817c7da377ecc4186b83058faa4794, type: 3}
       propertyPath: spherecastMask.m_Bits
       value: 247
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314443699292701787, guid: 53817c7da377ecc4186b83058faa4794, type: 3}
+      propertyPath: GunshotSound.Guid.Data1
+      value: 1131114165
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314443699292701787, guid: 53817c7da377ecc4186b83058faa4794, type: 3}
+      propertyPath: GunshotSound.Guid.Data2
+      value: 1276525110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314443699292701787, guid: 53817c7da377ecc4186b83058faa4794, type: 3}
+      propertyPath: GunshotSound.Guid.Data3
+      value: -1191485020
+      objectReference: {fileID: 0}
+    - target: {fileID: 7314443699292701787, guid: 53817c7da377ecc4186b83058faa4794, type: 3}
+      propertyPath: GunshotSound.Guid.Data4
+      value: -242469096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53817c7da377ecc4186b83058faa4794, type: 3}
