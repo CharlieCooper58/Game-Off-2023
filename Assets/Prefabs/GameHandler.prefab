@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74ee83f6fef345038f10463acdc0768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Music:
+    Guid:
+      Data1: 1442582566
+      Data2: 1125951617
+      Data3: 785533362
+      Data4: -1359594247
+    Path: event:/Music/In-GameMusic
 --- !u!1 &4327540055695499308
 GameObject:
   m_ObjectHideFlags: 0

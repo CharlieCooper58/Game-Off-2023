@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
-
+    [SerializeField] private EventReference Music;
     private void Awake()
     {
         if (instance != null)
@@ -16,6 +16,9 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("Found more than one Audio Manager in the scene");
         }
         instance = this;
+    }
+    private void Start() {
+        Play(Music);
     }
 
 
@@ -28,6 +31,11 @@ public class AudioManager : MonoBehaviour
     public EventInstance Play(EventReference sound, Vector3 worldPos) { 
         var evi = RuntimeManager.CreateInstance(sound);
         evi.set3DAttributes(RuntimeUtils.To3DAttributes(worldPos));
+        evi.start();
+        return evi;
+    }
+    public EventInstance Play(EventReference sound) {
+        var evi = RuntimeManager.CreateInstance(sound);
         evi.start();
         return evi;
     }
