@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: maxEnemies
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 582328653858625378, guid: ef545650afff22047903c9165cc26651, type: 3}
+      propertyPath: spawnableEnemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 3332981003698026122, guid: 75f749711f627b2439e15fdf2e065d99, type: 3}
     - target: {fileID: 1125444357738672267, guid: ef545650afff22047903c9165cc26651, type: 3}
       propertyPath: m_RootOrder
       value: 0

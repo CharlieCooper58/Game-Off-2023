@@ -45,10 +45,18 @@ public class EnemyWave : MonoBehaviour
     {
         foreach (EnemyManager enemy in enemies)
         {
+            if(enemy == null)
+            {
+                continue;
+            }
             enemy?.gameObject.SetActive(true);
         }
         foreach (Spawner spawner in spawners)
         {
+            if (spawner == null)
+            {
+                continue;
+            }
             spawner?.gameObject.SetActive(true);
         }
     }
@@ -56,11 +64,19 @@ public class EnemyWave : MonoBehaviour
     {
         foreach (EnemyManager enemy in enemies)
         {
+            if (enemy == null)
+            {
+                continue;
+            }
             enemy.gameObject.SetActive(true);
             enemy.enemyAI.TargetPlayer();
         }
         foreach (Spawner spawner in spawners)
         {
+            if(spawner == null)
+            {
+                continue;
+            }
             spawner?.gameObject.SetActive(true);
             spawner?.SetEnemyTargets();
         }

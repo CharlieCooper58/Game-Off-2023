@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 9146281319291802086}
   m_Layer: 6
   m_Name: Navmesh Target
-  m_TagString: Untagged
+  m_TagString: Baking Helper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
