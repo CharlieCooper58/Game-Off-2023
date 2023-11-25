@@ -6,7 +6,7 @@ public class MortarWeapon : Weapon
 {
     [SerializeField] Projectile proj;
     Vector3 targetPos;
-    [SerializeField] float height = 10f;
+    [SerializeField] public float height = 10f;
     public override bool OnTriggerPressed(Vector3 direction)
     {
         if (reloadTimer > 0)
@@ -14,7 +14,7 @@ public class MortarWeapon : Weapon
             return false;
         }
         //Instantiate projectile above target, falling down.
-        Projectile newProj = Instantiate(proj, targetPos + Vector3.up*height, Quaternion.identity);
+        Projectile newProj = Instantiate(proj, direction + Vector3.up*height, Quaternion.identity);
         newProj.Initialize(Vector3.down);
         return true;
     }

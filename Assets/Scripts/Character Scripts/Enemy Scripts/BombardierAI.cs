@@ -9,7 +9,7 @@ public class BombardierAI : EnemyAI
     MortarWeapon mortarWeapon;
     float playerDistance;
     Vector3 playerDirection;
-    float thresholdDistance = 15f;
+    float thresholdDistance = 150f;
     bool isAttacking;
     public override void Initialize() {
         base.Initialize();
@@ -38,7 +38,7 @@ public class BombardierAI : EnemyAI
         if (isAttacking) {
             return;
         } else if (playerDistance < thresholdDistance) {
-            if (enemyManager.animationHandler.PlayTargetAnimation("SpitterAttack", 1)) {
+            if (enemyManager.animationHandler.PlayTargetAnimation("Bombardier Attack", 1)) {
                 isAttacking = true;
             }
         } else {
@@ -48,6 +48,7 @@ public class BombardierAI : EnemyAI
 
     public void Attack() {
         mortarWeapon.OnTriggerPressed(target.transform.position);
+        mortarWeapon.OnTriggerPressed(target.transform.position+target.GetComponent<CharacterController>().velocity*mortarWeapon.height/(70));
         isAttacking = false;
     }
 
