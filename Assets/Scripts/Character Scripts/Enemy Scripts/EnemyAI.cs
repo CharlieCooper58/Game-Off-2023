@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     protected EnemyManager enemyManager;
     protected NavMeshAgent navMeshAgent;
+    protected AgentLinkMover navMeshLinkMover;
     protected NavMeshPath path;
 
     protected GameObject target;
@@ -25,7 +26,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] protected LayerMask playerLayer;
 
     [SerializeField] float stunTimerMax;
-    float stunTimer;
+    protected float stunTimer;
     bool nearDeathStunned = false;
     bool beenNearDeath = false;
 
@@ -33,9 +34,9 @@ public class EnemyAI : MonoBehaviour
 
     public virtual void Initialize()
     {
-        print("Called");
         enemyManager = GetComponent<EnemyManager>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshLinkMover = GetComponent<AgentLinkMover>();
         navMeshAgent.updateRotation = false;
         plantTarget = FindObjectOfType<Plant>();
         playerTarget = PlayerManager.littlePlayerInstance;
@@ -59,7 +60,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     public AIState state;
-    AIState prevState;
+    protected AIState prevState;
 
     public void TargetPlayer()
     {
@@ -116,6 +117,21 @@ public class EnemyAI : MonoBehaviour
                 enemyManager.animationHandler.SetAnimationTrigger("StunTriggerStop");
             }
         }
+    }
+    protected virtual void SetAIStateMove()
+    {
+        enemyManager.animationHandler.PlayTargetAnimation("Move", 0);
+        state = AIState.move;
+    }
+    protected virtual void SetAIStateAttack()
+    {
+        state = AIState.attack;
+    }
+    protected virtual void SetAIStateStun(float stunTime, AIState prevState)
+    {
+        this.prevState = prevState;
+        this.stunTimer = stunTime;
+        state = AIState.stun;
     }
 
     protected void TickMovementTimer()
@@ -180,12 +196,14 @@ public class EnemyAI : MonoBehaviour
     public void EnableRigidbody()
     {
         navMeshAgent.enabled = false;
+        navMeshLinkMover.enabled = false;
         rb.isKinematic = false;
         rb.useGravity = true;
     }
     public void DisableRigidbody()
     {
         navMeshAgent.enabled = true;
+        navMeshLinkMover.enabled = true;
         rb.isKinematic = true;
         rb.useGravity = false;
         rb.velocity = Vector3.zero;

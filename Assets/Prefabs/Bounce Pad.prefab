@@ -92,8 +92,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95b7c1dbcf25a742a147ad6c2cc6978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 50
-  bounceDuration: 0
+  bounciness: 100
+  bounceDuration: 2
+  BounceSound:
+    Guid:
+      Data1: 849613187
+      Data2: 1283579856
+      Data3: 2140652181
+      Data4: -227007897
+    Path: event:/SFX/Player Sounds/MushroomBounce
 --- !u!65 &446114428720268571
 BoxCollider:
   m_ObjectHideFlags: 0

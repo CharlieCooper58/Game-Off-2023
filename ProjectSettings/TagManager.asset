@@ -12,15 +12,15 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - 'Ground: Dirt'
   - Enemies
   - Player
   - Player Projectiles
   - Enemy Projectiles
   - Level Progression
-  - Ground Macro
-  - 
-  - 
+  - 'Ground: Floor'
+  - 'Ground: Concrete'
+  - 'Ground: Wood'
   - 
   - 
   - 

@@ -103,7 +103,7 @@ MonoBehaviour:
   groundCheckRadius: 0.5
   groundCheckMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 28737
   groundCheckPoint: {fileID: 4724973773316255982}
   playerLayer:
     serializedVersion: 2

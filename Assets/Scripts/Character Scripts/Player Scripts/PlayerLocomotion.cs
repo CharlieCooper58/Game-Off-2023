@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
 public class PlayerLocomotion : CharacterLocomotion
 { 
     private PlayerManager playerManager;
@@ -16,6 +16,9 @@ public class PlayerLocomotion : CharacterLocomotion
     float wallJumpCooldownTimer;
     int wallJumpsPerformed;
     [SerializeField] int maxWallJumps;
+
+    [SerializeField] EventReference climbJumpSoundEffect;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -82,6 +85,7 @@ public class PlayerLocomotion : CharacterLocomotion
 
         if (wallJumpDirection != Vector3.zero)
         {
+            AudioManager.instance.Play(climbJumpSoundEffect);
             yVelocity = wallJumpVelocityUp;
             planarMovement = moveSpeed*wallJumpDirection.normalized;
             wallJumpCooldownTimer = wallJumpCooldownTimerMax;

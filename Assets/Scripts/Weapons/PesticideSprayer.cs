@@ -30,6 +30,7 @@ public class PesticideSprayer : Weapon
         particleSystemDistance = baseParticleLifetime * weaponParticles.main.startSpeed.constant;
         weaponParticles.Stop();
         weaponSoundEvent = AudioManager.instance.Play(weaponSound, this.transform.position);
+        weaponSoundEvent.setParameterByName("SprayGun", 1);
         weaponSoundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
     protected override void Update()
@@ -45,13 +46,17 @@ public class PesticideSprayer : Weapon
         firing = true;
         weaponParticles.Play();
         weaponSoundEvent.start();
+        weaponSoundEvent.setParameterByName("SprayGun", 0);
+
         return true;
     }
     public override void OnTriggerReleased()
     {
         firing = false;
         weaponParticles.Stop();
-        weaponSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        //weaponSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        weaponSoundEvent.setParameterByName("SprayGun", 1);
+
         base.OnTriggerReleased();
     }
 

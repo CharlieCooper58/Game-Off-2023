@@ -8,7 +8,6 @@ using UnityEngine.UIElements;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
-    [SerializeField] private EventReference Music;
     private void Awake()
     {
         if (instance != null)
@@ -17,9 +16,7 @@ public class AudioManager : MonoBehaviour
         }
         instance = this;
     }
-    private void Start() {
-        Play(Music);
-    }
+
 
 
 

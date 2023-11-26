@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UI.Panels;
-
+using FMODUnity;
+using FMOD.Studio;
 public class GameHandler : MonoBehaviour
 {
     public static GameHandler instance;
@@ -15,6 +16,9 @@ public class GameHandler : MonoBehaviour
     PauseMenu pauseMenu;
 
     MetaControls metaControls;
+    [SerializeField] private EventReference Music;
+
+    EventInstance musicEventInstance;
     private void Awake()
     {
         instance = this;
@@ -26,6 +30,8 @@ public class GameHandler : MonoBehaviour
         littlePlayerManager = PlayerManager.littlePlayerInstance;
         bigPlayerManager = PlayerManager.bigPlayerInstance;
         StartCoroutine("GameStart");
+        musicEventInstance = AudioManager.instance.Play(Music);
+        musicEventInstance.setVolume(.75f);
     }
     IEnumerator GameStart()
     {
@@ -51,18 +57,18 @@ public class GameHandler : MonoBehaviour
         playerIsLittle = little;
         if(bigPlayerManager == null)
         {
-            AudioManager.instance.SetFMODParameter("MusicPlayerSize", 1);
+            musicEventInstance.setParameterByName("MusicPlayerSize", 1);
             return;
         }
         if (!little)
         {
-            AudioManager.instance.SetFMODParameter("MusicPlayerSize", 0);
+            musicEventInstance.setParameterByName("MusicPlayerSize", 0);
 
             bigPlayerManager.transform.position = littlePlayerManager.transform.position;
         }
         else
         {
-            AudioManager.instance.SetFMODParameter("MusicPlayerSize", 1);
+            musicEventInstance.setParameterByName("MusicPlayerSize", 1);
 
             littlePlayerManager.transform.position = bigPlayerManager.transform.position;
         }
