@@ -31,7 +31,9 @@ public class GameHandler : MonoBehaviour
         bigPlayerManager = PlayerManager.bigPlayerInstance;
         StartCoroutine("GameStart");
         musicEventInstance = AudioManager.instance.Play(Music);
-        musicEventInstance.setVolume(.75f);
+        musicEventInstance.setVolume(GameSettings.instance.musicVolume);
+        AudioManager.instance.SetFMODParameter("SFXVolume", GameSettings.instance.sfxVolume);
+        AudioManager.instance.SetFMODParameter("MasterVolume", GameSettings.instance.masterVolume);
     }
     IEnumerator GameStart()
     {
@@ -74,5 +76,20 @@ public class GameHandler : MonoBehaviour
         }
         littlePlayerManager.gameObject.SetActive(little);
         bigPlayerManager.gameObject.SetActive(!little);
+    }
+    
+    public void SetMusicVolume(float value)
+    {
+        musicEventInstance.setVolume(value);
+    }
+    
+    public void SetSfxVolume(float value)
+    {
+        AudioManager.instance.SetFMODParameter("SFXVolume", value);
+    }
+    
+    public void SetMasterVolume(float value)
+    {
+        AudioManager.instance.SetFMODParameter("MasterVolume", value);
     }
 }
