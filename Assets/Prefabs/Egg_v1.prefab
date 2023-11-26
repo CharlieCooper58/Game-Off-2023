@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1125444357738672267}
   - component: {fileID: 582328653858625380}
   - component: {fileID: 582328653858625378}
-  - component: {fileID: 582328653858625381}
   - component: {fileID: 3514967711384234249}
   - component: {fileID: 4087245778765496640}
+  - component: {fileID: 4310792247686992399}
   m_Layer: 7
   m_Name: Egg_v1
   m_TagString: Untagged
@@ -73,20 +73,6 @@ MonoBehaviour:
   spawnableEnemies:
   - {fileID: 5387369867345002290, guid: a57c911b07725e142863541dab32771c, type: 3}
   plantTarget: {fileID: 0}
---- !u!114 &582328653858625381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348379171288476209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfd20ff65a5ade448fb86aca3fad06e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 10
-  currentHP: 0
 --- !u!199 &3514967711384234249
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4866,6 +4852,21 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &4310792247686992399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348379171288476209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2838b18fcda24104c88c4bfcb425f4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 10
+  currentHP: 0
+  isImmuneToRangedAttacks: 0
 --- !u!1 &501573003851087227
 GameObject:
   m_ObjectHideFlags: 0
