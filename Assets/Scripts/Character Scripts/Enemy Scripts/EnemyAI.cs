@@ -110,7 +110,14 @@ public class EnemyAI : MonoBehaviour
         if (CheckRigidbodyShouldBeInactive())
         {
             DisableRigidbody();
-            state = prevState;
+            if(prevState == AIState.move)
+            {
+                SetAIStateMove();
+            }
+            else
+            {
+                SetAIStateAttack();
+            }
             if (nearDeathStunned)
             {
                 nearDeathStunned = false;
@@ -173,6 +180,7 @@ public class EnemyAI : MonoBehaviour
             prevState = state;
         }
         state = AIState.stun;
+        SetAIStateStun(Mathf.Max(stunTimer, 0.3f), (state!=AIState.stun)?state:prevState);
     }
 
     public void SetLowHealthStun()
@@ -184,13 +192,8 @@ public class EnemyAI : MonoBehaviour
         beenNearDeath = true;
         EnableRigidbody();
         enemyManager.animationHandler.SetAnimationTrigger("StunTrigger");
-        stunTimer = Mathf.Max(stunTimer, stunTimerMax);
-        if (state != AIState.stun)
-        {
-            prevState = state;
-        }
         nearDeathStunned = true;
-        state = AIState.stun;
+        SetAIStateStun(Mathf.Max(stunTimer, stunTimerMax), (state != AIState.stun) ? state : prevState);
     }
 
     public void EnableRigidbody()

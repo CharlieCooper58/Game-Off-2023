@@ -12,8 +12,10 @@ public class PlayerHealth : CharacterHealth
     public override void Initialize()
     {
         base.Initialize();
-        print("Butt");
-        healthBar.maxValue = healthBar.value = backgroundHealthbar.maxValue = backgroundHealthbar.value = maxHP;
+        healthBar.maxValue = maxHP;
+        healthBar.value = maxHP;
+        backgroundHealthbar.maxValue = maxHP;
+        backgroundHealthbar.value = maxHP;
         
     }
     public override void TakeDamage(int damage, bool brutal = false)
