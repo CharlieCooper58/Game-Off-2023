@@ -36,9 +36,7 @@ public class ChargerAI : EnemyAI
         if (CheckRigidbodyShouldBeInactive())
         {
             DisableRigidbody();
-            prevState = AIState.move;
-            state = AIState.stun;
-            stunTimer = jumpCooldown;
+            SetAIStateStun(jumpCooldown, AIState.move);
             contactDamage = 0;
         }
     }
