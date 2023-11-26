@@ -38,56 +38,26 @@ namespace UI.Panels
             
             _masterVolumeSlider = _document.rootVisualElement.Q<Slider>("MasterVolumeSlider");
             _masterVolumeSlider.value = GameSettings.instance.masterVolume;
-            _masterVolumeSlider.RegisterValueChangedCallback(v => ChangeMasterVolume(_masterVolumeSlider.value));
-
+            _masterVolumeSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName(GameSettings.MasterVolumeKey, _masterVolumeSlider.value));
+            
             _musicVolumeSlider = _document.rootVisualElement.Q<Slider>("MusicVolumeSlider");
             _musicVolumeSlider.value = GameSettings.instance.musicVolume;
-            _musicVolumeSlider.RegisterValueChangedCallback(v => ChangeMusicVolume(_musicVolumeSlider.value));
+            _musicVolumeSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName(GameSettings.MusicVolumeKey, _musicVolumeSlider.value));
 
             _sfxVolumeSlider = _document.rootVisualElement.Q<Slider>("SFXVolumeSlider");
             _sfxVolumeSlider.value = GameSettings.instance.sfxVolume;
-            _sfxVolumeSlider.RegisterValueChangedCallback(v => ChangeSfxVolume(_sfxVolumeSlider.value));
+            _sfxVolumeSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName(GameSettings.SFXVolumeKey, _sfxVolumeSlider.value));
 
             var cameraLookXSlider = _document.rootVisualElement.Q<Slider>("HorizontalLook");
             cameraLookXSlider.value = GameSettings.instance.horizontalLookSensitivity;
-            cameraLookXSlider.RegisterValueChangedCallback(v => ChangeHorizontalLook(_masterVolumeSlider.value));
+            cameraLookXSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName(GameSettings.HorizontalSensitivityKey, _masterVolumeSlider.value));
             
             var cameraLookYSlider = _document.rootVisualElement.Q<Slider>("VerticalLook");
             cameraLookYSlider.value = GameSettings.instance.verticalLookSensitivity;
-            cameraLookYSlider.RegisterValueChangedCallback(v => ChangeVerticalLook(_masterVolumeSlider.value));
+            cameraLookYSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName(GameSettings.VerticalSensitivityKey, _masterVolumeSlider.value));
 
             _startMenu = FindObjectOfType<StartMenu>();
             _pauseMenu = FindObjectOfType<PauseMenu>();
-        }
-        
-        public void ChangeMasterVolume(float value)
-        {
-            GameSettings.instance.masterVolume = value;
-            GameSettings.instance.SaveSettings();
-        }
-        
-        public void ChangeMusicVolume(float value)
-        {
-            GameSettings.instance.musicVolume = value;
-            GameSettings.instance.SaveSettings();
-        }
-        
-        public void ChangeSfxVolume(float value)
-        {
-            GameSettings.instance.sfxVolume = value;
-            GameSettings.instance.SaveSettings();
-        }
-        
-        public void ChangeHorizontalLook(float value)
-        {
-            GameSettings.instance.horizontalLookSensitivity = value;
-            GameSettings.instance.SaveSettings();
-        }
-        
-        public void ChangeVerticalLook(float value)
-        {
-            GameSettings.instance.verticalLookSensitivity = value;
-            GameSettings.instance.SaveSettings();
         }
         
         public void OpenDisplay()
