@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3514967711384234249}
   - component: {fileID: 4087245778765496640}
   - component: {fileID: 4310792247686992399}
+  - component: {fileID: 2508376351834353153}
   m_Layer: 7
   m_Name: Egg_v1
   m_TagString: Untagged
@@ -4866,7 +4867,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 10
   currentHP: 0
-  isImmuneToRangedAttacks: 0
+--- !u!114 &2508376351834353153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348379171288476209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecaf02a48b65231408c86a98cb0944c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BugDeath:
+    Guid:
+      Data1: -1326438872
+      Data2: 1099589899
+      Data3: 1732187543
+      Data4: -1207343719
+    Path: event:/SFX/Enemy Sounds/BugDeath
+  BugHurt:
+    Guid:
+      Data1: -1941699854
+      Data2: 1304251554
+      Data3: 2094281136
+      Data4: -859899393
+    Path: event:/SFX/Enemy Sounds/BugHurt
+  BugWalk:
+    Guid:
+      Data1: 61619511
+      Data2: 1169117524
+      Data3: 1056861614
+      Data4: 887468413
+    Path: event:/SFX/Enemy Sounds/BugChatter1
+  organs:
+  - {fileID: 8724449295435555802, guid: 0886f0f41df0a8c4da230f7ebb94493e, type: 3}
+  - {fileID: 8724449295435555802, guid: c258e1755fb2fd8488e8cf46372c496d, type: 3}
+  - {fileID: 8724449295435555802, guid: b9095a53e79d68742b666d9a92dbf933, type: 3}
+  splatter: {fileID: 5050555587078368133, guid: 1b8b5d345e8f16c48add7361d3ff249a, type: 3}
 --- !u!1 &501573003851087227
 GameObject:
   m_ObjectHideFlags: 0
