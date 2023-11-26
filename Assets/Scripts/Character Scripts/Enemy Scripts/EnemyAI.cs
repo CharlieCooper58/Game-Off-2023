@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     protected EnemyManager enemyManager;
     protected NavMeshAgent navMeshAgent;
+    protected AgentLinkMover navMeshLinkMover;
     protected NavMeshPath path;
 
     protected GameObject target;
@@ -25,7 +26,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] protected LayerMask playerLayer;
 
     [SerializeField] float stunTimerMax;
-    float stunTimer;
+    protected float stunTimer;
     bool nearDeathStunned = false;
     bool beenNearDeath = false;
 
@@ -33,9 +34,9 @@ public class EnemyAI : MonoBehaviour
 
     public virtual void Initialize()
     {
-        print("Called");
         enemyManager = GetComponent<EnemyManager>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshLinkMover = GetComponent<AgentLinkMover>();
         navMeshAgent.updateRotation = false;
         plantTarget = FindObjectOfType<Plant>();
         playerTarget = PlayerManager.littlePlayerInstance;
@@ -59,7 +60,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     public AIState state;
-    AIState prevState;
+    protected AIState prevState;
 
     public void TargetPlayer()
     {
@@ -73,14 +74,18 @@ public class EnemyAI : MonoBehaviour
         }
         if (navMeshAgent.enabled && navMeshAgent.velocity != Vector3.zero)
             transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(navMeshAgent.velocity, Vector3.up), Vector3.up);
-        else if(rb.velocity != Vector3.zero)
+        else
+        {
+            transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(target.transform.position-transform.position, Vector3.up), Vector3.up);
+        }
+       /* else if(rb.velocity != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(rb.velocity, Vector3.up), Vector3.up);
         }
         else if(transform.up != Vector3.up)
         {
-            transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
-        }
+            transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(rb.velocity, Vector3.up), Vector3.up);
+        }*/
         
 
 
@@ -109,13 +114,35 @@ public class EnemyAI : MonoBehaviour
         if (CheckRigidbodyShouldBeInactive())
         {
             DisableRigidbody();
-            state = prevState;
+            if(prevState == AIState.move)
+            {
+                SetAIStateMove();
+            }
+            else
+            {
+                SetAIStateAttack();
+            }
             if (nearDeathStunned)
             {
                 nearDeathStunned = false;
                 enemyManager.animationHandler.SetAnimationTrigger("StunTriggerStop");
             }
         }
+    }
+    protected virtual void SetAIStateMove()
+    {
+        enemyManager.animationHandler.PlayTargetAnimation("Move", 0);
+        state = AIState.move;
+    }
+    protected virtual void SetAIStateAttack()
+    {
+        state = AIState.attack;
+    }
+    protected virtual void SetAIStateStun(float stunTime, AIState prevState)
+    {
+        this.prevState = prevState;
+        this.stunTimer = stunTime;
+        state = AIState.stun;
     }
 
     protected void TickMovementTimer()
@@ -157,6 +184,7 @@ public class EnemyAI : MonoBehaviour
             prevState = state;
         }
         state = AIState.stun;
+        SetAIStateStun(Mathf.Max(stunTimer, 0.3f), (state!=AIState.stun)?state:prevState);
     }
 
     public void SetLowHealthStun()
@@ -168,24 +196,21 @@ public class EnemyAI : MonoBehaviour
         beenNearDeath = true;
         EnableRigidbody();
         enemyManager.animationHandler.SetAnimationTrigger("StunTrigger");
-        stunTimer = Mathf.Max(stunTimer, stunTimerMax);
-        if (state != AIState.stun)
-        {
-            prevState = state;
-        }
         nearDeathStunned = true;
-        state = AIState.stun;
+        SetAIStateStun(Mathf.Max(stunTimer, stunTimerMax), (state != AIState.stun) ? state : prevState);
     }
 
     public void EnableRigidbody()
     {
         navMeshAgent.enabled = false;
+        navMeshLinkMover.enabled = false;
         rb.isKinematic = false;
         rb.useGravity = true;
     }
     public void DisableRigidbody()
     {
         navMeshAgent.enabled = true;
+        navMeshLinkMover.enabled = true;
         rb.isKinematic = true;
         rb.useGravity = false;
         rb.velocity = Vector3.zero;

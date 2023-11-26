@@ -16,7 +16,15 @@ public class AgentLinkMover : MonoBehaviour
     public OffMeshLinkMoveMethod m_Method = OffMeshLinkMoveMethod.Parabola;
     public AnimationCurve m_Curve = new AnimationCurve();
 
-    IEnumerator Start()
+    private void OnEnable()
+    {
+        StartCoroutine("CompleteLinks");
+    }
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+    IEnumerator CompleteLinks()
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         agent.autoTraverseOffMeshLink = false;

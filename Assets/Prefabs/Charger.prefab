@@ -103,7 +103,7 @@ MonoBehaviour:
   groundCheckRadius: 0.5
   groundCheckMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 28737
   groundCheckPoint: {fileID: 4724973773316255982}
   playerLayer:
     serializedVersion: 2
@@ -114,8 +114,7 @@ MonoBehaviour:
   attackRange: 10
   contactDamage: 0
   jumpTime: 0.5
-  meleeDamagePoint: {fileID: 0}
-  meleeDamageRadius: 3
+  jumpCooldown: 0.25
 --- !u!114 &3332981003698024820
 MonoBehaviour:
   m_ObjectHideFlags: 0

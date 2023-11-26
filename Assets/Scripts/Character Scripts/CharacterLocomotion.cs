@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
+using FMOD.Studio;
 public class CharacterLocomotion : MonoBehaviour
 {
     [SerializeField] protected float moveSpeed;
@@ -44,12 +45,24 @@ public class CharacterLocomotion : MonoBehaviour
     [SerializeField] float groundCheckRadius = 1;
     [SerializeField] private int jumpHeight;
     [SerializeField] float frictionModifier;
+
+    [SerializeField] private float groundPoundForce;
     public bool isGrounded;
     bool isJumping;
 
     //[Header("Misc Forces")]
     float miscForceTimer;
     [SerializeField] float airResistance;
+
+    [Header("Sound Effects")]
+    [SerializeField] EventReference dashSoundEffect;
+    [SerializeField] EventReference dashDepletedSoundEffect;
+    [SerializeField] EventReference footstepsSoundEffect;
+    EventInstance footstepsEventInstance;
+    [SerializeField] EventReference jumpSoundEffect;
+    [SerializeField] EventReference mushroomBounceSoundEffect;
+    PLAYBACK_STATE footstepsArePlaying;
+
 
     // Initialize is called by the CharacterManager
     public virtual void Initialize()
@@ -58,7 +71,8 @@ public class CharacterLocomotion : MonoBehaviour
         controller = GetComponent<CharacterController>();
         controllerTopOffset = controller.height/2;
         controllerLateralOffset = controller.radius;
-
+        footstepsEventInstance = AudioManager.instance.Play(footstepsSoundEffect);
+        footstepsEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
     public void HandleAllMovement()
     {
@@ -89,18 +103,33 @@ public class CharacterLocomotion : MonoBehaviour
             return;
         }
         moveDirection = ProcessMovementInput(moveInput);
+        footstepsEventInstance.getPlaybackState(out footstepsArePlaying);
+
         if (isGrounded)
         {
             planarMovement = moveSpeed * moveDirection.normalized;
+            if(moveDirection == Vector3.zero)
+            {
+                if(footstepsArePlaying == PLAYBACK_STATE.PLAYING)
+                {
+                    footstepsEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                }
+            }
+            else
+            {
+                if (footstepsArePlaying == PLAYBACK_STATE.STOPPED)
+                {
+                    footstepsEventInstance.start();
+                }
+            }
         }
         else
         {
+            if (footstepsArePlaying == PLAYBACK_STATE.PLAYING)
+            {
+                footstepsEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            }
             Accelerate(moveDirection);
-            //planarMovement += inAirMovementDelta * moveDirection * Time.deltaTime;
-            //if(planarMovement.sqrMagnitude > moveSpeed*moveSpeed)
-            //{
-            //    planarMovement = moveSpeed*planarMovement.normalized;
-            //}
         }
     }
 
@@ -139,10 +168,15 @@ public class CharacterLocomotion : MonoBehaviour
     #region Dashing and Charging
     public void AttemptDash(Vector3 direction)
     {
-        if (dashTimer > 0 || dashesUsed >= maxDashes)
+        if(dashesUsed >= maxDashes)
+        {
+            AudioManager.instance.Play(dashDepletedSoundEffect);
+        }
+        if (dashTimer > 0)
         {
             return;
         }
+        AudioManager.instance.Play(dashSoundEffect);
         // Add sounds here
         dashesUsed++;
         dashTimer = dashTimerMax;
@@ -171,9 +205,27 @@ public class CharacterLocomotion : MonoBehaviour
     #region Jumping and Falling
     protected virtual void GroundedCheck()
     {
-        if (Physics.CheckSphere(groundCheckRaycastStart.position, groundCheckRadius, groundCheckMask))
+        Collider[] objectsHit = Physics.OverlapSphere(groundCheckRaycastStart.position, groundCheckRadius, groundCheckMask);
+        if (objectsHit.Length > 0)
         {
             isGrounded = true;
+            foreach(Collider collider in objectsHit)
+            {
+                if(collider.gameObject.layer == LayerMask.NameToLayer("Ground: Concrete"))
+                {
+                    footstepsEventInstance.setParameterByName("FootstepsMaterial", 0);
+                    break;
+                }
+                else if (collider.gameObject.layer == LayerMask.NameToLayer("Ground: Dirt"))
+                {
+                    footstepsEventInstance.setParameterByName("FootstepsMaterial", 1);
+                    break;
+                }
+                else if (collider.gameObject.layer == LayerMask.NameToLayer("Ground: Wood"))
+                {
+                    footstepsEventInstance.setParameterByName("FootstepsMaterial", 2);
+                }
+            }
         }
         else
         {
@@ -216,7 +268,18 @@ public class CharacterLocomotion : MonoBehaviour
         {
             return;
         }
+        AudioManager.instance.Play(jumpSoundEffect);
         yVelocity = jumpHeight;
+
+    }
+    public void AttemptGroundPound()
+    {
+        if (isGrounded || miscForceTimer > 0)
+        {
+            return;
+        }
+        AudioManager.instance.Play(jumpSoundEffect);
+        yVelocity = groundPoundForce;
 
     }
 
@@ -237,13 +300,11 @@ public class CharacterLocomotion : MonoBehaviour
 
         planarMovement = miscForce - yComponent * Vector3.up;
         miscForceTimer = duration;
-        print(planarMovement);
     }
     void HandleMiscForces()
     {
         if (miscForceTimer > 0)
         {
-            print(planarMovement);
             planarMovement -= planarMovement * airResistance*Time.deltaTime;
             miscForceTimer -= Time.deltaTime;
         }
@@ -294,6 +355,7 @@ public class CharacterLocomotion : MonoBehaviour
         if (bouncePad != null)
         {
             ApplyMiscForce(bouncePad.bounciness*bouncePad.transform.up, bouncePad.bounceDuration);
+            AudioManager.instance.Play(mushroomBounceSoundEffect);
         }
     }
 }

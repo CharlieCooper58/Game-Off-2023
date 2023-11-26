@@ -7,10 +7,7 @@ public class ChargerAI : EnemyAI
     public float attackRange;
     [SerializeField] int contactDamage;
     [SerializeField] float jumpTime;
-    [SerializeField] Transform meleeDamagePoint;
-    [SerializeField] float meleeDamageRadius;
-    //[SerializeField] BoxCollide
-
+    [SerializeField] float jumpCooldown;
 
 
     public override void Initialize()
@@ -29,6 +26,7 @@ public class ChargerAI : EnemyAI
             EnableRigidbody();
             contactDamage = attackDamage;
             Vector3 newVelocity = CalculateJumpVelocity();
+            enemyManager.animationHandler.PlayTargetAnimation("Attack", 0);
             rb.velocity = newVelocity;
         }
     }
@@ -37,19 +35,11 @@ public class ChargerAI : EnemyAI
         base.OnAIStateAttack();
         if (CheckRigidbodyShouldBeInactive())
         {
-            DisableRigidbody();
-            state = AIState.move;
+            //DisableRigidbody();
+            SetAIStateStun(jumpCooldown, AIState.move);
             contactDamage = 0;
         }
     }
-    public void CheckDamage()
-    {
-        if(Physics.OverlapSphere(meleeDamagePoint.position, meleeDamageRadius, playerLayer).Length > 0)
-        {
-            playerTarget.characterHealth.TakeDamage(attackDamage);
-        }
-    }
-
     private Vector3 CalculateJumpVelocity()
     {
         // Calculate the displacement in XZ plane
