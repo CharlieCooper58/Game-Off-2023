@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028353, g: 0.22571383, b: 0.30692253, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24086,6 +24086,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4690002253184643922, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: PlayerDeath.Path
+      value: event:/SFX/Player Sounds/Player Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690002253184643922, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: PlayerDeath.Guid.Data1
+      value: -715586064
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690002253184643922, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: PlayerDeath.Guid.Data2
+      value: 1090182661
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690002253184643922, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: PlayerDeath.Guid.Data3
+      value: -374792318
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690002253184643922, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: PlayerDeath.Guid.Data4
+      value: 656414902
+      objectReference: {fileID: 0}
     - target: {fileID: 4968031690763188664, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -24169,6 +24189,26 @@ PrefabInstance:
     - target: {fileID: 8379547644769444515, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379547646006929073, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: GunshotSound.Path
+      value: event:/SFX/Weapon Sounds/LazerGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379547646006929073, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: GunshotSound.Guid.Data1
+      value: -1616112609
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379547646006929073, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: GunshotSound.Guid.Data2
+      value: 1166161865
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379547646006929073, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: GunshotSound.Guid.Data3
+      value: 986596756
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379547646006929073, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: GunshotSound.Guid.Data4
+      value: -1083024938
       objectReference: {fileID: 0}
     - target: {fileID: 8461486590338589464, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: m_AnchorMax.y
