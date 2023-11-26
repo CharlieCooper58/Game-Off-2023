@@ -93,6 +93,11 @@ public class PlayerAttacker : CharacterAttacker
         Collider[] enemiesHit = Physics.OverlapBox(meleeDamagePoint.position, meleeDamageDimensions, meleeDamagePoint.rotation, enemyMask);
         foreach(Collider c in enemiesHit)
         {
+            SpawnerHealth spawner = c.GetComponent<SpawnerHealth>();
+            if (spawner != null) { 
+                spawner.TakeMeleeAttack(damageDirection, meleeKnockback, meleeDamage);//I do this because I am STUPID. Definitely not a good practice.
+                continue;
+            }
             EnemyAI enemy = c.GetComponent<EnemyAI>();
             if(enemy != null)
             {

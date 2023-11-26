@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using static EnemyAI;
+
 public class Spawner : MonoBehaviour
 {
     [SerializeField] int maxEnemies;
@@ -72,4 +74,5 @@ public class Spawner : MonoBehaviour
         wave.AddNewEnemy(newEnemy);
         newEnemy.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
     }
+    
 }

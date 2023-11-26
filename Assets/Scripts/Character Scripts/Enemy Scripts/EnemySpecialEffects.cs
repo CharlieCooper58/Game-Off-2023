@@ -13,18 +13,18 @@ public class EnemySpecialEffects : MonoBehaviour
     [SerializeField] SplatterEffect splatter;
 
 
-    EnemyManager manager;
+    CharacterHealth characterHealth;
     EnemyAI ai;
     EventInstance walkSoundEvent;
     
 
     private void Start() 
     {
-        manager = GetComponent<EnemyManager>();
-        manager.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
-        manager.characterHealth.OnCharacterHit += CharacterHealth_OnCharacterHit;
+        characterHealth = GetComponent<CharacterHealth>();
+        characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
+        characterHealth.OnCharacterHit += CharacterHealth_OnCharacterHit;
 
-        ai = manager.GetComponent<EnemyAI>();
+        ai = GetComponent<EnemyAI>();
         walkSoundEvent = AudioManager.instance.Play(BugWalk, this.transform.position);
     }
 
@@ -34,6 +34,7 @@ public class EnemySpecialEffects : MonoBehaviour
 
     private void CharacterHealth_OnCharacterDeath(object sender, CharacterHealth.CharacterDeathEventArgs e)
     {
+        walkSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         int numOrgans;
         numOrgans = e.isBrutal? Random.Range(5, 8):0;
         for(int i = 0; i < numOrgans; i++)
@@ -47,6 +48,7 @@ public class EnemySpecialEffects : MonoBehaviour
     private void Update() {
         PLAYBACK_STATE state;
         walkSoundEvent.getPlaybackState(out state);
+        if (ai == null) return;
         if (ai.state == EnemyAI.AIState.move && state == PLAYBACK_STATE.STOPPED) { walkSoundEvent.start(); } else if (ai.state != EnemyAI.AIState.move){ walkSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
