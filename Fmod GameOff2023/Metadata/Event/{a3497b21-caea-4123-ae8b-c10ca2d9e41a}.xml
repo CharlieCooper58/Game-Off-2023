@@ -107,6 +107,9 @@
 		<property name="name">
 			<value>ConcreteSteps</value>
 		</property>
+		<property name="volume">
+			<value>-4</value>
+		</property>
 		<relationship name="event">
 			<destination>{135e5f32-fbad-4f89-ac81-3cf233f3eba3}</destination>
 		</relationship>
