@@ -50,11 +50,11 @@ namespace UI.Panels
 
             var cameraLookXSlider = _document.rootVisualElement.Q<Slider>("HorizontalLook");
             cameraLookXSlider.value = GameSettings.instance.horizontalLookSensitivity;
-            cameraLookXSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName(GameSettings.HorizontalSensitivityKey, _masterVolumeSlider.value));
+            cameraLookXSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName(GameSettings.HorizontalSensitivityKey, cameraLookXSlider.value));
             
             var cameraLookYSlider = _document.rootVisualElement.Q<Slider>("VerticalLook");
             cameraLookYSlider.value = GameSettings.instance.verticalLookSensitivity;
-            cameraLookYSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName(GameSettings.VerticalSensitivityKey, _masterVolumeSlider.value));
+            cameraLookYSlider.RegisterValueChangedCallback(v => GameSettings.instance.ChangeSettingByName(GameSettings.VerticalSensitivityKey, cameraLookYSlider.value));
 
             _startMenu = FindObjectOfType<StartMenu>();
             _pauseMenu = FindObjectOfType<PauseMenu>();

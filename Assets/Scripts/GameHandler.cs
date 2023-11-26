@@ -34,6 +34,9 @@ public class GameHandler : MonoBehaviour
         musicEventInstance.setVolume(GameSettings.instance.musicVolume);
         AudioManager.instance.SetFMODParameter("SFXVolume", GameSettings.instance.sfxVolume);
         AudioManager.instance.SetFMODParameter("MasterVolume", GameSettings.instance.masterVolume);
+        
+        // print out all player settings from PlayerPrefs in one line
+        Debug.Log($"verticalLookSensitivity: {GameSettings.instance.verticalLookSensitivity}, horizontalLookSensitivity: {GameSettings.instance.horizontalLookSensitivity}, masterVolume: {GameSettings.instance.masterVolume}, sfxVolume: {GameSettings.instance.sfxVolume}, musicVolume: {GameSettings.instance.musicVolume}");
     }
     IEnumerator GameStart()
     {
