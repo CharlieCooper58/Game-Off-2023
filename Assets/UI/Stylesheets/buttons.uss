@@ -1,22 +1,7 @@
-.topTabButton {
-    background-color: rgba(19, 19, 19, 255);
-    flex-grow: 1;
-    min-height: 40px;
-    font-size: 19px;
-}
-
-.topTabButton:hover {
-    background-color: rgba(29, 29, 29, 255);
-}
-
-.topTabButton:active {
-    background-color: rgba(94, 94, 94, 255);
-}
-
 .button {
     background-color: var(--positive);
     color: var(--light);
-    padding: 15px 32px;
+    padding: 8px 16px;
     margin: 12px 0;
     font-size: 28px;
     border-radius: 5px;
