@@ -74,14 +74,18 @@ public class EnemyAI : MonoBehaviour
         }
         if (navMeshAgent.enabled && navMeshAgent.velocity != Vector3.zero)
             transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(navMeshAgent.velocity, Vector3.up), Vector3.up);
-        else if(rb.velocity != Vector3.zero)
+        else
+        {
+            transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(target.transform.position-transform.position, Vector3.up), Vector3.up);
+        }
+       /* else if(rb.velocity != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(rb.velocity, Vector3.up), Vector3.up);
         }
         else if(transform.up != Vector3.up)
         {
-            transform.rotation = Quaternion.LookRotation(transform.forward, Vector3.up);
-        }
+            transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(rb.velocity, Vector3.up), Vector3.up);
+        }*/
         
 
 

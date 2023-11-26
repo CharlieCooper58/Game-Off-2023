@@ -35,7 +35,7 @@ public class ChargerAI : EnemyAI
         base.OnAIStateAttack();
         if (CheckRigidbodyShouldBeInactive())
         {
-            DisableRigidbody();
+            //DisableRigidbody();
             SetAIStateStun(jumpCooldown, AIState.move);
             contactDamage = 0;
         }
