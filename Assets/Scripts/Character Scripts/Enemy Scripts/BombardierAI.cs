@@ -34,7 +34,7 @@ public class BombardierAI : EnemyAI
     protected override void OnAIStateAttack() {
         base.OnAIStateAttack();
         Quaternion targetRotation = Quaternion.LookRotation(new Vector3(playerDirection.x, 0, playerDirection.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         if (isAttacking) {
             return;
         } else if (playerDistance < thresholdDistance) {
@@ -48,11 +48,12 @@ public class BombardierAI : EnemyAI
 
     public void Attack() {
         //mortarWeapon.OnTriggerPressed(target.transform.position);
-        if (playerTarget != null)
+        if (target == playerTarget.gameObject)
         {
-            mortarWeapon.OnTriggerPressed(target.transform.position + target.GetComponent<CharacterController>().velocity * mortarWeapon.height / (90));
+            mortarWeapon.OnTriggerPressed(target.transform.position + target.GetComponent<CharacterController>().velocity);
         }
         isAttacking = false;
+        print("Boom");
     }
 
 }

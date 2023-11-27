@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] int damage;
+    [SerializeField] protected int damage;
     [SerializeField] float speed;
-    public void Initialize(Vector3 direction)
+    public virtual void Initialize(Vector3 direction)
     {
         GetComponent<Rigidbody>().velocity = speed*direction.normalized;
         transform.LookAt(direction);
     }
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
-        print(other.gameObject.name);
-        print(gameObject.layer);
+
         CharacterHealth health = other.gameObject.GetComponent<CharacterHealth>();
         if (health != null)
         {
