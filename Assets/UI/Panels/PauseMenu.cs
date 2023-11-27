@@ -31,7 +31,6 @@ namespace UI.Panels
             _quit.clicked += QuitGame;
 
 
-
             _main.style.display = DisplayStyle.None;
         }
 

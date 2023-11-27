@@ -51,7 +51,7 @@ namespace UI.Panels
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             UnityEngine.Cursor.visible = false;
 
-            SceneManager.LoadScene("Tutorial-Map 1");
+            SceneManager.LoadScene("Scenes/Main");
         }
         
         private void OpenOptions()

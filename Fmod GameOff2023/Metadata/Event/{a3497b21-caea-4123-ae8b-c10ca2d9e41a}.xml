@@ -56,7 +56,7 @@
 			<destination>{22aeb89c-9571-40df-8213-85d90d8038d3}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{45641d0a-4889-4d5e-9488-5d1e2c820741}</destination>
+			<destination>{0ba080b5-59e1-4bd8-936f-bd534e32d935}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{07822294-077c-46f2-88ed-0aaae2a2c955}" />
@@ -106,6 +106,9 @@
 	<object class="EventSound" id="{fa8dc021-f151-4fd9-8334-cfaae2b33a3a}">
 		<property name="name">
 			<value>ConcreteSteps</value>
+		</property>
+		<property name="volume">
+			<value>-4</value>
 		</property>
 		<relationship name="event">
 			<destination>{135e5f32-fbad-4f89-ac81-3cf233f3eba3}</destination>

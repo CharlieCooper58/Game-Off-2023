@@ -59,7 +59,7 @@
 			<destination>{acf6c287-7f56-436e-af29-afe4e41953ca}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{45641d0a-4889-4d5e-9488-5d1e2c820741}</destination>
+			<destination>{0ba080b5-59e1-4bd8-936f-bd534e32d935}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{3e8087da-eee9-4b68-83db-6270e4a78bf7}" />
@@ -125,7 +125,6 @@
 		<property name="startOffset">
 			<value>9</value>
 		</property>
-		<property name="name" />
 		<property name="pitch">
 			<value>15</value>
 		</property>

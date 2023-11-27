@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638363414090750374
+  lastModified: 638366410555974997
   FileSizes:
   - Name: Desktop
-    Value: 1084512
+    Value: 1120608
   Exists: 1
 --- !u!114 &-8572842629266677782
 MonoBehaviour:
@@ -226,10 +226,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638361700958325097
+  lastModified: 638366410554407920
   FileSizes:
   - Name: Desktop
-    Value: 4189888
+    Value: 4150592
   Exists: 1
 --- !u!114 &-6396518944279779343
 MonoBehaviour:
@@ -300,10 +300,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638348773647769715
+  lastModified: 638366410524169307
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1588
   Exists: 1
 --- !u!114 &-4934273819083783909
 MonoBehaviour:
@@ -454,10 +454,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638363414090692995
+  lastModified: 638366410524179437
   FileSizes:
   - Name: Desktop
-    Value: 2068
+    Value: 2270
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -500,13 +500,41 @@ MonoBehaviour:
   - {fileID: 770140288123108961}
   - {fileID: -5318543734564457905}
   - {fileID: -835824505182714661}
+  - {fileID: 254993180498530032}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5304237580905327408}
   StringsBanks:
   - {fileID: -626962777086003362}
-  cacheTime: 638363414090750374
+  cacheTime: 638366410555974997
   cacheVersion: 131608
+--- !u!114 &254993180498530032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/Player Death
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/Player Death
+  Guid:
+    Data1: -715586064
+    Data2: 1090182661
+    Data3: -374792318
+    Data4: 656414902
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &770140288123108961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,7 +663,7 @@ MonoBehaviour:
     Data4: -1359594247
   Banks:
   - {fileID: -6649233959911178494}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:

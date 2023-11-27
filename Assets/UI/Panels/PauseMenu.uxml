@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Stylesheets/general.uss?fileID=7433441132597879392&amp;guid=8a746f0266cb494bab9ba507d8394e6e&amp;type=3#general" />
     <Style src="project://database/Assets/UI/Stylesheets/buttons.uss?fileID=7433441132597879392&amp;guid=0a66ba6e2acf5a5eea1d0b3023f763f3&amp;type=3#buttons" />
-    <ui:VisualElement name="Main" style="flex-grow: 1; padding-top: 24px; padding-right: 24px; padding-bottom: 24px; padding-left: 24px; justify-content: center; align-items: center; background-color: rgba(5, 17, 16, 0.87);">
+    <ui:VisualElement name="Main" style="flex-grow: 1; padding-top: 24px; padding-right: 24px; padding-bottom: 24px; padding-left: 24px; justify-content: center; align-items: center; background-color: rgba(5, 17, 16, 0.87); display: none;">
         <ui:Label text="Paused" display-tooltip-when-elided="true" name="Title" enable-rich-text="true" style="-unity-font-definition: url(&apos;project://database/Assets/Fonts/Sunnyspells%20SDF.asset?fileID=11400000&amp;guid=7f04fa59e72cd9f9ea8648c9b52583a9&amp;type=2#Sunnyspells SDF&apos;); font-size: 100px; -unity-text-align: middle-center; height: 50%; color: rgb(255, 255, 255); width: 100%;" />
         <ui:VisualElement name="Buttons" style="max-width: 400px; align-items: stretch; justify-content: flex-start; width: 100%; height: 50%;">
             <ui:Button text="Resume" display-tooltip-when-elided="true" name="Resume" class="button" />
