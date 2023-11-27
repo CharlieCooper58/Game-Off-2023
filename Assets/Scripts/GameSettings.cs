@@ -22,6 +22,7 @@ public class GameSettings : MonoBehaviour
     {
         instance = this;
     }
+    
     void Start()
     {
         LoadSettings();
@@ -34,7 +35,12 @@ public class GameSettings : MonoBehaviour
         PlayerPrefs.SetFloat(MasterVolumeKey, masterVolume);
         PlayerPrefs.SetFloat(SFXVolumeKey, sfxVolume);
         PlayerPrefs.SetFloat(MusicVolumeKey, musicVolume);
-
+        
+        // set fmod volume for Music event
+        GameHandler.instance.SetMasterVolume(masterVolume);
+        GameHandler.instance.SetMusicVolume(musicVolume);
+        GameHandler.instance.SetSfxVolume(sfxVolume);
+        
         PlayerPrefs.Save();
     }
 
@@ -68,7 +74,7 @@ public class GameSettings : MonoBehaviour
 
     public void ChangeSettingByName(string settingName, float value)
     {
-        print("Changing "+ settingName);
+        // print("Changing "+ settingName);
         switch (settingName)
         {
             case VerticalSensitivityKey:
@@ -91,7 +97,6 @@ public class GameSettings : MonoBehaviour
                 break;
 
         }
-        SaveSettings() ;
-
+        SaveSettings();
     }
 }

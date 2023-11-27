@@ -25,8 +25,12 @@ public class PlayerCamera : MonoBehaviour
     }
     public void UpdateCameraOrientation(Vector2 cameraInput)
     {
-        float lookX = GameSettings.instance.horizontalLookSensitivity * cameraInput.x * Time.deltaTime;
-        float lookY = GameSettings.instance.verticalLookSensitivity * cameraInput.y * Time.deltaTime;
+        float lookX = (GameSettings.instance.horizontalLookSensitivity * 100) * cameraInput.x * Time.deltaTime;
+        float lookY = (GameSettings.instance.verticalLookSensitivity * 100) * cameraInput.y * Time.deltaTime;
+        
+        // log lookX and lookY in one line
+        Debug.Log($"lookX: {lookX}, lookY: {lookY}");
+        
 
         // Adjust the target camera rotation based on input
         targetCameraXAxisRotation = Mathf.Clamp(targetCameraXAxisRotation - lookY, -90f, 90f);
