@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 8592614047219356282}
   - component: {fileID: 2078610911660304889}
   - component: {fileID: 2048453572072096782}
+  - component: {fileID: -4700834756494131474}
   m_Layer: 7
   m_Name: Bombardier
   m_TagString: Untagged
@@ -179,6 +180,13 @@ MonoBehaviour:
       Data3: 2094281136
       Data4: -859899393
     Path: event:/SFX/Enemy Sounds/BugHurt
+  BugWalk:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   organs:
   - {fileID: 8724449295435555802, guid: 0886f0f41df0a8c4da230f7ebb94493e, type: 3}
   - {fileID: 8724449295435555802, guid: c258e1755fb2fd8488e8cf46372c496d, type: 3}
@@ -197,15 +205,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantTarget: {fileID: 0}
-  groundCheckRadius: 0.3
+  groundCheckRadius: 0.5
   groundCheckMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 28736
   groundCheckPoint: {fileID: 7075546649807392557}
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  stunTimerMax: 0
+  stunTimerMax: 0.3
   attackDamage: 10
   state: 0
 --- !u!114 &2048453572072096782
@@ -223,9 +231,73 @@ MonoBehaviour:
   muzzleEndpoint: {fileID: 4292451275151304732}
   reloadTimerMax: 1
   weaponParticles: {fileID: 0}
-  weaponDamage: 0
-  proj: {fileID: 5176585705194027165, guid: 7ab63ec97b5954e4da3d8dff5ce560d8, type: 3}
-  height: 10
+  weaponDamage: 5
+  proj: {fileID: 8042560191958345324, guid: 75d4d9d99af47a443ac27aae910426f5, type: 3}
+  height: 60
+--- !u!114 &-4700834756494131474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5387369867345000654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c5647c7ee026a4caafb12d08eb2e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Method: 3
+  m_Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 17.535929
+      outSlope: 17.535929
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1198941
+      value: 2.1024544
+      inSlope: 15.286107
+      outSlope: 15.286107
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.30318892
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.50956166
+      value: 4.0078387
+      inSlope: -0.27204347
+      outSlope: -0.27204347
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8658727
+      value: 2.0507095
+      inSlope: -10.629861
+      outSlope: -10.629861
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.00838089
+      inSlope: -15.22679
+      outSlope: -15.22679
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5945293819005227894
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a41325bfd3db8f645b35808c986dd51f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a41325bfd3db8f645b35808c986dd51f, type: 3}
       propertyPath: m_LocalPosition.z

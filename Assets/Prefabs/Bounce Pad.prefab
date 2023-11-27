@@ -94,13 +94,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounciness: 100
   bounceDuration: 2
-  BounceSound:
-    Guid:
-      Data1: 849613187
-      Data2: 1283579856
-      Data3: 2140652181
-      Data4: -227007897
-    Path: event:/SFX/Player Sounds/MushroomBounce
 --- !u!65 &446114428720268571
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerInteractor : MonoBehaviour
 {
     Interactable hovered;
-
+    public float interactRange;
     private void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit))
+        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, interactRange))
         {
             Interactable interactableObject = hit.collider.GetComponent<Interactable>();
             if (interactableObject != null && interactableObject != hovered)
