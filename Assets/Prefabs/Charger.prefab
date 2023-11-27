@@ -110,6 +110,8 @@ MonoBehaviour:
     m_Bits: 256
   stunTimerMax: 0
   attackDamage: 1
+  mySpawner: {fileID: 0}
+  leashDistance: 25
   state: 0
   attackRange: 10
   contactDamage: 0

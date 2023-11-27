@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3456109029090785186
 Transform:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.6
+  m_Height: 2.2
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -340,21 +340,65 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  reasonableAverageVelocity: {x: 0, y: 0, z: 0}
   gravity: 13
   groundCheckMask:
     serializedVersion: 2
     m_Bits: 4339
   groundCheckRaycastStart: {fileID: 3456109029394469568}
   groundCheckRadius: 75
-  jumpHeight: 2
+  jumpHeight: 0
   frictionModifier: 1
+  groundPoundForce: 0
   isGrounded: 0
   airResistance: 0
+  dashSoundEffect:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  dashDepletedSoundEffect:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  footstepsSoundEffect:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  jumpSoundEffect:
+    Guid:
+      Data1: -1555465439
+      Data2: 1092864746
+      Data3: 214010798
+      Data4: 451205538
+    Path: event:/SFX/Player Sounds/Footsteps
+  mushroomBounceSoundEffect:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   wallCheckRaycastDistance: 0.6
   wallJumpVelocityUp: 0
   wallJumpVelocitySide: 0
   wallJumpCooldownTimerMax: 0.2
-  maxWallJumps: 3
+  maxWallJumps: 0
+  climbJumpSoundEffect:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &3456109029090785189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50541c1f6bb5c34db1765894f700834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactRange: 150
 --- !u!1 &3456109029394469569
 GameObject:
   m_ObjectHideFlags: 0

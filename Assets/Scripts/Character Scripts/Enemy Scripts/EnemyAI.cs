@@ -32,6 +32,8 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] protected int attackDamage;
 
+    public Spawner mySpawner;
+    [SerializeField] float leashDistance;
     public virtual void Initialize()
     {
         enemyManager = GetComponent<EnemyManager>();
@@ -153,7 +155,14 @@ public class EnemyAI : MonoBehaviour
         // Check if it's time to set a new destination
         if (navigationTimer <= 0f)
         {
-            navMeshAgent.SetDestination(target.transform.position);
+            if (mySpawner != null && Vector3.SqrMagnitude(target.transform.position - mySpawner.transform.position) > leashDistance * leashDistance)
+            {
+                navMeshAgent.SetDestination(mySpawner.transform.position);
+            }
+            else
+            {
+                navMeshAgent.SetDestination(target.transform.position);
+            }
             navigationTimer = navigationTimerMax; // Reset the timer
         }
     }

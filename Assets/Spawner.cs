@@ -70,6 +70,7 @@ public class Spawner : MonoBehaviour
     {
         GetComponent<ParticleSystem>().Play();
         EnemyManager newEnemy = Instantiate(spawnableEnemies[Random.Range(0, spawnableEnemies.Length)], transform.position, Quaternion.identity);
+        newEnemy.enemyAI.mySpawner = this;
         enemies.Add(newEnemy);
         wave.AddNewEnemy(newEnemy);
         newEnemy.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;

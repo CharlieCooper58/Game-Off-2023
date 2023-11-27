@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79cad9c2199535c488332e4bf7ce3e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
+  moveSpeed: 40
   inAirMovementDelta: 0.75
   maxDashes: 3
   dashCooldownTimerMax: 0.5
@@ -1228,7 +1228,7 @@ MonoBehaviour:
       Data4: -227007897
     Path: event:/SFX/Player Sounds/MushroomBounce
   wallCheckRaycastDistance: 0.6
-  wallJumpVelocityUp: 25
+  wallJumpVelocityUp: 35
   wallJumpVelocitySide: 20
   wallJumpCooldownTimerMax: 0.2
   maxWallJumps: 3
@@ -1323,11 +1323,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerDeath:
     Guid:
-      Data1: 712392815
-      Data2: 1128282788
-      Data3: 684274089
-      Data4: -81179095
-    Path: event:/SFX/Player Sounds/PlayerHurt
+      Data1: -715586064
+      Data2: 1090182661
+      Data3: -374792318
+      Data4: 656414902
+    Path: event:/SFX/Player Sounds/Player Death
   PlayerHurt:
     Guid:
       Data1: 712392815
@@ -1689,7 +1689,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3997906742409146556, guid: 6af5a680493daba4bb7a147b4a65809e, type: 3}
       propertyPath: GunshotSound.Path
-      value: event:/SFX/Weapon Sounds/SmallGunshot
+      value: event:/SFX/Weapon Sounds/LazerGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997906742409146556, guid: 6af5a680493daba4bb7a147b4a65809e, type: 3}
+      propertyPath: GunshotSound.Guid.Data1
+      value: -1616112609
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997906742409146556, guid: 6af5a680493daba4bb7a147b4a65809e, type: 3}
+      propertyPath: GunshotSound.Guid.Data2
+      value: 1166161865
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997906742409146556, guid: 6af5a680493daba4bb7a147b4a65809e, type: 3}
+      propertyPath: GunshotSound.Guid.Data3
+      value: 986596756
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997906742409146556, guid: 6af5a680493daba4bb7a147b4a65809e, type: 3}
+      propertyPath: GunshotSound.Guid.Data4
+      value: -1083024938
       objectReference: {fileID: 0}
     - target: {fileID: 3997906742409146559, guid: 6af5a680493daba4bb7a147b4a65809e, type: 3}
       propertyPath: m_Name

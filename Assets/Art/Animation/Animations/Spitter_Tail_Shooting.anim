@@ -4504,7 +4504,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 3.47, z: -0.94}
+        value: {x: -0.0021, y: 0.0095, z: 0.0052}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4512,8 +4512,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.23333333
-        value: {x: 0, y: 3.47, z: 2.11}
+        time: 0.16666667
+        value: {x: -0.0019, y: 0.0173, z: 0.0101}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -4523,7 +4523,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Sphere
+    path: Armature.001/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/FleshBall
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
@@ -5588,7 +5588,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.23333333
+        time: 0.16666667
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -5599,7 +5599,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Sphere
+    path: Armature.001/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/FleshBall
   m_FloatCurves:
   - curve:
       serializedVersion: 2
@@ -5614,7 +5614,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.3
+        time: 0.28333333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -5626,7 +5626,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Sphere
+    path: Armature.001/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/FleshBall
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -5645,7 +5645,7 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1381327793
+      path: 235508323
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5694,14 +5694,14 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1381327793
+      path: 235508323
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1381327793
+      path: 235508323
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -25111,7 +25111,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.3
+        time: 0.28333333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -25123,7 +25123,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Sphere
+    path: Armature.001/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/FleshBall
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -25139,7 +25139,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.23333333
+        time: 0.16666667
         value: 1
         inSlope: 0
         outSlope: 0
@@ -25151,7 +25151,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Sphere
+    path: Armature.001/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/FleshBall
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -25167,7 +25167,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.23333333
+        time: 0.16666667
         value: 1
         inSlope: 0
         outSlope: 0
@@ -25179,7 +25179,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Sphere
+    path: Armature.001/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/FleshBall
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -25195,7 +25195,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.23333333
+        time: 0.16666667
         value: 1
         inSlope: 0
         outSlope: 0
@@ -25207,7 +25207,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Sphere
+    path: Armature.001/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/FleshBall
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -25215,7 +25215,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: -0.0021
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -25223,8 +25223,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.23333333
-        value: 0
+        time: 0.16666667
+        value: -0.0019
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -25235,7 +25235,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Sphere
+    path: Armature.001/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/FleshBall
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -25243,7 +25243,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.47
+        value: 0.0095
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -25251,8 +25251,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.23333333
-        value: 3.47
+        time: 0.16666667
+        value: 0.0173
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -25263,7 +25263,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Sphere
+    path: Armature.001/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/FleshBall
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -25271,7 +25271,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.94
+        value: 0.0052
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -25279,8 +25279,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.23333333
-        value: 2.11
+        time: 0.16666667
+        value: 0.0101
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -25291,7 +25291,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Sphere
+    path: Armature.001/Tail/Tail.001/Tail.002/Tail.003/Tail.004/Tail.005/FleshBall
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:

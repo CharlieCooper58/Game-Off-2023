@@ -9,8 +9,9 @@ public class BombardierAI : EnemyAI
     MortarWeapon mortarWeapon;
     float playerDistance;
     Vector3 playerDirection;
-    float thresholdDistance = 150f;
+    float thresholdDistance = 450f;
     bool isAttacking;
+    [SerializeField] float reloadTime;
     public override void Initialize() {
         base.Initialize();
         mortarWeapon = GetComponent<MortarWeapon>();
@@ -53,7 +54,7 @@ public class BombardierAI : EnemyAI
             mortarWeapon.OnTriggerPressed(target.transform.position + target.GetComponent<CharacterController>().velocity);
         }
         isAttacking = false;
-        print("Boom");
+        SetAIStateStun(reloadTime, AIState.attack);
     }
 
 }
