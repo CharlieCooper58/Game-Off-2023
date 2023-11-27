@@ -11,7 +11,7 @@ public class GameHandler : MonoBehaviour
     public PlayerManager bigPlayerManager;
     public float gravity;
 
-    bool playerIsLittle = false;
+    public bool playerIsLittle = false;
 
     PauseMenu pauseMenu;
 
