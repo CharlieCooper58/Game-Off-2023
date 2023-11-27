@@ -83,16 +83,16 @@ public class GameHandler : MonoBehaviour
     
     public void SetMusicVolume(float value)
     {
-        musicEventInstance.setVolume(value);
+        FMODUnity.RuntimeManager.GetBus("bus:/BGM").setVolume(value);
     }
     
     public void SetSfxVolume(float value)
     {
-        AudioManager.instance.SetFMODParameter("SFXVolume", value);
+        FMODUnity.RuntimeManager.GetBus("bus:/SFX").setVolume(value);
     }
     
     public void SetMasterVolume(float value)
     {
-        AudioManager.instance.SetFMODParameter("MasterVolume", value);
+        FMODUnity.RuntimeManager.GetBus("bus:/").setVolume(value);
     }
 }
