@@ -74,10 +74,22 @@ public class CharacterLocomotion : MonoBehaviour
         footstepsEventInstance = AudioManager.instance.Play(footstepsSoundEffect);
         footstepsEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
+
+    public void WarpPosition(Vector3 newPosition) 
+    {
+        controller.enabled = false;
+        transform.position = newPosition;
+        controller.enabled = true;
+    }
+    public void StopFootsteps()
+    {
+        footstepsEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
     public void HandleAllMovement()
     {
         if (Time.timeScale == 0)
         {
+            footstepsEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             return;
         }
 
@@ -279,7 +291,7 @@ public class CharacterLocomotion : MonoBehaviour
             return;
         }
         AudioManager.instance.Play(jumpSoundEffect);
-        yVelocity = groundPoundForce;
+        yVelocity = Mathf.Min(yVelocity, groundPoundForce);
 
     }
 

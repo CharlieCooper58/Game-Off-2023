@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class PlayerInteractor : MonoBehaviour
 {
+    PlayerUIController uiController;
     Interactable hovered;
     public float interactRange;
+    [SerializeField] LayerMask interactMask;
+    private void Awake()
+    {
+        uiController = GetComponent<PlayerUIController>();
+    }
     private void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, interactRange))
+        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, interactRange, interactMask))
         {
             Interactable interactableObject = hit.collider.GetComponent<Interactable>();
             if (interactableObject != null && interactableObject != hovered)
             {
                 hovered = interactableObject;
                 interactableObject.OnHoverEnter();
+                if(interactableObject.highlightText != null)
+                {
+                    uiController.SetCurrentText(interactableObject.highlightText);
+                }
             }
             else if (interactableObject == null)
             {
@@ -23,8 +33,15 @@ public class PlayerInteractor : MonoBehaviour
                 {
                     hovered.OnHoverExit();
                     hovered = null;
+                    uiController.StopShowingText();
                 }
             }
+        }
+        else if(hovered != null)
+        {
+            hovered.OnHoverExit();
+            hovered = null;
+            uiController.StopShowingText();
         }
     }
 
@@ -33,6 +50,10 @@ public class PlayerInteractor : MonoBehaviour
         if(hovered != null)
         {
             hovered.OnInteract();
+            if (isActiveAndEnabled)
+            {
+                uiController.SetCurrentText(hovered.highlightText);
+            }
         }
     }
     private void OnDisable()

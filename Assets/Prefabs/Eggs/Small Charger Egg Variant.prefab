@@ -16,9 +16,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 582328653858625378, guid: ef545650afff22047903c9165cc26651, type: 3}
+      propertyPath: minEnemies
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 582328653858625378, guid: ef545650afff22047903c9165cc26651, type: 3}
+      propertyPath: enemySpawnTimerMax
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 582328653858625378, guid: ef545650afff22047903c9165cc26651, type: 3}
       propertyPath: spawnableEnemies.Array.data[0]
       value: 
-      objectReference: {fileID: 3332981003698026122, guid: 75f749711f627b2439e15fdf2e065d99, type: 3}
+      objectReference: {fileID: 1338051072841969148, guid: 252e6029f7c4a2343bc6d255815277d9, type: 3}
     - target: {fileID: 1125444357738672267, guid: ef545650afff22047903c9165cc26651, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -63,5 +71,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7625483642437059694, guid: ef545650afff22047903c9165cc26651, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4525719680426726715, guid: 70371b5b81d58804d9312cc470fc857f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef545650afff22047903c9165cc26651, type: 3}

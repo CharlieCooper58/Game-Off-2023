@@ -17,10 +17,23 @@ public class EnemyManager : CharacterManager
     {
         base.Start();
         enemyAI.Initialize();
+        PlayerManager.littlePlayerInstance.GetComponent<PlayerHealth>().OnPlayerDeath += Instance_OnPlayerDeath;
+    }
+    private void OnDestroy()
+    {
+        PlayerManager.littlePlayerInstance.GetComponent<PlayerHealth>().OnPlayerDeath -= Instance_OnPlayerDeath;
+    }
+    private void Instance_OnPlayerDeath(object sender, System.EventArgs e)
+    {
+        Destroy(gameObject);
     }
 
     void Update()
     {
         enemyAI.MakeStateDecisions();
+    }
+    public void DisposeOfSelf()
+    {
+        Destroy(gameObject);
     }
 }

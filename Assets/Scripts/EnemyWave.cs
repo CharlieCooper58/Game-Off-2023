@@ -10,7 +10,7 @@ public class EnemyWave : MonoBehaviour
 
     public Vector3 wavePosition;
     List<EnemyManager> enemies;
-    Spawner[] spawners;
+    List<Spawner> spawners;
     public event EventHandler OnWaveComplete;
 
     [SerializeField] Collider firstTrigger;
@@ -24,8 +24,9 @@ public class EnemyWave : MonoBehaviour
     WaveState waveState;
     private void Start()
     {
+        transform.localPosition = wavePosition;
         waveState = WaveState.unspawned;
-        enemies = GetComponentsInChildren<EnemyManager>().ToList();
+        enemies = new List<EnemyManager> ();
         foreach (EnemyManager enemy in enemies)
         {
             if(enemy != null)
@@ -35,9 +36,10 @@ public class EnemyWave : MonoBehaviour
             }
 
         }
-        spawners = GetComponentsInChildren<Spawner>();
+        spawners = GetComponentsInChildren<Spawner>().ToList();
         foreach (Spawner spawner in spawners)
         {
+            spawner.GetComponent<SpawnerHealth>().OnSpawnerDeath += OnSpawnerDeath;
             spawner?.gameObject.SetActive(false);
         }
     }
@@ -82,10 +84,66 @@ public class EnemyWave : MonoBehaviour
         }
     }
 
+    public void PauseWave()
+    {
+        foreach(EnemyManager enemy in enemies)
+        {
+            if(enemy == null)
+            {
+                continue;
+            }
+            enemy.enemyAI.TargetPlants();
+        }
+    }
+    public void ResumeWave()
+    {
+        foreach(EnemyManager enemy in enemies)
+        {
+            if(enemy == null)
+            {
+                continue;
+            }
+            enemy.enemyAI.TargetPlayer();
+        }
+    }
+
 
     private void CharacterHealth_OnCharacterDeath(object sender, CharacterHealth.CharacterDeathEventArgs e)
     {
         enemies.Remove(e.manager as EnemyManager);
+        if(enemies.Count == 0 && spawners.Count == 0)
+        {
+            OnWaveComplete?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    public void DisposeOfEnemiesAndSpawners()
+    {
+        foreach (Spawner spawner in spawners)
+        {
+            if (spawner != null)
+            {
+                Destroy(spawner.gameObject);
+            }
+        }
+        foreach (EnemyManager enemy in enemies)
+        {
+            if (enemy != null)
+            {
+                print(enemy.name);
+                enemy.DisposeOfSelf();
+            }
+        }
+       
+    }
+
+    private void OnSpawnerDeath(object sender, SpawnerHealth.SpawnerDeathEventArgs e)
+    {
+        spawners.Remove(e.deadSpawner);// GetComponent<Spawner>());
+        if (enemies.Count == 0 && spawners.Count == 0)
+        {
+            OnWaveComplete?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public void AddNewEnemy(EnemyManager newEnemy)

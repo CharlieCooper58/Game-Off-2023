@@ -7,6 +7,6 @@ public class ShrinkButton : Interactable
     public override void OnInteract()
     {
         base.OnInteract();
-        GameHandler.instance.SetActivePlayer(!GameHandler.instance.playerIsLittle);
+        GameHandler.instance.SetActivePlayer(!GameHandler.instance.playerIsLittle, sendEventCalls:true);
     }
 }

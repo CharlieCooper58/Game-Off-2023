@@ -4,35 +4,91 @@ using UnityEngine;
 public class Arena : MonoBehaviour
 {
     [SerializeField] EnemyWave[] waves;
-    int waveCount;
-    EnemyWave currentWave;
-    private void TriggerNextWave()
+    List<EnemyWave> spawnedWaves;
+
+    public bool arenaIsComplete;
+    int wavesCompleted;
+
+    
+
+    private void Awake()
     {
-        if (waveCount > waves.Length - 1)
+        spawnedWaves = new List<EnemyWave>();
+    }
+    private void Start()
+    {
+        PlayerManager.littlePlayerInstance.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
+        GameHandler.instance.OnPlayerSizeChange += Instance_OnPlayerSizeChange;
+        GameHandler.instance.OnPlayerRestart += Instance_OnPlayerRestart;
+        PlayerManager.littlePlayerInstance.GetComponent<PlayerHealth>().OnPlayerDeath += Instance_OnPlayerDeath;
+        ResetWaves();
+    }
+
+    private void Instance_OnPlayerRestart(object sender, System.EventArgs e)
+    {
+        ResetWaves();
+    }
+    private void Instance_OnPlayerDeath(object sender, System.EventArgs e)
+    {
+        ClearWaves();
+    }
+    private void Instance_OnPlayerSizeChange(object sender, GameHandler.OnPlayerSizeChangeArgs e)
+    {
+        if (e.little)
         {
-            OnArenaComplete();
+            foreach (EnemyWave wave in waves)
+            {
+                wave.ResumeWave();
+            }
         }
         else
         {
-            currentWave = Instantiate(waves[waveCount], transform);
-            currentWave.SpawnWave();
-            waveCount++;
-            currentWave.OnWaveComplete += NewWave_OnWaveComplete;
+            foreach (EnemyWave wave in waves)
+            {
+                wave.PauseWave();
+            }
         }
-    }
-    private void NewWave_OnWaveComplete(object sender, System.EventArgs e)
-    {
-        Destroy(currentWave.gameObject);
-        TriggerNextWave();
-    }
-    void OnArenaComplete()
-    {
-        Destroy(gameObject);
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void CharacterHealth_OnCharacterDeath(object sender, CharacterHealth.CharacterDeathEventArgs e)
     {
-        // Arenas sit on the Level Progression layer, which ONLY touches the Player layer
-        if(waveCount == 0) TriggerNextWave();
+        ClearWaves();
+        //ResetWaves();
+    }
+
+    private void ClearWaves()
+    {
+        print(name);
+        foreach (EnemyWave wave in spawnedWaves)
+        {
+            Destroy(wave.gameObject);
+        }
+        wavesCompleted = 0;
+        spawnedWaves.Clear();
+    }
+    private void ResetWaves()
+    {
+        if (arenaIsComplete)
+        {
+            return;
+        }
+        wavesCompleted = 0;
+        foreach(EnemyWave wave in waves)
+        {
+            EnemyWave newWave = Instantiate(wave, transform);
+            spawnedWaves.Add(newWave);
+            newWave.OnWaveComplete += NewWave_OnWaveComplete;
+        }
+    }
+
+    private void NewWave_OnWaveComplete(object sender, System.EventArgs e)
+    {
+        print("Boo");
+        wavesCompleted += 1;
+        if(wavesCompleted == waves.Length)
+        {
+            arenaIsComplete = true;
+        }
     }
 }

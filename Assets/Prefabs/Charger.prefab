@@ -63,7 +63,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3332981003698024822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.902854, y: -0.39, z: -33.08}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -110,6 +110,8 @@ MonoBehaviour:
     m_Bits: 256
   stunTimerMax: 0
   attackDamage: 1
+  mySpawner: {fileID: 0}
+  leashDistance: 500
   state: 0
   attackRange: 10
   contactDamage: 0

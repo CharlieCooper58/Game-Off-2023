@@ -44,6 +44,15 @@ public partial class @MetaControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""0df51b2c-a9c1-454f-ab5a-06f026e67ed9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -79,6 +88,28 @@ public partial class @MetaControls: IInputActionCollection2, IDisposable
                     ""action"": ""GrowShrink"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a8e2c70-4d0e-46db-ae22-74a60fd27ded"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""145f93a0-524c-45d2-a268-9ed68902342d"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -89,6 +120,7 @@ public partial class @MetaControls: IInputActionCollection2, IDisposable
         m_GameHandler = asset.FindActionMap("GameHandler", throwIfNotFound: true);
         m_GameHandler_PauseGame = m_GameHandler.FindAction("PauseGame", throwIfNotFound: true);
         m_GameHandler_GrowShrink = m_GameHandler.FindAction("GrowShrink", throwIfNotFound: true);
+        m_GameHandler_Restart = m_GameHandler.FindAction("Restart", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -152,12 +184,14 @@ public partial class @MetaControls: IInputActionCollection2, IDisposable
     private List<IGameHandlerActions> m_GameHandlerActionsCallbackInterfaces = new List<IGameHandlerActions>();
     private readonly InputAction m_GameHandler_PauseGame;
     private readonly InputAction m_GameHandler_GrowShrink;
+    private readonly InputAction m_GameHandler_Restart;
     public struct GameHandlerActions
     {
         private @MetaControls m_Wrapper;
         public GameHandlerActions(@MetaControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @PauseGame => m_Wrapper.m_GameHandler_PauseGame;
         public InputAction @GrowShrink => m_Wrapper.m_GameHandler_GrowShrink;
+        public InputAction @Restart => m_Wrapper.m_GameHandler_Restart;
         public InputActionMap Get() { return m_Wrapper.m_GameHandler; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -173,6 +207,9 @@ public partial class @MetaControls: IInputActionCollection2, IDisposable
             @GrowShrink.started += instance.OnGrowShrink;
             @GrowShrink.performed += instance.OnGrowShrink;
             @GrowShrink.canceled += instance.OnGrowShrink;
+            @Restart.started += instance.OnRestart;
+            @Restart.performed += instance.OnRestart;
+            @Restart.canceled += instance.OnRestart;
         }
 
         private void UnregisterCallbacks(IGameHandlerActions instance)
@@ -183,6 +220,9 @@ public partial class @MetaControls: IInputActionCollection2, IDisposable
             @GrowShrink.started -= instance.OnGrowShrink;
             @GrowShrink.performed -= instance.OnGrowShrink;
             @GrowShrink.canceled -= instance.OnGrowShrink;
+            @Restart.started -= instance.OnRestart;
+            @Restart.performed -= instance.OnRestart;
+            @Restart.canceled -= instance.OnRestart;
         }
 
         public void RemoveCallbacks(IGameHandlerActions instance)
@@ -204,5 +244,6 @@ public partial class @MetaControls: IInputActionCollection2, IDisposable
     {
         void OnPauseGame(InputAction.CallbackContext context);
         void OnGrowShrink(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
     }
 }

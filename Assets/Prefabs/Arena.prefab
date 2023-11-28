@@ -48,6 +48,7 @@ MonoBehaviour:
   waves:
   - {fileID: 3127335791285109640, guid: b61eae46eb128914ab336b60850c5b9c, type: 3}
   - {fileID: 3127335791285109640, guid: b61eae46eb128914ab336b60850c5b9c, type: 3}
+  arenaIsComplete: 0
 --- !u!65 &5573192803419892851
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -75,4 +75,9 @@ public class PlayerManager : CharacterManager
         inputHandler.TickCameraInput();
     }
 
+    public void StopProcesses()
+    {
+        playerLocomotion.StopFootsteps();
+    }
+
 }

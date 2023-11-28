@@ -29,7 +29,6 @@ public class PlayerCamera : MonoBehaviour
         float lookY = (GameSettings.instance.verticalLookSensitivity * 100) * cameraInput.y * Time.deltaTime;
         
         // log lookX and lookY in one line
-        Debug.Log($"lookX: {lookX}, lookY: {lookY}");
         
 
         // Adjust the target camera rotation based on input
