@@ -64,7 +64,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5387369867345000654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.39, y: 0, z: -36.19}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -182,11 +182,11 @@ MonoBehaviour:
     Path: event:/SFX/Enemy Sounds/BugHurt
   BugWalk:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -617716355
+      Data2: 1186219357
+      Data3: -658471034
+      Data4: 1093174050
+    Path: event:/SFX/Enemy Sounds/BugChatter3
   organs:
   - {fileID: 8724449295435555802, guid: 0886f0f41df0a8c4da230f7ebb94493e, type: 3}
   - {fileID: 8724449295435555802, guid: c258e1755fb2fd8488e8cf46372c496d, type: 3}
@@ -216,7 +216,7 @@ MonoBehaviour:
   stunTimerMax: 0.3
   attackDamage: 10
   mySpawner: {fileID: 0}
-  leashDistance: 5
+  leashDistance: 100
   state: 0
   reloadTime: 4
 --- !u!114 &2048453572072096782

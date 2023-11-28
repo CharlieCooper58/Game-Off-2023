@@ -18,15 +18,16 @@ public class InputHandler : MonoBehaviour
 
             // If the player is little, they have access to a different set of actions than if they're big
             inputActions.Movement.Movement.performed += x => movemementDirection = x.ReadValue<Vector2>();
-            inputActions.Movement.Jump.performed += x => OnJumpPerformed();
 
 
             inputActions.Camera.CameraLook.performed += x => cameraDirection = x.ReadValue<Vector2>();
 
             if (playerManager.isLittle)
             {
-                inputActions.Movement.Dash.performed += x => playerManager.playerLocomotion.AttemptDash(movemementDirection.normalized);
+                inputActions.Movement.Jump.performed += x => OnJumpPerformed();
 
+                inputActions.Movement.Dash.performed += x => playerManager.playerLocomotion.AttemptDash(movemementDirection.normalized);
+                inputActions.Movement.GroundPound.performed += x => playerManager.playerLocomotion.AttemptGroundPound();
                 inputActions.Combat.Shoot.performed += x => playerManager.playerAttacker.OnWeaponUsed();
                 inputActions.Combat.Shoot.canceled += x => playerManager.playerAttacker.OnWeaponReleased();
                 inputActions.Combat.NextWeapon.performed += x => playerManager.playerAttacker.CycleWeapons();
@@ -35,10 +36,8 @@ public class InputHandler : MonoBehaviour
                 inputActions.Combat.WeaponByNumber.performed += x => playerManager.playerAttacker.SwitchWeapon((int)x.ReadValue<float>() - 1);
                 inputActions.Combat.Melee.performed += x => playerManager.animationHandler.PlayTargetAnimation("Melee", 1);
             }
-            else
-            {
-                inputActions.Combat.Shoot.performed += x => playerManager.playerInteractor.InteractWithObject();
-            }
+            inputActions.Interaction.Interact.performed += x => playerManager.playerInteractor.InteractWithObject();
+            
         }
         inputActions.Enable();
         
@@ -58,6 +57,10 @@ public class InputHandler : MonoBehaviour
     // Processes input on update and sends it to other components
     public void TickInput()
     {
+        if(Time.timeScale == 0)
+        {
+            return;
+        }
         playerManager.playerLocomotion.SetMoveDirection(movemementDirection.normalized);
     }
 

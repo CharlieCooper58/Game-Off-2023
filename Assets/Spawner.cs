@@ -18,10 +18,10 @@ public class Spawner : MonoBehaviour
     bool spawning;
     bool targetingPlayer;
 
-    [SerializeField] GameObject plantTarget;
+    [SerializeField] Plant plantTarget;
     EnemyWave wave;
 
-    private void Start()
+    private void Awake()
     {
         enemies = new List<EnemyManager>();
         wave = GetComponentInParent<EnemyWave>();
@@ -30,15 +30,20 @@ public class Spawner : MonoBehaviour
         //    enemy.gameObject.SetActive(true);
         //    enemy.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
         //}
+        enemySpawnTimer = enemySpawnTimerMax;
         spawning = true;
     }
     public void SetEnemyTargets()
     {
         targetingPlayer = true;
-        foreach (EnemyManager enemy in enemies)
+        if (enemies.Count > 0)
         {
-            enemy.enemyAI.TargetPlayer();
+            foreach (EnemyManager enemy in enemies)
+            {
+                enemy.enemyAI.TargetPlayer();
+            }
         }
+
     }
 
     private void CharacterHealth_OnCharacterDeath(object sender, CharacterHealth.CharacterDeathEventArgs e)
@@ -71,8 +76,13 @@ public class Spawner : MonoBehaviour
         GetComponent<ParticleSystem>().Play();
         EnemyManager newEnemy = Instantiate(spawnableEnemies[Random.Range(0, spawnableEnemies.Length)], transform.position, Quaternion.identity);
         newEnemy.enemyAI.mySpawner = this;
+        if (plantTarget != null)
+        {
+            newEnemy.enemyAI.SetPlantTarget(plantTarget);
+        }
         enemies.Add(newEnemy);
         wave.AddNewEnemy(newEnemy);
+
         newEnemy.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
     }
     

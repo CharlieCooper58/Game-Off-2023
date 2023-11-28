@@ -64,9 +64,18 @@ public class EnemyAI : MonoBehaviour
     public AIState state;
     protected AIState prevState;
 
+    public void SetPlantTarget(Plant newPlant)
+    {
+        plantTarget = newPlant;
+        target = plantTarget.gameObject;
+    }
     public void TargetPlayer()
     {
         target = GameHandler.instance.littlePlayerManager.gameObject;
+    }
+    public void TargetPlants()
+    {
+        target = plantTarget.gameObject;
     }
     public virtual void MakeStateDecisions()
     {

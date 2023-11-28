@@ -5,7 +5,7 @@ using UnityEngine;
 public class Interactable: MonoBehaviour
 {
     Material highlightMaterial;
-
+    public string highlightText;
     void Start()
     {
         Renderer m_renderer = GetComponent<Renderer>();
@@ -13,7 +13,6 @@ public class Interactable: MonoBehaviour
         {
             if (m_renderer.materials[i].HasProperty("_Thickness"))
             {
-                print("Found it");
                 highlightMaterial = m_renderer.materials[i];
                 break;
             }
@@ -25,16 +24,14 @@ public class Interactable: MonoBehaviour
     }
     public virtual void OnInteract()
     {
-        Debug.Log("He clicked me!");
     }
     public virtual void OnHoverEnter() 
     {
-        Debug.Log("It's not that it's not working");
         highlightMaterial?.SetFloat("_Thickness", .975f);
     }
     public virtual void OnHoverExit() 
     {
+        print("Exit");
         highlightMaterial?.SetFloat("_Thickness", 0);
     }
-
 }
