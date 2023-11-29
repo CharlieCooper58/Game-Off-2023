@@ -3,7 +3,12 @@ guid: 03c5c6571e28a7341be3667494674d7e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book-Texture
+    second: {fileID: 2100000, guid: c79557001d0b4e84888d3014307461ab, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
