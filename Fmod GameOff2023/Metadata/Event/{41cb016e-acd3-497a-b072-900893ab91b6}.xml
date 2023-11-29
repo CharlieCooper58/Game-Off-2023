@@ -66,6 +66,9 @@
 		<property name="maxVoices">
 			<value>3</value>
 		</property>
+		<property name="maximumDistance">
+			<value>80</value>
+		</property>
 	</object>
 	<object class="MarkerTrack" id="{55bcacc4-df3d-43aa-9a2a-82a249eabef9}" />
 	<object class="GroupTrack" id="{0dc8f4f5-138d-4c1b-a7f8-68c6a7f2091e}">
@@ -126,6 +129,7 @@
 		<relationship name="effects">
 			<destination>{e4c74336-3cd8-4888-898c-d15f26223ca4}</destination>
 			<destination>{28ae09a3-8495-40e7-89af-1c9777be4b44}</destination>
+			<destination>{3a3dbded-6898-42f1-b1cd-9a60209000b0}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{79b396c7-ff72-4c42-b228-f1f2e5f13238}" />
@@ -149,6 +153,9 @@
 		<property name="distanceRolloffType">
 			<value>1</value>
 		</property>
+		<property name="maximumDistance">
+			<value>80</value>
+		</property>
 		<property name="extentMode">
 			<value>1</value>
 		</property>
@@ -159,6 +166,7 @@
 			<value>182</value>
 		</property>
 	</object>
+	<object class="SFXReverbEffect" id="{3a3dbded-6898-42f1-b1cd-9a60209000b0}" />
 	<object class="RandomizerModulator" id="{fd6be972-48ea-4c78-a845-1996d180cf9e}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>

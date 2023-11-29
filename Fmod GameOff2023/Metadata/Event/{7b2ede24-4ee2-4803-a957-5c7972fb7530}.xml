@@ -64,7 +64,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{badbb0b2-34ea-4c3f-b872-b5bd2f2c0c52}">
 		<property name="maximumDistance">
-			<value>2000</value>
+			<value>400</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{bfb9b8c6-3c31-4d9e-a52a-830f30caaa78}" />
@@ -96,7 +96,7 @@
 	</object>
 	<object class="MultiSound" id="{211e60be-edf9-46e5-b590-d3074dd73fed}">
 		<relationship name="sounds">
-			<destination>{d67d4d33-b6af-485f-a415-74bbe59a4146}</destination>
+			<destination>{93e400de-fe99-4562-84c0-33528ea97cc7}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{a16e45e5-a4c6-418f-b18e-71bc8c7b9e28}">
@@ -126,9 +126,9 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{52e808d7-603e-4c52-9ce9-eac4a5dc5aaf}" />
-	<object class="SingleSound" id="{d67d4d33-b6af-485f-a415-74bbe59a4146}">
+	<object class="SingleSound" id="{93e400de-fe99-4562-84c0-33528ea97cc7}">
 		<relationship name="audioFile">
-			<destination>{d96039f6-0ec4-484e-8b9e-694df7c96f1e}</destination>
+			<destination>{83d56653-a090-4ede-ba97-9b8a4437c02a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{314ce001-20d0-4930-b33d-779d457ff487}" />
@@ -144,7 +144,7 @@
 			<value>1</value>
 		</property>
 		<property name="maximumDistance">
-			<value>2000</value>
+			<value>400</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>

@@ -64,7 +64,10 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{5fa33de7-478b-48e9-a0e4-802f7e8fcb27}">
 		<property name="maxVoices">
-			<value>5</value>
+			<value>4</value>
+		</property>
+		<property name="maximumDistance">
+			<value>60</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{db52f858-9826-4252-b1d2-4bcdb4479f16}" />
@@ -157,6 +160,9 @@
 	<object class="SpatialiserEffect" id="{f0f9a92f-a70e-4996-808f-52e0633b51ef}">
 		<property name="distanceRolloffType">
 			<value>1</value>
+		</property>
+		<property name="maximumDistance">
+			<value>60</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>

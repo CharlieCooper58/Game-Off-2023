@@ -52,7 +52,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 50
   Length: 0
 --- !u!114 &-9016909816982812062
 MonoBehaviour:
@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638368270326092459
+  lastModified: 638368669275197956
   FileSizes:
   - Name: Desktop
-    Value: 1179168
+    Value: 1484736
   Exists: 1
 --- !u!114 &-8572842629266677782
 MonoBehaviour:
@@ -99,7 +99,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 70
   Length: 0
 --- !u!114 &-7958718166820896239
 MonoBehaviour:
@@ -154,7 +154,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 35
   Length: 8000
 --- !u!114 &-7222176570130108707
 MonoBehaviour:
@@ -209,7 +209,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 70
   Length: 0
 --- !u!114 &-6649233959911178494
 MonoBehaviour:
@@ -226,11 +226,38 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638366507329339646
+  lastModified: 638368669272918583
   FileSizes:
   - Name: Desktop
     Value: 4150592
   Exists: 1
+--- !u!114 &-6561299472008595048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/PlayerGrow
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/PlayerGrow
+  Guid:
+    Data1: -2017408091
+    Data2: 1166463673
+    Data3: -1833857402
+    Data4: -418395858
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6396518944279779343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +283,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 400
   Length: 0
 --- !u!114 &-5318543734564457905
 MonoBehaviour:
@@ -283,7 +310,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 35
   Length: 8141
 --- !u!114 &-5304237580905327408
 MonoBehaviour:
@@ -300,7 +327,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638366507329058689
+  lastModified: 638368669272557108
   FileSizes:
   - Name: Desktop
     Value: 1588
@@ -383,7 +410,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 400
   Length: 0
 --- !u!114 &-3149383321733162313
 MonoBehaviour:
@@ -410,7 +437,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 80
   Length: 0
 --- !u!114 &-2049135892195936943
 MonoBehaviour:
@@ -508,38 +535,11 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638368197922887971
+  lastModified: 638368669272568346
   FileSizes:
   - Name: Desktop
-    Value: 2492
+    Value: 2712
   Exists: 1
---- !u!114 &-253864987138016541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player Sounds/ShovelAttack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player Sounds/ShovelAttack
-  Guid:
-    Data1: -811230377
-    Data2: 1100778056
-    Data3: -782182997
-    Data4: 862231291
-  Banks:
-  - {fileID: -9016909816982812062}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,17 +582,22 @@ MonoBehaviour:
   - {fileID: -5318543734564457905}
   - {fileID: -835824505182714661}
   - {fileID: 254993180498530032}
-  - {fileID: -253864987138016541}
   - {fileID: -3149383321733162313}
   - {fileID: -3227072867715421226}
   - {fileID: 63815850131076821}
   - {fileID: 4294637161402139534}
+  - {fileID: 5763376952641904051}
+  - {fileID: 4995369312714931580}
+  - {fileID: 7792164524743106884}
+  - {fileID: 975147022678316788}
+  - {fileID: -6561299472008595048}
+  - {fileID: 7883026720172110318}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5304237580905327408}
   StringsBanks:
   - {fileID: -626962777086003362}
-  cacheTime: 638368270326092459
+  cacheTime: 638368669275197956
   cacheVersion: 131608
 --- !u!114 &63815850131076821
 MonoBehaviour:
@@ -619,7 +624,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 70
   Length: 0
 --- !u!114 &254993180498530032
 MonoBehaviour:
@@ -666,6 +671,33 @@ MonoBehaviour:
     Data2: 1128282788
     Data3: 684274089
     Data4: -81179095
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &975147022678316788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Weapon Sounds/ShovelAttack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Weapon Sounds/ShovelAttack
+  Guid:
+    Data1: -811230377
+    Data2: 1100778056
+    Data3: -782182997
+    Data4: 862231291
   Banks:
   - {fileID: -9016909816982812062}
   IsStream: 0
@@ -727,7 +759,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 0.2
-  MaxDistance: 25
+  MaxDistance: 50
   Length: 0
 --- !u!114 &3396825620185564913
 MonoBehaviour:
@@ -781,7 +813,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 45
   Length: 0
 --- !u!114 &4392202294682580346
 MonoBehaviour:
@@ -811,6 +843,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4995369312714931580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/Fireplace
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/Fireplace
+  Guid:
+    Data1: 1764882046
+    Data2: 1105048628
+    Data3: 1590833052
+    Data4: -1682009541
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 200
+  Length: 7494
 --- !u!114 &5639749470615351546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,6 +897,33 @@ MonoBehaviour:
   - Dirt
   - Wood
   Exists: 1
+--- !u!114 &5763376952641904051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/PlayerHitByShooter
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/PlayerHitByShooter
+  Guid:
+    Data1: 1708109141
+    Data2: 1233616835
+    Data3: -1009893975
+    Data4: -1095472575
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6121458083773105832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,7 +975,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 35
   Length: 7402
 --- !u!114 &7037766520153600397
 MonoBehaviour:
@@ -909,6 +995,60 @@ MonoBehaviour:
     Data2: 1308439577
     Data3: -1625381459
     Data4: -1136802075
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7792164524743106884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/MachineTurnOn
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/MachineTurnOn
+  Guid:
+    Data1: -379067172
+    Data2: 1077083802
+    Data3: -2009007468
+    Data4: 1148586276
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 70
+  Length: 0
+--- !u!114 &7883026720172110318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/PlayerShrink
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/PlayerShrink
+  Guid:
+    Data1: 2071103143
+    Data2: 1081934412
+    Data3: 233850787
+    Data4: 1594531752
   Banks:
   - {fileID: -9016909816982812062}
   IsStream: 0
@@ -943,7 +1083,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 60
   Length: 0
 --- !u!114 &8460356281212580663
 MonoBehaviour:
@@ -997,5 +1137,5 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 400
   Length: 0

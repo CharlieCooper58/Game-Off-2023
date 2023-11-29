@@ -66,6 +66,9 @@
 		<property name="maxVoices">
 			<value>3</value>
 		</property>
+		<property name="maximumDistance">
+			<value>70</value>
+		</property>
 	</object>
 	<object class="MarkerTrack" id="{a7dfff99-982f-4bc9-8fdb-b94affc493bb}" />
 	<object class="GroupTrack" id="{82ccc891-c062-46de-be9b-e138c64e23c3}">
@@ -123,12 +126,14 @@
 		<relationship name="effects">
 			<destination>{f8cfecc7-e8b3-4767-b4c8-381f1e0a4a06}</destination>
 			<destination>{9c1a92a2-2d90-46d5-b30e-29405cf83a74}</destination>
+			<destination>{90810565-42a7-4291-afe7-44df35fd2849}</destination>
+			<destination>{13085254-f162-49de-8520-4260043208ab}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{67b4cefa-00c3-44b8-bca5-dc3b1de2ea7d}" />
 	<object class="SingleSound" id="{6ccb7724-0612-4f73-94e6-d808c59c6e87}">
 		<property name="pitch">
-			<value>1</value>
+			<value>7.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{543482be-555b-447b-acf0-09d3c17dc2ea}</destination>
@@ -149,14 +154,36 @@
 		<property name="distanceRolloffType">
 			<value>1</value>
 		</property>
+		<property name="maximumDistance">
+			<value>70</value>
+		</property>
 		<property name="extentMode">
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>40</value>
+			<value>90</value>
 		</property>
 		<property name="minimumExtent">
-			<value>168</value>
+			<value>130</value>
+		</property>
+	</object>
+	<object class="FlangerEffect" id="{90810565-42a7-4291-afe7-44df35fd2849}">
+		<property name="rate">
+			<value>9.5</value>
+		</property>
+		<property name="delay">
+			<value>0.179999992</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{13085254-f162-49de-8520-4260043208ab}">
+		<property name="decayTime">
+			<value>650</value>
+		</property>
+		<property name="earlyDelay">
+			<value>9</value>
+		</property>
+		<property name="wetLevel">
+			<value>-12</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{543482be-555b-447b-acf0-09d3c17dc2ea}">
