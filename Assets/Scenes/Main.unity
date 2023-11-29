@@ -163,6 +163,7 @@ Transform:
   - {fileID: 4767485435903632013}
   - {fileID: 8901865753208930557}
   - {fileID: 4718855068067967830}
+  - {fileID: 1778948042}
   - {fileID: 1929232839}
   - {fileID: 203851817}
   - {fileID: 462786583}
@@ -171,15 +172,14 @@ Transform:
   - {fileID: 2047408821}
   - {fileID: 340228529}
   - {fileID: 1777389714}
-  - {fileID: 1778948042}
   - {fileID: 1125647993}
   - {fileID: 1531011397}
   - {fileID: 369493578}
+  - {fileID: 246763072}
   - {fileID: 1744153281}
   - {fileID: 178778765}
   - {fileID: 1817749086}
   - {fileID: 237721864}
-  - {fileID: 246763072}
   - {fileID: 1810785786}
   - {fileID: 1995931555}
   - {fileID: 490672180}
@@ -192,25 +192,25 @@ Transform:
   - {fileID: 2136013762}
   - {fileID: 1637923296}
   - {fileID: 1798561109}
+  - {fileID: 4157846}
   - {fileID: 1979023183}
   - {fileID: 2138577158}
   - {fileID: 1591116641}
   - {fileID: 771880482}
   - {fileID: 1363019314}
-  - {fileID: 4157846}
   - {fileID: 1606464356}
   - {fileID: 618618600}
+  - {fileID: 914076574}
   - {fileID: 1058662359}
   - {fileID: 770998565}
   - {fileID: 1242011476}
   - {fileID: 1240790956}
-  - {fileID: 914076574}
   - {fileID: 28033400}
   - {fileID: 520920339}
-  - {fileID: 1511595217}
   - {fileID: 1515789801}
-  - {fileID: 662027851}
+  - {fileID: 1511595217}
   - {fileID: 1506657611}
+  - {fileID: 662027851}
   - {fileID: 1762584307}
   - {fileID: 264854331}
   - {fileID: 720714848}
@@ -219,9 +219,9 @@ Transform:
   - {fileID: 1052998465}
   - {fileID: 1415855920}
   - {fileID: 414291680}
+  - {fileID: 1417864419}
   - {fileID: 2036843206}
   - {fileID: 892896265}
-  - {fileID: 1417864419}
   - {fileID: 1678348189}
   - {fileID: 758489267}
   - {fileID: 784107305}
@@ -323,7 +323,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1295618}
-  m_RootOrder: 46
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: -185.091, y: 186.65, z: -88.60101}
 --- !u!64 &4157847
 MeshCollider:
@@ -3771,7 +3771,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1295618}
-  m_RootOrder: 28
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: -185.091, y: 360.167, z: -88.60101}
 --- !u!64 &246763073
 MeshCollider:
@@ -12985,7 +12985,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1295618}
-  m_RootOrder: 53
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: -185.091, y: 451.729, z: -88.60101}
 --- !u!64 &914076575
 MeshCollider:
@@ -19146,7 +19146,7 @@ MonoBehaviour:
   textWhenCarried: '[E] Drop'
   carryMask:
     serializedVersion: 2
-    m_Bits: 30415
+    m_Bits: 30407
   carryDistance: 100
 --- !u!1001 &1362256597
 PrefabInstance:
@@ -20504,7 +20504,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1295618}
-  m_RootOrder: 70
+  m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: -265.332, y: 387.839, z: -67.145996}
 --- !u!64 &1417864420
 MeshCollider:
@@ -21551,7 +21551,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1295618}
-  m_RootOrder: 59
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: -265.332, y: 387.839, z: -67.145996}
 --- !u!64 &1506657612
 MeshCollider:
@@ -21810,7 +21810,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1295618}
-  m_RootOrder: 57
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: -178.017, y: 280.505, z: -179.036}
 --- !u!64 &1515789802
 MeshCollider:
@@ -25806,7 +25806,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1295618}
-  m_RootOrder: 20
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: -179.39, y: 86.801, z: 182.115}
 --- !u!64 &1778948043
 MeshCollider:
@@ -26586,8 +26586,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822206465}
-  m_LocalRotation: {x: 0, y: -0.96549404, z: 0, w: 0.26042524}
-  m_LocalPosition: {x: 1236.769, y: 314.214, z: -73.74284}
+  m_LocalRotation: {x: 0, y: -0.80473834, z: 0, w: 0.59362966}
+  m_LocalPosition: {x: 521.6691, y: 289.014, z: -105.142845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28772,21 +28772,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4295cd1ed1e3ce841ac783506ff93c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightText: 
+  highlightText: '[E] Door'
   doorOpenSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1659676834
+      Data2: 1077418662
+      Data3: -309791564
+      Data4: -1638710176
+    Path: event:/Environment/DoorOpen
   doorCloseSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 2066669092
+      Data2: 1208176354
+      Data3: 2036094889
+      Data4: 813038450
+    Path: event:/Environment/DoorClose
 --- !u!1001 &1956480862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32524,6 +32524,10 @@ PrefabInstance:
     - target: {fileID: 3456109029090785187, guid: 72d56dde24fa8ef428e8e960c1d8c7be, type: 3}
       propertyPath: m_StepOffset
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456109029090785188, guid: 72d56dde24fa8ef428e8e960c1d8c7be, type: 3}
+      propertyPath: moveSpeed
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3456109029090785188, guid: 72d56dde24fa8ef428e8e960c1d8c7be, type: 3}
       propertyPath: footstepsSoundEffect.Path

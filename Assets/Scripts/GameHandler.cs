@@ -52,7 +52,7 @@ public class GameHandler : MonoBehaviour
     IEnumerator GameStart()
     {
         yield return null;
-        SetActivePlayer(little: true, sendEventCalls: false);
+        SetActivePlayer(little: false, sendEventCalls: false);
     }
     private void OnEnable()
     {
