@@ -71,6 +71,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2508376351834353153, guid: ef545650afff22047903c9165cc26651, type: 3}
+      propertyPath: BugDeath.Path
+      value: event:/SFX/Enemy Sounds/EggCrunch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508376351834353153, guid: ef545650afff22047903c9165cc26651, type: 3}
+      propertyPath: BugDeath.Guid.Data1
+      value: -1283455818
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508376351834353153, guid: ef545650afff22047903c9165cc26651, type: 3}
+      propertyPath: BugDeath.Guid.Data2
+      value: 1180879094
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508376351834353153, guid: ef545650afff22047903c9165cc26651, type: 3}
+      propertyPath: BugDeath.Guid.Data3
+      value: 1372114048
+      objectReference: {fileID: 0}
+    - target: {fileID: 2508376351834353153, guid: ef545650afff22047903c9165cc26651, type: 3}
+      propertyPath: BugDeath.Guid.Data4
+      value: 138208966
+      objectReference: {fileID: 0}
     - target: {fileID: 7625483642437059694, guid: ef545650afff22047903c9165cc26651, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

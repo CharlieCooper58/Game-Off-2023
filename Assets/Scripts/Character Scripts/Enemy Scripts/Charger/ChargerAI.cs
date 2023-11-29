@@ -28,6 +28,7 @@ public class ChargerAI : EnemyAI
             Vector3 newVelocity = CalculateJumpVelocity();
             enemyManager.animationHandler.PlayTargetAnimation("Attack", 0);
             rb.velocity = newVelocity;
+            AudioManager.instance.Play(attackSound, transform.position);
         }
     }
     protected override void OnAIStateAttack()
@@ -51,7 +52,7 @@ public class ChargerAI : EnemyAI
         float horizontalVelocity = displacementXZ / jumpTime;
 
         // Calculate the vertical velocity to reach the desired height
-        float verticalVelocity = ((target.transform.position.y-transform.position.y) + 0.5f * GameHandler.instance.gravity * Mathf.Pow(jumpTime, 2)) / jumpTime;
+        float verticalVelocity = ((target.transform.position.y+1.2f-transform.position.y) + 0.5f * GameHandler.instance.gravity * Mathf.Pow(jumpTime, 2)) / jumpTime;
 
         // Apply the calculated velocity
         Vector3 jumpVelocity = horizontalVelocity*(playerPositionXZ - enemyPositionXZ).normalized+Vector3.up*verticalVelocity;

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
+
 public class EnemyAI : MonoBehaviour
 {
     protected EnemyManager enemyManager;
@@ -34,6 +36,7 @@ public class EnemyAI : MonoBehaviour
 
     public Spawner mySpawner;
     [SerializeField] float leashDistance;
+    [SerializeField] protected EventReference attackSound;
     public virtual void Initialize()
     {
         enemyManager = GetComponent<EnemyManager>();

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
 public class MortarProjectile : Projectile
 {
     [SerializeField] GameObject hitMarkerCircle;
@@ -9,6 +9,7 @@ public class MortarProjectile : Projectile
     [SerializeField] GameObject explosionEffect;
     [SerializeField] LayerMask groundMask;
     GameObject warningCircle;
+    [SerializeField] EventReference onExplodeSound;
     public override void Initialize(Vector3 direction)
     {
         base.Initialize(direction);
@@ -27,6 +28,7 @@ public class MortarProjectile : Projectile
     protected override void OnTriggerEnter(Collider other)
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        AudioManager.instance.Play(onExplodeSound, transform.position);
         if (Vector3.SqrMagnitude(PlayerManager.littlePlayerInstance.transform.position - transform.position) < explosionRadius * explosionRadius)
         {
             PlayerManager.littlePlayerInstance.characterHealth.TakeDamage(damage);

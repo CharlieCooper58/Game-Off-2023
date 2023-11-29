@@ -54,6 +54,7 @@ public class BombardierAI : EnemyAI
             mortarWeapon.OnTriggerPressed(target.transform.position + target.GetComponent<CharacterController>().velocity);
         }
         isAttacking = false;
+        AudioManager.instance.Play(attackSound, transform.position);
         SetAIStateStun(reloadTime, AIState.attack);
     }
 

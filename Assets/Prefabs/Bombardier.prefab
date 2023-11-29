@@ -217,6 +217,13 @@ MonoBehaviour:
   attackDamage: 10
   mySpawner: {fileID: 0}
   leashDistance: 100
+  attackSound:
+    Guid:
+      Data1: 1355741575
+      Data2: 1079096152
+      Data3: -1611356000
+      Data4: 1548499114
+    Path: event:/SFX/Enemy Sounds/MortarShoot
   state: 0
   reloadTime: 4
 --- !u!114 &2048453572072096782

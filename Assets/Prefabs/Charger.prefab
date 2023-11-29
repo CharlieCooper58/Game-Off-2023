@@ -112,6 +112,13 @@ MonoBehaviour:
   attackDamage: 1
   mySpawner: {fileID: 0}
   leashDistance: 500
+  attackSound:
+    Guid:
+      Data1: -81874265
+      Data2: 1134392241
+      Data3: 2098662278
+      Data4: -1298057058
+    Path: event:/SFX/Enemy Sounds/ChargerAttack
   state: 0
   attackRange: 10
   contactDamage: 0

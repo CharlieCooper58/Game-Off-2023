@@ -55,6 +55,7 @@ public class SpitterAI : EnemyAI
 
     public void Attack()
     {
+        AudioManager.instance.Play(attackSound, transform.position);
         spitPoint.OnTriggerPressed(playerDirection);
         isAttacking = false;
     }
