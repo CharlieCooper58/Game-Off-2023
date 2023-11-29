@@ -9,9 +9,9 @@ public class AnimatedInteractable : Interactable
     {
         m_animator = GetComponent<Animator>();   
     }
-    public override void OnInteract()
+    public override void OnInteract(PlayerInteractor interactor)
     {
-        base.OnInteract();
+        base.OnInteract(interactor);
         m_animator.SetTrigger("Interact");
     }
 }

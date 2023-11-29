@@ -51,7 +51,7 @@ public class PlayerInteractor : MonoBehaviour
     {
         if(hovered != null)
         {
-            hovered.OnInteract();
+            hovered.OnInteract(this);
             if (isActiveAndEnabled)
             {
                 uiController.SetCurrentText(hovered.highlightText);
