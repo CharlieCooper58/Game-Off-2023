@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using static EnemyAI;
+using System;
 
 public class Spawner : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] Plant plantTarget;
     EnemyWave wave;
+    public event Action OnDestroyEvent;
 
     private void Awake()
     {
@@ -74,7 +76,7 @@ public class Spawner : MonoBehaviour
     private void SpawnEnemy()
     {
         GetComponent<ParticleSystem>().Play();
-        EnemyManager newEnemy = Instantiate(spawnableEnemies[Random.Range(0, spawnableEnemies.Length)], transform.position, Quaternion.identity);
+        EnemyManager newEnemy = Instantiate(spawnableEnemies[UnityEngine.Random.Range(0, spawnableEnemies.Length)], transform.position, Quaternion.identity);
         newEnemy.enemyAI.mySpawner = this;
         if (plantTarget != null)
         {
@@ -85,5 +87,8 @@ public class Spawner : MonoBehaviour
 
         newEnemy.characterHealth.OnCharacterDeath += CharacterHealth_OnCharacterDeath;
     }
-    
+    private void OnDestroy() {
+        OnDestroyEvent?.Invoke();
+    }
+
 }
