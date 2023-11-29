@@ -13,7 +13,7 @@ public class CheckpointButton : Interactable
     private void Awake()
     {
         m_checkPoint = GetComponentInParent<Checkpoint>();
-        highlightText = m_checkPoint.isFirstCheckpoint?growText:(m_checkPoint.myArena.arenaIsComplete?incompleteText:saveText);
+        highlightText = m_checkPoint.isFirstCheckpoint?growText:((m_checkPoint.myArena!=null && m_checkPoint.myArena.arenaIsComplete)?incompleteText:saveText);
     }
 
     public override void OnInteract()
