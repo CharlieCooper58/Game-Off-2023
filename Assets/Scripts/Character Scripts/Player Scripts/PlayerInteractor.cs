@@ -8,6 +8,8 @@ public class PlayerInteractor : MonoBehaviour
     Interactable hovered;
     public float interactRange;
     [SerializeField] LayerMask interactMask;
+
+    [SerializeField] public Transform carryParent;
     private void Awake()
     {
         uiController = GetComponent<PlayerUIController>();

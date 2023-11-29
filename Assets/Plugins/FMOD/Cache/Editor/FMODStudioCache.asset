@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638366507329422592
+  lastModified: 638368197922960540
   FileSizes:
   - Name: Desktop
-    Value: 1120608
+    Value: 1179168
   Exists: 1
 --- !u!114 &-8572842629266677782
 MonoBehaviour:
@@ -358,6 +358,60 @@ MonoBehaviour:
   - PlayerBig
   - PlayerShrunk
   Exists: 1
+--- !u!114 &-3227072867715421226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/MortarShoot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/MortarShoot
+  Guid:
+    Data1: 1355741575
+    Data2: 1079096152
+    Data3: -1611356000
+    Data4: 1548499114
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3149383321733162313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/MortarExplode
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/MortarExplode
+  Guid:
+    Data1: 1103823214
+    Data2: 1232776403
+    Data3: 143684272
+    Data4: -1231967341
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2049135892195936943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,11 +508,38 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638366507329058689
+  lastModified: 638368197922887971
   FileSizes:
   - Name: Desktop
-    Value: 2270
+    Value: 2492
   Exists: 1
+--- !u!114 &-253864987138016541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/ShovelAttack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/ShovelAttack
+  Guid:
+    Data1: -811230377
+    Data2: 1100778056
+    Data3: -782182997
+    Data4: 862231291
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,13 +582,45 @@ MonoBehaviour:
   - {fileID: -5318543734564457905}
   - {fileID: -835824505182714661}
   - {fileID: 254993180498530032}
+  - {fileID: -253864987138016541}
+  - {fileID: -3149383321733162313}
+  - {fileID: -3227072867715421226}
+  - {fileID: 63815850131076821}
+  - {fileID: 4294637161402139534}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5304237580905327408}
   StringsBanks:
   - {fileID: -626962777086003362}
-  cacheTime: 638366507329422592
+  cacheTime: 638368197922960540
   cacheVersion: 131608
+--- !u!114 &63815850131076821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/ShooterBugShoot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/ShooterBugShoot
+  Guid:
+    Data1: 283657877
+    Data2: 1111159502
+    Data3: 1967358368
+    Data4: 725643561
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &254993180498530032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,6 +751,33 @@ MonoBehaviour:
   - {fileID: -9016909816982812062}
   IsStream: 0
   Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4294637161402139534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy Sounds/EggCrunch
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy Sounds/EggCrunch
+  Guid:
+    Data1: -1283455818
+    Data2: 1180879094
+    Data3: 1372114048
+    Data4: 138208966
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1

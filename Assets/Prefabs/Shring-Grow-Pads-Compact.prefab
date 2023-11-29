@@ -244,6 +244,7 @@ MonoBehaviour:
   highlightText: 
   saveText: '[E] Activate checkpoint'
   growText: '[E] Return to macro world'
+  incompleteText: Cannot Activate---area not clear
 --- !u!1 &1101078641733294463
 GameObject:
   m_ObjectHideFlags: 0

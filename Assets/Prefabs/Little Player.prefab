@@ -518,6 +518,7 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 8
+  carryParent: {fileID: 0}
 --- !u!1 &8379547644973516739
 GameObject:
   m_ObjectHideFlags: 0

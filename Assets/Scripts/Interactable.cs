@@ -6,7 +6,7 @@ public class Interactable: MonoBehaviour
 {
     Material highlightMaterial;
     public string highlightText;
-    void Start()
+    protected virtual void Start()
     {
         Renderer m_renderer = GetComponent<Renderer>();
         for (int i = 0; i < m_renderer.materials.Length; i++)
