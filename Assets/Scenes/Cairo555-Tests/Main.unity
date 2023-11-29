@@ -18913,6 +18913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b5b8ec59d91894a9366f9d38bcb590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlightText: 
 --- !u!135 &1132442189
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25612,6 +25613,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 643394425}
     m_Modifications:
+    - target: {fileID: 1231611089804784609, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231611089804784609, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1327772408892658391, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -25745,6 +25754,14 @@ PrefabInstance:
       value: -1083024938
       objectReference: {fileID: 0}
     - target: {fileID: 8461486590338589464, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498726817567410109, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498726817567410109, guid: a99f4674f4cb6d048a32b2a2396fb936, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -31508,6 +31525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a66e0c0df893642bf0b35ec2363ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlightText: 
 --- !u!114 &1954970669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31520,6 +31538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5809b2c4e5e062c44b642787efdc3e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlightText: 
 --- !u!65 &1954970673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34696,6 +34715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConcreteJungle-1
       objectReference: {fileID: 0}
+    - target: {fileID: 9023937306299477373, guid: 0dca7e84e02640d4290bd14a71445b8c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8454328519281972716, guid: 0dca7e84e02640d4290bd14a71445b8c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dca7e84e02640d4290bd14a71445b8c, type: 3}
 --- !u!1 &2126212021 stripped
