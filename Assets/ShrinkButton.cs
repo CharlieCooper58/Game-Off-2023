@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ShrinkButton : Interactable
 {
-    public override void OnInteract()
+    public override void OnInteract(PlayerInteractor interactor)
     {
-        base.OnInteract();
+        base.OnInteract(interactor);
         GameHandler.instance.SetActivePlayer(!GameHandler.instance.playerIsLittle, sendEventCalls:true);
     }
 }

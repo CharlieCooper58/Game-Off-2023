@@ -22,7 +22,7 @@ public class Interactable: MonoBehaviour
             highlightMaterial.SetFloat("_Thickness", 0);
         }
     }
-    public virtual void OnInteract()
+    public virtual void OnInteract(PlayerInteractor interactor)
     {
     }
     public virtual void OnHoverEnter() 

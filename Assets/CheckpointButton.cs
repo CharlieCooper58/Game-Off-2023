@@ -13,12 +13,16 @@ public class CheckpointButton : Interactable
     private void Awake()
     {
         m_checkPoint = GetComponentInParent<Checkpoint>();
-        highlightText = m_checkPoint.isFirstCheckpoint?growText:(m_checkPoint.myArena.arenaIsComplete?incompleteText:saveText);
+        highlightText = m_checkPoint.isFirstCheckpoint?growText:((m_checkPoint.myArena!=null && !m_checkPoint.myArena.arenaIsComplete)?incompleteText:saveText);
     }
-
-    public override void OnInteract()
+    public override void OnHoverEnter()
     {
-        base.OnInteract();
+        highlightText = m_checkPoint.isFirstCheckpoint ? growText : ((m_checkPoint.myArena != null && !m_checkPoint.myArena.arenaIsComplete) ? incompleteText : saveText);
+        base.OnHoverEnter();
+    }
+    public override void OnInteract(PlayerInteractor interactor)
+    {
+        base.OnInteract(interactor);
         if (!beenPressed)
         {
             beenPressed = m_checkPoint.TrySetCheckpoint();
