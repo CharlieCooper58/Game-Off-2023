@@ -4897,6 +4897,13 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 28737
+  onExplodeSound:
+    Guid:
+      Data1: 1103823214
+      Data2: 1232776403
+      Data3: 143684272
+      Data4: -1231967341
+    Path: event:/SFX/Enemy Sounds/MortarExplode
 --- !u!1001 &1484729293182560688
 PrefabInstance:
   m_ObjectHideFlags: 0

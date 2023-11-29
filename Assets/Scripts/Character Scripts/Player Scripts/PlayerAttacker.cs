@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 public class PlayerAttacker : CharacterAttacker
 {
     public Image crossHair;
@@ -13,6 +14,9 @@ public class PlayerAttacker : CharacterAttacker
     [SerializeField] int meleeDamage;
     [SerializeField] float meleeKnockback;
     [SerializeField] LayerMask enemyMask;
+
+    [SerializeField] EventReference meleeAttackSound;
+    [SerializeField] EventReference changeWeaponSound;
     public void Initialize()
     {
         currentWeaponIndex = 0;
@@ -64,6 +68,7 @@ public class PlayerAttacker : CharacterAttacker
 
         if (!activeWeapon || activeWeapon != weapons[weaponIndex])
         {
+            AudioManager.instance.Play(changeWeaponSound);
             // Disable the current active weapon if it's different from the new one
             if (activeWeapon != null)
             {
@@ -89,6 +94,7 @@ public class PlayerAttacker : CharacterAttacker
 
     public void MeleeAttack()
     {
+        AudioManager.instance.Play(meleeAttackSound);
         Vector3 damageDirection = meleeDamagePoint.TransformDirection(Vector3.forward);
         Collider[] enemiesHit = Physics.OverlapBox(meleeDamagePoint.position, meleeDamageDimensions, meleeDamagePoint.rotation, enemyMask);
         foreach(Collider c in enemiesHit)

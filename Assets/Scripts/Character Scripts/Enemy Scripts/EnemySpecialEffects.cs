@@ -16,7 +16,6 @@ public class EnemySpecialEffects : MonoBehaviour
     CharacterHealth characterHealth;
     EnemyAI ai;
     EventInstance walkSoundEvent;
-    
 
     private void Start() 
     {

@@ -128,6 +128,13 @@ MonoBehaviour:
   attackDamage: 3
   mySpawner: {fileID: 0}
   leashDistance: 200
+  attackSound:
+    Guid:
+      Data1: 283657877
+      Data2: 1111159502
+      Data3: 1967358368
+      Data4: 725643561
+    Path: event:/SFX/Enemy Sounds/ShooterBugShoot
   state: 0
 --- !u!195 &5387369867345000653
 NavMeshAgent:

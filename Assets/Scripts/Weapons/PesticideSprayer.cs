@@ -21,6 +21,7 @@ public class PesticideSprayer : Weapon
     [SerializeField] LayerMask damageMask;
     [SerializeField] float damageRadius;
     [SerializeField] private EventReference weaponSound;
+    [SerializeField] private EventReference enemyBurnSound;
 
     EventInstance weaponSoundEvent;
     private void Start()
@@ -75,6 +76,7 @@ public class PesticideSprayer : Weapon
                     if (health != null)
                     {
                         health.TakeDamage(weaponDamage);
+                        AudioManager.instance.Play(enemyBurnSound, health.transform.position);
                     }
                 }
 

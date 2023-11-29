@@ -65,6 +65,13 @@ MonoBehaviour:
       Data3: -1191485020
       Data4: -242469096
     Path: event:/SFX/Weapon Sounds/SprayGun
+  enemyBurnSound:
+    Guid:
+      Data1: 1409089122
+      Data2: 1103291305
+      Data3: -582148455
+      Data4: 1851238124
+    Path: event:/SFX/Enemy Sounds/BugBurnedHigh
 --- !u!1 &3124324455359534899
 GameObject:
   m_ObjectHideFlags: 0
