@@ -9,10 +9,11 @@ public class CheckpointButton : Interactable
 
     public string saveText;
     public string growText;
+    public string incompleteText;
     private void Awake()
     {
         m_checkPoint = GetComponentInParent<Checkpoint>();
-        highlightText = m_checkPoint.isFirstCheckpoint?growText:saveText;
+        highlightText = m_checkPoint.isFirstCheckpoint?growText:(m_checkPoint.myArena.arenaIsComplete?incompleteText:saveText);
     }
 
     public override void OnInteract()
