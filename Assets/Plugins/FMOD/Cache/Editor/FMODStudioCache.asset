@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638368270326092459
+  lastModified: 638368648006854830
   FileSizes:
   - Name: Desktop
     Value: 1179168
@@ -256,7 +256,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 2000
   Length: 0
 --- !u!114 &-5318543734564457905
 MonoBehaviour:
@@ -592,7 +592,7 @@ MonoBehaviour:
   - {fileID: -5304237580905327408}
   StringsBanks:
   - {fileID: -626962777086003362}
-  cacheTime: 638368270326092459
+  cacheTime: 638368648006854830
   cacheVersion: 131608
 --- !u!114 &63815850131076821
 MonoBehaviour:
@@ -997,5 +997,5 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 2000
   Length: 0

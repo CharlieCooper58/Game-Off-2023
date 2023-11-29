@@ -66,11 +66,11 @@ public class PlayerManager : CharacterManager
     }
     private void Update()
     {
-        inputHandler.TickInput();
     }
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
+        inputHandler.TickInput();
         playerLocomotion.HandleAllMovement();
         inputHandler.TickCameraInput();
     }
