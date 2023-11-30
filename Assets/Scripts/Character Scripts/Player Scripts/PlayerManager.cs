@@ -9,7 +9,7 @@ public class PlayerManager : CharacterManager
     public PlayerAttacker playerAttacker;
     public PlayerLocomotion playerLocomotion;
     public PlayerInteractor playerInteractor;
-
+    public PlayerUIController playerUIController;
     public bool isLittle;
     public static PlayerManager littlePlayerInstance;
     public static PlayerManager bigPlayerInstance;
@@ -45,6 +45,7 @@ public class PlayerManager : CharacterManager
         playerAttacker = GetComponent<PlayerAttacker>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         playerInteractor = GetComponent<PlayerInteractor>();
+        playerUIController = GetComponent<PlayerUIController>();
         
     }
     protected override void Start()

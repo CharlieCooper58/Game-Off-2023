@@ -455,7 +455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5573192803419892848, guid: 3005baadd54d3bf40aaa80e7b64cdff2, type: 3}
       propertyPath: m_Name
-      value: Planter 2 Wave 3
+      value: Planter 2 Wave 3 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5573192803419892848, guid: 3005baadd54d3bf40aaa80e7b64cdff2, type: 3}
       propertyPath: m_IsActive

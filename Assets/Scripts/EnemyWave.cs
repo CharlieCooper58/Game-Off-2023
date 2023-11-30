@@ -22,6 +22,7 @@ public class EnemyWave : MonoBehaviour
         attacking
     }
     WaveState waveState;
+    KillPlane kp;
     private void Start()
     {
         transform.localPosition = wavePosition;
@@ -42,6 +43,11 @@ public class EnemyWave : MonoBehaviour
             spawner.GetComponent<SpawnerHealth>().OnSpawnerDeath += OnSpawnerDeath;
             spawner?.gameObject.SetActive(false);
         }
+        kp = GetComponentInChildren<KillPlane> ();
+        if(kp != null)
+        {
+            kp.gameObject.SetActive(false);
+        }
     }
     public void SpawnWave()
     {
@@ -60,6 +66,10 @@ public class EnemyWave : MonoBehaviour
                 continue;
             }
             spawner?.gameObject.SetActive(true);
+        }
+        if(kp != null)
+        {
+            kp.gameObject?.SetActive(true);
         }
     }
     public void TargetPlayer()

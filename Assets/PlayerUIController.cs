@@ -6,33 +6,47 @@ using UnityEngine.UI;
 public class PlayerUIController : MonoBehaviour
 {
     public TMP_Text tooltipText;
-    GameObject textPanel;
+    public TMP_Text objectiveText;
+    public GameObject tooltipPanel;
+    public GameObject objectivePanel;
     private void Awake()
     {
-        tooltipText.gameObject.SetActive(false);
+        tooltipPanel.gameObject.SetActive(false);
+        objectivePanel.gameObject.SetActive(false);
     }
     IEnumerator FlashText(string text)
     {
-        tooltipText.gameObject.SetActive(true);
+        tooltipPanel.gameObject.SetActive(true);
         tooltipText.text = text;
         yield return new WaitForSeconds(5);
         if(tooltipText.text == text)
         {
-            tooltipText.gameObject.SetActive(false);
+            tooltipPanel.gameObject.SetActive(false);
         }
     }
     public void SetCurrentText(string text)
     {
-        tooltipText.gameObject.SetActive(true);
+        tooltipPanel.gameObject.SetActive(true);
         tooltipText.text=text;
     }
     public void StopShowingText()
     {
-        tooltipText.gameObject.SetActive(false);
+        tooltipPanel.gameObject.SetActive(false);
         tooltipText.text = "";
     }
     public void ShowTooltip(string text)
     {
         StartCoroutine("FlashText", text);
+    }
+
+    public void ClearObjectiveText()
+    {
+        objectiveText.text = "";
+        objectivePanel.gameObject.SetActive(false);
+    }
+    public void SetObjectiveText(string text)
+    {
+        objectivePanel.gameObject.SetActive(true);
+        objectiveText.text = text;
     }
 }

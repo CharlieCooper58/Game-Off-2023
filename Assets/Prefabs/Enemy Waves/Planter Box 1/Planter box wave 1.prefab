@@ -54,6 +54,8 @@ MonoBehaviour:
 
 '
   wavePosition: {x: -34.7, y: -3.8, z: -17.4}
+  firstTrigger: {fileID: 0}
+  secondTrigger: {fileID: 0}
 --- !u!1001 &960152042492217794
 PrefabInstance:
   m_ObjectHideFlags: 0

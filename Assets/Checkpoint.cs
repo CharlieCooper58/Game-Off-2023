@@ -6,6 +6,7 @@ public class Checkpoint : MonoBehaviour
 {
     public static Checkpoint currentActiveCheckpoint;
     public bool isFirstCheckpoint;
+    public bool isLastCheckpoint;
     public Vector3 spawnPoint;
     private Vector3 spawnOffset = 2 * Vector3.up;
 

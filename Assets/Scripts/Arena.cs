@@ -9,8 +9,6 @@ public class Arena : MonoBehaviour
     public bool arenaIsComplete;
     int wavesCompleted;
 
-    
-
     private void Awake()
     {
         spawnedWaves = new List<EnemyWave>();

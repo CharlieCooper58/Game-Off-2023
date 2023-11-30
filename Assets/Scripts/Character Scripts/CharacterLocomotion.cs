@@ -5,6 +5,7 @@ using FMODUnity;
 using FMOD.Studio;
 public class CharacterLocomotion : MonoBehaviour
 {
+    CharacterManager characterManager;
     [SerializeField] protected float moveSpeed;
     [SerializeField] private float inAirMovementDelta;
 
@@ -49,6 +50,7 @@ public class CharacterLocomotion : MonoBehaviour
     [SerializeField] private float groundPoundForce;
     public bool isGrounded;
     bool isJumping;
+    Vector3 lastGroundContactPoint;
 
     //[Header("Misc Forces")]
     float miscForceTimer;
@@ -73,6 +75,7 @@ public class CharacterLocomotion : MonoBehaviour
         controllerLateralOffset = controller.radius;
         footstepsEventInstance = AudioManager.instance.Play(footstepsSoundEffect);
         footstepsEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        characterManager = GetComponent<CharacterManager>();
     }
 
     public void WarpPosition(Vector3 newPosition) 
@@ -147,10 +150,10 @@ public class CharacterLocomotion : MonoBehaviour
 
     private void Accelerate(Vector3 direction)
     {
-        if (direction == Vector3.zero)
-        {
-            return;
-        }
+        //if (direction == Vector3.zero)
+        //{
+        //    return;
+        //}
         Vector3 desiredVelocity = moveSpeed * direction.normalized;
         Vector3 acceleration = new Vector3(desiredVelocity.x - planarMovement.x, 0, desiredVelocity.z - planarMovement.z) / Time.deltaTime;
         if (acceleration.sqrMagnitude > inAirMovementDelta * inAirMovementDelta)
@@ -238,6 +241,7 @@ public class CharacterLocomotion : MonoBehaviour
                     footstepsEventInstance.setParameterByName("FootstepsMaterial", 2);
                 }
             }
+            lastGroundContactPoint = transform.position;
         }
         else
         {
@@ -369,5 +373,15 @@ public class CharacterLocomotion : MonoBehaviour
             ApplyMiscForce(bouncePad.bounciness*bouncePad.transform.up, bouncePad.bounceDuration);
             AudioManager.instance.Play(mushroomBounceSoundEffect);
         }
+        else
+        {
+            KillPlane killPlane = other.GetComponent<KillPlane>();
+            if(killPlane != null)
+            {
+                WarpPosition(lastGroundContactPoint);
+                characterManager.characterHealth.TakeDamage(5);
+            }
+        }
+
     }
 }

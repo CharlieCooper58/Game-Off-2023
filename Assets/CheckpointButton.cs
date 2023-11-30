@@ -17,7 +17,15 @@ public class CheckpointButton : Interactable
     private void Awake()
     {
         m_checkPoint = GetComponentInParent<Checkpoint>();
-        highlightText = m_checkPoint.isFirstCheckpoint?growText:((m_checkPoint.myArena!=null && !m_checkPoint.myArena.arenaIsComplete)?incompleteText:saveText);
+        if (m_checkPoint.isFirstCheckpoint)
+        {
+            highlightText = growText;
+            beenPressed = true;
+        }
+        else
+        {
+            highlightText = (m_checkPoint.myArena != null && !m_checkPoint.myArena.arenaIsComplete) ? incompleteText : saveText;
+        }
     }
     public override void OnHoverEnter()
     {
@@ -42,6 +50,14 @@ public class CheckpointButton : Interactable
         {
             AudioManager.instance.Play(growSound);
             GameHandler.instance.SetActivePlayer(little: false, true);
+            if (m_checkPoint.isLastCheckpoint)
+            {
+                PlayerManager.bigPlayerInstance.playerUIController.SetObjectiveText("Celebrate your victory with a nice cup of tea");
+            }
+            else
+            {
+                PlayerManager.bigPlayerInstance.playerUIController.SetObjectiveText("Feeling low? Drink some tea to get your health up!");
+            }
         }
     }
 }
