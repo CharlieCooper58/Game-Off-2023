@@ -111,7 +111,7 @@ public class EnemyWave : MonoBehaviour
     private void CharacterHealth_OnCharacterDeath(object sender, CharacterHealth.CharacterDeathEventArgs e)
     {
         enemies.Remove(e.manager as EnemyManager);
-        if(enemies.Count == 0 && spawners.Count == 0)
+        if(spawners.Count == 0)
         {
             OnWaveComplete?.Invoke(this, EventArgs.Empty);
         }
@@ -140,7 +140,7 @@ public class EnemyWave : MonoBehaviour
     private void OnSpawnerDeath(object sender, SpawnerHealth.SpawnerDeathEventArgs e)
     {
         spawners.Remove(e.deadSpawner);// GetComponent<Spawner>());
-        if (enemies.Count == 0 && spawners.Count == 0)
+        if (spawners.Count == 0)
         {
             OnWaveComplete?.Invoke(this, EventArgs.Empty);
         }

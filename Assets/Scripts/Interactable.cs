@@ -31,7 +31,6 @@ public class Interactable: MonoBehaviour
     }
     public virtual void OnHoverExit() 
     {
-        print("Exit");
         highlightMaterial?.SetFloat("_Thickness", 0);
     }
 }

@@ -37,6 +37,10 @@ public class ChargerAI : EnemyAI
         if (CheckRigidbodyShouldBeInactive())
         {
             //DisableRigidbody();
+            if (contactDamage > 0)
+            {
+                print("Failed");
+            }
             SetAIStateStun(jumpCooldown, AIState.move);
             contactDamage = 0;
         }
@@ -50,17 +54,19 @@ public class ChargerAI : EnemyAI
 
         // Calculate the required horizontal velocity
         float horizontalVelocity = displacementXZ / jumpTime;
+        print(horizontalVelocity);
 
         // Calculate the vertical velocity to reach the desired height
-        float verticalVelocity = ((target.transform.position.y+1.2f-transform.position.y) + 0.5f * GameHandler.instance.gravity * Mathf.Pow(jumpTime, 2)) / jumpTime;
+        float verticalVelocity = ((target.transform.position.y+2f-transform.position.y) + 0.5f * GameHandler.instance.gravity * Mathf.Pow(jumpTime, 2)) / jumpTime;
 
         // Apply the calculated velocity
         Vector3 jumpVelocity = horizontalVelocity*(playerPositionXZ - enemyPositionXZ).normalized+Vector3.up*verticalVelocity;
         return jumpVelocity;
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
+        print("Butt");
         if(contactDamage > 0 && collision.gameObject == target.gameObject)
         {
             target.GetComponent<CharacterHealth>().TakeDamage(contactDamage);

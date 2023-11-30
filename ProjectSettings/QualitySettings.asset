@@ -4,7 +4,11 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
+<<<<<<< Updated upstream
   m_CurrentQuality: 3
+=======
+  m_CurrentQuality: 2
+>>>>>>> Stashed changes
   m_QualitySettings:
   - serializedVersion: 2
     name: Very Low
