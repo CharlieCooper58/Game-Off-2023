@@ -6,13 +6,24 @@ public class Tooltip : MonoBehaviour
 {
     public string tooltipText;
 
+    public bool objective;
+
     private void OnTriggerEnter(Collider other)
     {
         PlayerUIController uiController = other.GetComponent<PlayerUIController>();
         if (uiController != null)
         {
-            uiController.ShowTooltip(tooltipText);
-            Destroy(gameObject);
+            if (objective)
+            {
+                uiController.SetObjectiveText(tooltipText);
+                Destroy(gameObject);
+            }
+            else
+            {
+                uiController.ShowTooltip(tooltipText);
+                Destroy(gameObject);
+            }
+
         }
     }
 }
