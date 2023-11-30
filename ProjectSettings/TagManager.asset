@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Baking Helper
+  - Leaf
+  - pyramid
+  - plane
   layers:
   - Default
   - TransparentFX
@@ -26,7 +29,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Big Player
   - 
   - 
   - 

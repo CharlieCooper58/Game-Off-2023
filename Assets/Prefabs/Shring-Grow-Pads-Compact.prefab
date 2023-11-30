@@ -245,6 +245,27 @@ MonoBehaviour:
   saveText: '[E] Activate checkpoint'
   growText: '[E] Return to macro world'
   incompleteText: Cannot Activate---area not clear
+  buttonPressSound:
+    Guid:
+      Data1: -379067172
+      Data2: 1077083802
+      Data3: -2009007468
+      Data4: 1148586276
+    Path: event:/Environment/MachineTurnOn
+  checkpointSound:
+    Guid:
+      Data1: -1022662805
+      Data2: 1198186227
+      Data3: 758831246
+      Data4: 1617583699
+    Path: event:/SFX/Player Sounds/DashDepleted
+  growSound:
+    Guid:
+      Data1: -2017408091
+      Data2: 1166463673
+      Data3: -1833857402
+      Data4: -418395858
+    Path: event:/SFX/Player Sounds/PlayerGrow
 --- !u!1 &1101078641733294463
 GameObject:
   m_ObjectHideFlags: 0
