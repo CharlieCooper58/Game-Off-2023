@@ -33,4 +33,5 @@ public class CharacterHealth : MonoBehaviour
         OnCharacterDeath?.Invoke(this, new CharacterDeathEventArgs { manager = GetComponent<CharacterManager>(), isBrutal=brutal});
         Destroy(gameObject);
     }
+    public virtual void Heal() { }
 }

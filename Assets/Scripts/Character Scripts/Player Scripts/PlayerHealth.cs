@@ -40,6 +40,12 @@ public class PlayerHealth : CharacterHealth
             StartCoroutine("HealthBarChipCoroutine");
         }
     }
+    public override void Heal()
+    {
+        base.Heal();
+        currentHP = maxHP;
+        StartCoroutine("HealCoroutine");
+    }
     IEnumerator HealthBarChipCoroutine()
     {
         healthBarCoroutineIsRunning = true;
@@ -49,6 +55,19 @@ public class PlayerHealth : CharacterHealth
             backgroundHealthbar.value -= healthBarSpeed*Time.deltaTime;
             yield return null;
         }
+        backgroundHealthbar.value = currentHP;
+
+        healthBarCoroutineIsRunning = false;
+    }
+    IEnumerator HealCoroutine()
+    {
+        healthBarCoroutineIsRunning = true;
+        while (healthBar.value < currentHP)
+        {
+            healthBar.value += healthBarSpeed * Time.deltaTime;
+            yield return null;
+        }
+        healthBar.value = currentHP;
         backgroundHealthbar.value = currentHP;
 
         healthBarCoroutineIsRunning = false;
