@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  inAirMovementDelta: 0.75
+  inAirMovementDelta: 1
   maxDashes: 3
   dashCooldownTimerMax: 0.5
   dashTimerMax: 0.3
@@ -329,7 +329,7 @@ MonoBehaviour:
   gravity: 13
   groundCheckMask:
     serializedVersion: 2
-    m_Bits: 28865
+    m_Bits: 28873
   groundCheckRaycastStart: {fileID: 8379547644973516738}
   groundCheckRadius: 0.5
   jumpHeight: 33

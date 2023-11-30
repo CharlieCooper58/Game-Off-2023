@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
 public class FireEffect : MonoBehaviour
 {
     public Light fireLight;
@@ -10,6 +10,7 @@ public class FireEffect : MonoBehaviour
     public float flickerSpeed = 1f;
 
     float random;
+    [SerializeField] EventReference logCrackle;
 
     void Start()
     {
@@ -18,7 +19,8 @@ public class FireEffect : MonoBehaviour
             Debug.LogError("Fire light not assigned!");
             return;
         }
-
+        AudioManager.instance.Play(logCrackle, transform.position);
+        
         // Store a random value to add variation to the flickering
         random = Random.Range(0.0f, 65535.0f);
     }

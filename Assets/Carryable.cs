@@ -16,6 +16,8 @@ public class Carryable : Interactable
     float curCarryDistance;
     Vector3 carryDirection;
 
+    public bool alignRotation;
+
     protected override void Start()
     {
         base.Start();
@@ -30,9 +32,9 @@ public class Carryable : Interactable
     {
         if (beingCarried)
         {
-            carryDirection = (transform.position-transform.parent.position).normalized;
+            //carryDirection = (transform.position-transform.parent.position).normalized;
             RaycastHit hit;
-            if(Physics.Raycast(transform.parent.position, carryDirection, out hit, carryDistance, carryMask)){
+            if(Physics.Raycast(transform.parent.position, transform.parent.forward, out hit, carryDistance, carryMask)){
                 if(hit.collider.gameObject != gameObject)
                 {
                     curCarryDistance = hit.distance * 0.9f;
@@ -46,7 +48,7 @@ public class Carryable : Interactable
             {
                 curCarryDistance = carryDistance;
             }
-            transform.position = transform.parent.position + carryDirection * curCarryDistance;
+            transform.position = transform.parent.position + transform.parent.forward * curCarryDistance;
         }
     }
     private void Instance_OnPlayerSizeChange(object sender, GameHandler.OnPlayerSizeChangeArgs e)
@@ -82,6 +84,7 @@ public class Carryable : Interactable
                 rb.isKinematic = true;
                 rb.useGravity = false;
                 beingCarried = true;
+                if(alignRotation) transform.localRotation = Quaternion.LookRotation(transform.parent.up, -transform.parent.right);
             }
         }
     }

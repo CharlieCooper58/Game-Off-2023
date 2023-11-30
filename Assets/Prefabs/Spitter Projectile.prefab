@@ -4875,6 +4875,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   speed: 90
+  projectileHitSound:
+    Guid:
+      Data1: 1708109141
+      Data2: 1233616835
+      Data3: -1009893975
+      Data4: -1095472575
+    Path: event:/SFX/Player Sounds/PlayerHitByShooter
 --- !u!54 &8140038727446177373
 Rigidbody:
   m_ObjectHideFlags: 0
