@@ -66,6 +66,9 @@
 		<property name="maxVoices">
 			<value>4</value>
 		</property>
+		<property name="maximumDistance">
+			<value>400</value>
+		</property>
 	</object>
 	<object class="MarkerTrack" id="{1803a6cd-e7a4-4519-8da5-7521610f12fc}" />
 	<object class="GroupTrack" id="{ec1b6632-2e04-41d4-aafb-e0b3d24e3253}">
@@ -145,6 +148,9 @@
 	<object class="SpatialiserEffect" id="{c4342d7e-4b32-46c9-a65d-a07c02aaaa6b}">
 		<property name="distanceRolloffType">
 			<value>1</value>
+		</property>
+		<property name="maximumDistance">
+			<value>400</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
