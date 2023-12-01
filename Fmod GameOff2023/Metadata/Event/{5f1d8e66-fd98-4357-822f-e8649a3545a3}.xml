@@ -67,7 +67,7 @@
 			<value>2</value>
 		</property>
 		<property name="maximumDistance">
-			<value>70</value>
+			<value>150</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{a4a242d2-ef87-4ef3-b8c4-b5a63c0ae6f1}" />
@@ -150,7 +150,7 @@
 	<object class="MixerBusFader" id="{badae8d0-086a-478d-a066-f82d31da1fe8}" />
 	<object class="SpatialiserEffect" id="{0c1d4fc7-f477-44d9-8e1b-ecbf06bec4a9}">
 		<property name="maximumDistance">
-			<value>70</value>
+			<value>150</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
@@ -159,7 +159,7 @@
 			<value>20</value>
 		</property>
 		<property name="minimumExtent">
-			<value>174</value>
+			<value>74</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{684c0924-cedd-446a-956e-214ab892a5df}">

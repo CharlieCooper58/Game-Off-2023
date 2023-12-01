@@ -67,7 +67,7 @@
 			<value>4</value>
 		</property>
 		<property name="maximumDistance">
-			<value>50</value>
+			<value>60</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{5d9810c3-cd28-4a08-9650-c4391d49ea46}" />
@@ -156,16 +156,16 @@
 	<object class="MixerBusFader" id="{8616c39a-062b-4cd2-95ee-d64e5d102a2a}" />
 	<object class="SpatialiserEffect" id="{5b35bb1e-9af8-47e4-9735-9e6226fb3d24}">
 		<property name="maximumDistance">
-			<value>50</value>
+			<value>60</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>92</value>
+			<value>14.5</value>
 		</property>
 		<property name="minimumExtent">
-			<value>174</value>
+			<value>70</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{0909e9c3-4441-441c-927b-5046745d14e6}">
