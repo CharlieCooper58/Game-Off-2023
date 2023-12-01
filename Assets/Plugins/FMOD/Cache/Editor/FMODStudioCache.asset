@@ -52,7 +52,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 50
+  MaxDistance: 60
   Length: 0
 --- !u!114 &-9016909816982812062
 MonoBehaviour:
@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638369852834462142
+  lastModified: 638369866237515186
   FileSizes:
   - Name: Desktop
-    Value: 1529920
+    Value: 1535872
   Exists: 1
 --- !u!114 &-8858713841000786979
 MonoBehaviour:
@@ -126,7 +126,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 70
+  MaxDistance: 150
   Length: 0
 --- !u!114 &-7958718166820896239
 MonoBehaviour:
@@ -236,7 +236,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 70
+  MaxDistance: 150
   Length: 0
 --- !u!114 &-6649233959911178494
 MonoBehaviour:
@@ -253,7 +253,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638366507329339646
+  lastModified: 638369866236189313
   FileSizes:
   - Name: Desktop
     Value: 4150592
@@ -354,7 +354,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638366507329058689
+  lastModified: 638369866235821869
   FileSizes:
   - Name: Desktop
     Value: 1588
@@ -437,7 +437,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 400
+  MaxDistance: 600
   Length: 0
 --- !u!114 &-3149383321733162313
 MonoBehaviour:
@@ -464,7 +464,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 80
+  MaxDistance: 400
   Length: 0
 --- !u!114 &-2049135892195936943
 MonoBehaviour:
@@ -520,6 +520,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-994043444138706074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/PressButton
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/PressButton
+  Guid:
+    Data1: 389496779
+    Data2: 1329201777
+    Data3: 419492750
+    Data4: -1193733430
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 600
+  Length: 0
 --- !u!114 &-835824505182714661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,10 +589,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638369852834314415
+  lastModified: 638369866235833557
   FileSizes:
   - Name: Desktop
-    Value: 2864
+    Value: 2906
   Exists: 1
 --- !u!114 &-582102686420365407
 MonoBehaviour:
@@ -650,12 +677,13 @@ MonoBehaviour:
   - {fileID: -8858713841000786979}
   - {fileID: 8236311813302420397}
   - {fileID: -582102686420365407}
+  - {fileID: -994043444138706074}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5304237580905327408}
   StringsBanks:
   - {fileID: -626962777086003362}
-  cacheTime: 638369852834462142
+  cacheTime: 638369866237515186
   cacheVersion: 131608
 --- !u!114 &63815850131076821
 MonoBehaviour:
@@ -817,7 +845,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 0.2
-  MaxDistance: 50
+  MaxDistance: 60
   Length: 0
 --- !u!114 &3396825620185564913
 MonoBehaviour:
@@ -898,7 +926,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 45
+  MaxDistance: 90
   Length: 0
 --- !u!114 &4392202294682580346
 MonoBehaviour:
@@ -953,7 +981,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 200
+  MaxDistance: 550
   Length: 7494
 --- !u!114 &5639749470615351546
 MonoBehaviour:
@@ -1114,7 +1142,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 70
+  MaxDistance: 600
   Length: 0
 --- !u!114 &7883026720172110318
 MonoBehaviour:
@@ -1168,7 +1196,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 60
+  MaxDistance: 70
   Length: 0
 --- !u!114 &8236311813302420397
 MonoBehaviour:

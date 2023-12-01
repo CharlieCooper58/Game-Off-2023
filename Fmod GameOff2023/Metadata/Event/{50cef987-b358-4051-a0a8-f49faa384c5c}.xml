@@ -67,7 +67,7 @@
 			<value>4</value>
 		</property>
 		<property name="maximumDistance">
-			<value>400</value>
+			<value>600</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{1803a6cd-e7a4-4519-8da5-7521610f12fc}" />
@@ -150,7 +150,7 @@
 			<value>1</value>
 		</property>
 		<property name="maximumDistance">
-			<value>400</value>
+			<value>600</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
@@ -159,7 +159,7 @@
 			<value>56</value>
 		</property>
 		<property name="minimumExtent">
-			<value>186</value>
+			<value>84</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{5a1d5540-0894-49bc-bb53-10c8f7294815}" />

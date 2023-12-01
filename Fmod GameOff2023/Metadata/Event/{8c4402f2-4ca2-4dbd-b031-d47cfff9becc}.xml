@@ -70,7 +70,7 @@
 			<value>0.200000003</value>
 		</property>
 		<property name="maximumDistance">
-			<value>50</value>
+			<value>60</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{c8cb76bf-8375-41b1-bb4e-523209a15a74}" />
@@ -157,16 +157,16 @@
 			<value>0.200000003</value>
 		</property>
 		<property name="maximumDistance">
-			<value>50</value>
+			<value>60</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>38</value>
+			<value>14.5</value>
 		</property>
 		<property name="minimumExtent">
-			<value>188</value>
+			<value>70</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{93d1f069-1294-4e24-adbb-d1665e0e0188}">

@@ -67,7 +67,7 @@
 			<value>4</value>
 		</property>
 		<property name="maximumDistance">
-			<value>60</value>
+			<value>70</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{db52f858-9826-4252-b1d2-4bcdb4479f16}" />
@@ -162,7 +162,7 @@
 			<value>1</value>
 		</property>
 		<property name="maximumDistance">
-			<value>60</value>
+			<value>70</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
@@ -171,7 +171,7 @@
 			<value>18.5</value>
 		</property>
 		<property name="minimumExtent">
-			<value>192</value>
+			<value>88</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{faa06f9a-32f9-4265-990a-f4c53cf1c572}">

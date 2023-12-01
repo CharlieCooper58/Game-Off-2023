@@ -161,10 +161,10 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>90</value>
+			<value>15</value>
 		</property>
 		<property name="minimumExtent">
-			<value>130</value>
+			<value>52</value>
 		</property>
 	</object>
 	<object class="FlangerEffect" id="{90810565-42a7-4291-afe7-44df35fd2849}">
