@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638369866237515186
+  lastModified: 638369972701259675
   FileSizes:
   - Name: Desktop
     Value: 1535872
@@ -253,10 +253,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638369866236189313
+  lastModified: 638369972699867957
   FileSizes:
   - Name: Desktop
-    Value: 4150592
+    Value: 4913344
   Exists: 1
 --- !u!114 &-6561299472008595048
 MonoBehaviour:
@@ -354,7 +354,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638369866235821869
+  lastModified: 638369972699510593
   FileSizes:
   - Name: Desktop
     Value: 1588
@@ -520,6 +520,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1553379733108539346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/IntroMonologue
+  m_EditorClassIdentifier: 
+  Path: event:/Music/IntroMonologue
+  Guid:
+    Data1: -873241004
+    Data2: 1238663441
+    Data3: 1019316914
+    Data4: 1684919348
+  Banks:
+  - {fileID: -6649233959911178494}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 62249
 --- !u!114 &-994043444138706074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,10 +616,10 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638369866235833557
+  lastModified: 638369972699520678
   FileSizes:
   - Name: Desktop
-    Value: 2906
+    Value: 2962
   Exists: 1
 --- !u!114 &-582102686420365407
 MonoBehaviour:
@@ -678,12 +705,13 @@ MonoBehaviour:
   - {fileID: 8236311813302420397}
   - {fileID: -582102686420365407}
   - {fileID: -994043444138706074}
+  - {fileID: -1553379733108539346}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5304237580905327408}
   StringsBanks:
   - {fileID: -626962777086003362}
-  cacheTime: 638369866237515186
+  cacheTime: 638369972701259675
   cacheVersion: 131608
 --- !u!114 &63815850131076821
 MonoBehaviour:
