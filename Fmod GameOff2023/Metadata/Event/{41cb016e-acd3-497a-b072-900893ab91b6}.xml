@@ -67,7 +67,7 @@
 			<value>3</value>
 		</property>
 		<property name="maximumDistance">
-			<value>80</value>
+			<value>400</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{55bcacc4-df3d-43aa-9a2a-82a249eabef9}" />
@@ -154,7 +154,7 @@
 			<value>1</value>
 		</property>
 		<property name="maximumDistance">
-			<value>80</value>
+			<value>400</value>
 		</property>
 		<property name="extentMode">
 			<value>1</value>
@@ -163,7 +163,7 @@
 			<value>17.5</value>
 		</property>
 		<property name="minimumExtent">
-			<value>182</value>
+			<value>104</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{3a3dbded-6898-42f1-b1cd-9a60209000b0}" />
