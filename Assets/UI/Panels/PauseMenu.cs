@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using FMODUnity;
 
 namespace UI.Panels
 {
@@ -16,6 +17,8 @@ namespace UI.Panels
         private VisualElement _main;
 
         [SerializeField] private SettingsMenu _settingsMenu;
+
+        [SerializeField] EventReference buttonClickSound;
 
         public void Awake()
         {
@@ -57,6 +60,7 @@ namespace UI.Panels
 
         private void ResumeGame()
         {
+            AudioManager.instance.Play(buttonClickSound);
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             UnityEngine.Cursor.visible = false;
 
@@ -67,6 +71,7 @@ namespace UI.Panels
 
         private void PauseGame()
         {
+            AudioManager.instance.Play(buttonClickSound);
             UnityEngine.Cursor.lockState = CursorLockMode.Confined;
             UnityEngine.Cursor.visible = true;
             Time.timeScale = 0;
@@ -80,6 +85,7 @@ namespace UI.Panels
         
         private void QuitGame()
         {
+            AudioManager.instance.Play(buttonClickSound);
             ResumeGame();
             SceneManager.LoadScene("StartMenu");
         }
