@@ -11,11 +11,23 @@ public class EggTrackingUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameHandler.instance.OnPlayerRestart += Instance_OnPlayerRestart;
     }
+
+    private void Instance_OnPlayerRestart(object sender, System.EventArgs e)
+    {
+        Trackers.Clear();
+        CreateTrackers();
+        RefreshTrackers();
+    }
+
     void CreateTrackers() {
         Spawns = FindObjectsByType<Spawner>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();//All spawners in the scene, including the inactive ones.
         foreach (var tracker in Trackers) {
-            Destroy(tracker);
+            if(tracker != null)
+            {
+                Destroy(tracker);
+            }
         }
         foreach (var spawner in Spawns) {
             var tracker = Instantiate(EggTracker, transform);
