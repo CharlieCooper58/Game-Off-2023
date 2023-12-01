@@ -196,6 +196,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settingsMenu: {fileID: 54586926}
+  buttonClickSound:
+    Guid:
+      Data1: -1094921256
+      Data2: 1265194994
+      Data3: -672751715
+      Data4: -1236316321
+    Path: event:/Environment/UIClick
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ public class PesticideSprayer : Weapon
     [SerializeField] private EventReference weaponSound;
     [SerializeField] private EventReference enemyBurnSound;
 
+    [SerializeField] GameObject pesticideParticles;
     EventInstance weaponSoundEvent;
     private void Start()
     {
@@ -69,6 +70,7 @@ public class PesticideSprayer : Weapon
             mainModule.startLifetimeMultiplier = hit.distance / particleSystemDistance;
             if(reloadTimer == 0)
             {
+                Instantiate(pesticideParticles, hit.point, Quaternion.identity);
                 Collider[] ObjectsInHitRadius = Physics.OverlapSphere(hit.point, damageRadius, damageMask);
                 foreach (Collider enemyHit in ObjectsInHitRadius)
                 {
