@@ -340,6 +340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2745413956429647764, guid: 0499326179180be459ee01af5b4d2414, type: 3}
+      propertyPath: maxEnemies
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3087431551884899015, guid: 0499326179180be459ee01af5b4d2414, type: 3}
       propertyPath: m_Name
       value: Spitter Egg (1)
@@ -397,6 +401,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2745413956429647764, guid: 0499326179180be459ee01af5b4d2414, type: 3}
+      propertyPath: maxEnemies
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3087431551884899015, guid: 0499326179180be459ee01af5b4d2414, type: 3}
       propertyPath: m_Name
       value: Spitter Egg
@@ -453,6 +461,10 @@ PrefabInstance:
     - target: {fileID: 2419297284435929213, guid: 1fa10e7da56a82e4fbce757a49f24f92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2745413956429647764, guid: 1fa10e7da56a82e4fbce757a49f24f92, type: 3}
+      propertyPath: maxEnemies
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3087431551884899015, guid: 1fa10e7da56a82e4fbce757a49f24f92, type: 3}
       propertyPath: m_Name

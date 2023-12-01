@@ -379,7 +379,7 @@ public class CharacterLocomotion : MonoBehaviour
             if(killPlane != null)
             {
                 WarpPosition(lastGroundContactPoint);
-                characterManager.characterHealth.TakeDamage(5);
+                characterManager.characterHealth.TakeDamage(1);
             }
         }
 

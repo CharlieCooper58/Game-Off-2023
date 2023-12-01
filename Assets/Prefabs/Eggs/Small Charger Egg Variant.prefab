@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 582328653858625378, guid: ef545650afff22047903c9165cc26651, type: 3}
       propertyPath: enemySpawnTimerMax
-      value: 3.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 582328653858625378, guid: ef545650afff22047903c9165cc26651, type: 3}
       propertyPath: spawnableEnemies.Array.data[0]

@@ -8,5 +8,9 @@ public class Tea : Interactable
     {
         base.OnInteract(interactor);
         PlayerManager.bigPlayerInstance?.characterHealth.Heal();
+        if (GameHandler.instance.Victory)
+        {
+            GameHandler.instance.EndGame();
+        }
     }
 }
