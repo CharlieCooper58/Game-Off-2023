@@ -17,6 +17,8 @@ public class PlayerAttacker : CharacterAttacker
 
     [SerializeField] EventReference meleeAttackSound;
     [SerializeField] EventReference changeWeaponSound;
+
+    bool crosshairCoroutineTick;
     public void Initialize()
     {
         currentWeaponIndex = 0;
@@ -77,6 +79,7 @@ public class PlayerAttacker : CharacterAttacker
 
             // Enable the new weapon
             weapons[weaponIndex].gameObject.SetActive(true);
+            crossHair.rectTransform.localScale = Vector3.one;
 
             // Set the new weapon as the active weapon
             activeWeapon = weapons[weaponIndex];
@@ -87,11 +90,23 @@ public class PlayerAttacker : CharacterAttacker
         if (base.OnWeaponUsed())
         {
             StartCoroutine("ShrinkCrosshair");
+            if(currentWeaponIndex == 0)
+            {
+                crosshairCoroutineTick = true;
+            }
+            else
+            {
+                crosshairCoroutineTick=false;
+            }
             return true;
         }
         return false;
     }
-
+    public override void OnWeaponReleased()
+    {
+        base.OnWeaponReleased();
+        crosshairCoroutineTick = true;
+    }
     public void MeleeAttack()
     {
         AudioManager.instance.Play(meleeAttackSound);
@@ -122,7 +137,7 @@ public class PlayerAttacker : CharacterAttacker
             crosshairSize = Vector3.one*(0.35f+2*elapsedTime);
 
             crossHair.rectTransform.localScale = crosshairSize;
-            elapsedTime += Time.deltaTime;
+            if(crosshairCoroutineTick) elapsedTime += Time.deltaTime;
             yield return null; // Wait for the next frame
         }
 

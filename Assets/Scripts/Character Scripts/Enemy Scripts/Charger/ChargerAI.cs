@@ -66,11 +66,14 @@ public class ChargerAI : EnemyAI
 
     private void OnTriggerStay(Collider collision)
     {
-        print("Butt");
         if(contactDamage > 0 && collision.gameObject == target.gameObject)
         {
             target.GetComponent<CharacterHealth>().TakeDamage(contactDamage);
             contactDamage = 0;
+        }
+        else if(collision.GetComponent<KillPlane>() != null)
+        {
+            enemyManager.characterHealth.TakeDamage(1000);
         }
     }
 

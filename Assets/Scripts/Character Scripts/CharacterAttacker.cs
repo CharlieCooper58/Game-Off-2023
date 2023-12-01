@@ -10,7 +10,7 @@ public class CharacterAttacker : MonoBehaviour
     {
         return activeWeapon.OnTriggerPressed();
     }
-    public void OnWeaponReleased()
+    public virtual void OnWeaponReleased()
     {
         activeWeapon.OnTriggerReleased();
     }

@@ -55,7 +55,7 @@ namespace UI.Panels
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             UnityEngine.Cursor.visible = false;
 
-            SceneManager.LoadScene("Scenes/Main");
+            SceneManager.LoadScene("Intro Cinematic");
         }
         
         private void OpenOptions()
@@ -67,8 +67,7 @@ namespace UI.Panels
         private void QuitGame()
         {
             RuntimeManager.PlayOneShot(buttonClickSound);
-
-            Application.Quit(1);
+            Application.Quit();
         }
     }
 }

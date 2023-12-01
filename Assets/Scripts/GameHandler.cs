@@ -66,7 +66,7 @@ public class GameHandler : MonoBehaviour
         {
             metaControls = new MetaControls();
             metaControls.GameHandler.PauseGame.performed += x=>pauseMenu.TogglePauseState();
-            metaControls.GameHandler.GrowShrink.performed += x=>SetActivePlayer(!playerIsLittle, sendEventCalls:true);
+            //metaControls.GameHandler.GrowShrink.performed += x=>SetActivePlayer(!playerIsLittle, sendEventCalls:true);
             metaControls.GameHandler.Restart.performed += x=>RestartGame();
         }
         metaControls.Enable();

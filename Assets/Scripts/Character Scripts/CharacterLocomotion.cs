@@ -49,6 +49,7 @@ public class CharacterLocomotion : MonoBehaviour
 
     [SerializeField] private float groundPoundForce;
     public bool isGrounded;
+    public bool isMovingGrounded;
     bool isJumping;
     Vector3 lastGroundContactPoint;
 
@@ -125,6 +126,7 @@ public class CharacterLocomotion : MonoBehaviour
             planarMovement = moveSpeed * moveDirection.normalized;
             if(moveDirection == Vector3.zero)
             {
+                isMovingGrounded = false;
                 if(footstepsArePlaying == PLAYBACK_STATE.PLAYING)
                 {
                     footstepsEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
@@ -132,6 +134,7 @@ public class CharacterLocomotion : MonoBehaviour
             }
             else
             {
+                isMovingGrounded = true;
                 if (footstepsArePlaying == PLAYBACK_STATE.STOPPED)
                 {
                     footstepsEventInstance.start();
@@ -140,6 +143,7 @@ public class CharacterLocomotion : MonoBehaviour
         }
         else
         {
+            isMovingGrounded = false;
             if (footstepsArePlaying == PLAYBACK_STATE.PLAYING)
             {
                 footstepsEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);

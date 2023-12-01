@@ -15,6 +15,7 @@ public class PlayerCamera : MonoBehaviour
     float cameraYAngularVelocity;
 
     [SerializeField] float cameraSmoothTime;
+
     public void Initialize()
     {
         vcam = GetComponentInChildren<CinemachineVirtualCamera>();
@@ -22,6 +23,8 @@ public class PlayerCamera : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         cameraRotationHelper.localRotation = transform.rotation;
+
+
     }
     public void UpdateCameraOrientation(Vector2 cameraInput)
     {
