@@ -88,8 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b54ddf6bddcb34692eb5ad80174a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalLookSensitivity: 60
-  horizontalLookSensitivity: 60
+  verticalLookSensitivity: 0.5
+  horizontalLookSensitivity: 0.5
   masterVolume: 0.5
   sfxVolume: 0.5
   musicVolume: 0.5
