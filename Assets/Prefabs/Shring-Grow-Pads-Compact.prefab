@@ -793,5 +793,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFirstCheckpoint: 0
+  isLastCheckpoint: 0
   spawnPoint: {x: 0, y: 0, z: 0}
   myArena: {fileID: 0}

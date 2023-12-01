@@ -147,6 +147,7 @@ MonoBehaviour:
   gravity: 13
   playerIsLittle: 0
   GameOverCanvas: {fileID: 0}
+  VictoryCanvas: {fileID: 0}
   Music:
     Guid:
       Data1: 0
@@ -154,6 +155,7 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  Victory: 0
 --- !u!1 &7994458453194926180
 GameObject:
   m_ObjectHideFlags: 0
