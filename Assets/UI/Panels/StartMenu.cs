@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using FMODUnity;
 
 namespace UI.Panels
 {
@@ -17,6 +18,8 @@ namespace UI.Panels
 
 
         private UIDocument _document;
+
+        [SerializeField] EventReference buttonClickSound;
 
         public void OnEnable()
         {
@@ -46,8 +49,9 @@ namespace UI.Panels
         {
             _main.style.display = DisplayStyle.None;
         }
-        private static void PlayGame()
+        private void PlayGame()
         {
+            RuntimeManager.PlayOneShot(buttonClickSound);
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             UnityEngine.Cursor.visible = false;
 
@@ -56,10 +60,14 @@ namespace UI.Panels
         
         private void OpenOptions()
         {
+            RuntimeManager.PlayOneShot(buttonClickSound);
+
             _settingsMenu.OpenDisplay();
         }
-        private static void QuitGame()
+        private void QuitGame()
         {
+            RuntimeManager.PlayOneShot(buttonClickSound);
+
             Application.Quit(1);
         }
     }

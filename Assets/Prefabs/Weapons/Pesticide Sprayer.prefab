@@ -734,7 +734,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 6
+    angle: 1
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -1057,24 +1057,24 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0.6294005
-          outSlope: 0.6294005
+          inSlope: 0.46938467
+          outSlope: 0.46938467
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 0.80119795
-          value: 0.50427437
-          inSlope: 0.55115914
-          outSlope: 0.55115914
+          value: 0.37607002
+          inSlope: 0.5356435
+          outSlope: 0.5356435
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0.5982914
+          value: 0.49572945
           inSlope: 2
           outSlope: 2
           tangentMode: 0
@@ -1403,7 +1403,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 10409
+        atime1: 4626
         atime2: 43947
         atime3: 65535
         atime4: 0
@@ -2126,7 +2126,7 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 0.7302551
-          value: 0.24324417
+          value: 0.6193123
           inSlope: 0
           outSlope: 0
           tangentMode: 0

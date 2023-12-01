@@ -69,11 +69,38 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638369345669635202
+  lastModified: 638369852834462142
   FileSizes:
   - Name: Desktop
-    Value: 1484736
+    Value: 1529920
   Exists: 1
+--- !u!114 &-8858713841000786979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/WoodFall
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/WoodFall
+  Guid:
+    Data1: 210108447
+    Data2: 1170681270
+    Data3: -1337005166
+    Data4: -99844092
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 500
+  Length: 0
 --- !u!114 &-8572842629266677782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +253,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638368248009871924
+  lastModified: 638366507329339646
   FileSizes:
   - Name: Desktop
     Value: 4150592
@@ -327,7 +354,7 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638368248009531287
+  lastModified: 638366507329058689
   FileSizes:
   - Name: Desktop
     Value: 1588
@@ -535,11 +562,38 @@ MonoBehaviour:
   Path: Fmod GameOff2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638369345669600135
+  lastModified: 638369852834314415
   FileSizes:
   - Name: Desktop
-    Value: 2712
+    Value: 2864
   Exists: 1
+--- !u!114 &-582102686420365407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/UIClick
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/UIClick
+  Guid:
+    Data1: -1094921256
+    Data2: 1265194994
+    Data3: -672751715
+    Data4: -1236316321
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,12 +646,16 @@ MonoBehaviour:
   - {fileID: 975147022678316788}
   - {fileID: -6561299472008595048}
   - {fileID: 7883026720172110318}
+  - {fileID: 3653584553362304110}
+  - {fileID: -8858713841000786979}
+  - {fileID: 8236311813302420397}
+  - {fileID: -582102686420365407}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5304237580905327408}
   StringsBanks:
   - {fileID: -626962777086003362}
-  cacheTime: 638369345669635202
+  cacheTime: 638369852834462142
   cacheVersion: 131608
 --- !u!114 &63815850131076821
 MonoBehaviour:
@@ -779,6 +837,33 @@ MonoBehaviour:
     Data2: 1187401444
     Data3: -1662477671
     Data4: 1650860617
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3653584553362304110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Sounds/SipTea
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Sounds/SipTea
+  Guid:
+    Data1: 303276554
+    Data2: 1124685086
+    Data3: 1433637040
+    Data4: -627175897
   Banks:
   - {fileID: -9016909816982812062}
   IsStream: 0
@@ -1084,6 +1169,33 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 60
+  Length: 0
+--- !u!114 &8236311813302420397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment/ToolTip
+  m_EditorClassIdentifier: 
+  Path: event:/Environment/ToolTip
+  Guid:
+    Data1: -471906115
+    Data2: 1258798556
+    Data3: -1541247816
+    Data4: -111409399
+  Banks:
+  - {fileID: -9016909816982812062}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
   Length: 0
 --- !u!114 &8460356281212580663
 MonoBehaviour:
