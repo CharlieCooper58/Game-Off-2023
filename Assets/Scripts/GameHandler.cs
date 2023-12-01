@@ -5,6 +5,8 @@ using UI.Panels;
 using FMODUnity;
 using FMOD.Studio;
 using System;
+using UnityEngine.SceneManagement;
+
 public class GameHandler : MonoBehaviour
 {
     public static GameHandler instance;
@@ -16,6 +18,7 @@ public class GameHandler : MonoBehaviour
 
     PauseMenu pauseMenu;
     [SerializeField] GameObject GameOverCanvas;
+    [SerializeField] GameObject VictoryCanvas;
 
     MetaControls metaControls;
 
@@ -28,12 +31,15 @@ public class GameHandler : MonoBehaviour
     public event System.EventHandler OnPlayerRestart;
     [SerializeField] private EventReference Music;
 
+    public bool Victory;
+
     EventInstance musicEventInstance;
     private void Awake()
     {
         instance = this;
         Physics.gravity = new Vector3(0, -gravity, 0);
         pauseMenu = GetComponentInChildren<PauseMenu>();
+        VictoryCanvas.SetActive(false);
     }
     private void Start()
     {
@@ -76,6 +82,22 @@ public class GameHandler : MonoBehaviour
             GameOverCanvas.SetActive(false);
             OnPlayerRestart.Invoke(this, EventArgs.Empty);
         }
+    }
+
+    public void SetVictory()
+    {
+        Victory = true;
+    }
+    public void EndGame()
+    {
+        VictoryCanvas.SetActive(true);
+        VictoryCanvas.GetComponentInChildren<Animator>().Play("FadeOut");
+        StartCoroutine("RollCredits");
+    }
+    IEnumerator RollCredits()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("Credits");
     }
 
     private void OnDisable()

@@ -29,9 +29,14 @@ public class MortarProjectile : Projectile
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
         AudioManager.instance.Play(onExplodeSound, transform.position);
-        if (Vector3.SqrMagnitude(PlayerManager.littlePlayerInstance.transform.position - transform.position) < explosionRadius * explosionRadius)
+        Collider[] objectsHit= Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach(Collider obj in objectsHit)
         {
-            PlayerManager.littlePlayerInstance.characterHealth.TakeDamage(damage);
+            CharacterHealth hp = obj.GetComponent<CharacterHealth>();
+            if(hp != null)
+            {
+                hp.TakeDamage(damage);
+            }
         }
         Destroy(warningCircle.gameObject);
         Destroy(gameObject);

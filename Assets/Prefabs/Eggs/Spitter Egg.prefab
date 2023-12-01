@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 582328653858625378, guid: ef545650afff22047903c9165cc26651, type: 3}
       propertyPath: maxEnemies
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 582328653858625378, guid: ef545650afff22047903c9165cc26651, type: 3}
       propertyPath: plantTarget

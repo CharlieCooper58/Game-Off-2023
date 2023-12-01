@@ -4889,8 +4889,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09794bc264b0b3443838c7f5962a2e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 3
   speed: 0
+  projectileHitSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   hitMarkerCircle: {fileID: 6234332283229297011, guid: dad00dcbf5ee5f64ba5bad32c28659fb, type: 3}
   explosionRadius: 20
   explosionEffect: {fileID: 270765458442582639, guid: 8512f4c9a45f2c349bbcfeb0c66d41bc, type: 3}

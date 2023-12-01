@@ -52,6 +52,7 @@ public class CheckpointButton : Interactable
             GameHandler.instance.SetActivePlayer(little: false, true);
             if (m_checkPoint.isLastCheckpoint)
             {
+                GameHandler.instance.SetVictory();
                 PlayerManager.bigPlayerInstance.playerUIController.SetObjectiveText("Celebrate your victory with a nice cup of tea");
             }
             else
