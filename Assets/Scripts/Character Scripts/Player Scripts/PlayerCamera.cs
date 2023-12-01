@@ -28,8 +28,8 @@ public class PlayerCamera : MonoBehaviour
     }
     public void UpdateCameraOrientation(Vector2 cameraInput)
     {
-        float lookX = (GameSettings.instance.horizontalLookSensitivity * 50) * cameraInput.x * Time.deltaTime;
-        float lookY = (GameSettings.instance.verticalLookSensitivity * 50) * cameraInput.y * Time.deltaTime;
+        float lookX = (GameSettings.instance.horizontalLookSensitivity * 100) * cameraInput.x * Time.deltaTime;
+        float lookY = (GameSettings.instance.verticalLookSensitivity * 100) * cameraInput.y * Time.deltaTime;
         
         // log lookX and lookY in one line
         
