@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278d68003735dc4448a9e96528bf51b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 5
-  maxSpeed: 15
+  minSpeed: 20
+  maxSpeed: 30
   maxAngle: 45
   splatterSystem: {fileID: 5050555587078368133, guid: 9de744493e033f44fa5f5fdcb0f3f1de, type: 3}
 --- !u!54 &8724449295435555803
