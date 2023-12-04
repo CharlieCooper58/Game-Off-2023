@@ -11,6 +11,8 @@ public class EnemySpecialEffects : MonoBehaviour
     [SerializeField] private EventReference BugWalk;
     [SerializeField] Organs[] organs;
     [SerializeField] SplatterEffect splatter;
+    [SerializeField] SplatterEffect smallSplatter;
+
 
 
     CharacterHealth characterHealth;
@@ -29,13 +31,15 @@ public class EnemySpecialEffects : MonoBehaviour
 
     private void CharacterHealth_OnCharacterHit(object sender, System.EventArgs e) {
         AudioManager.instance.PlayOneShot(BugHurt, this.transform.position);
+        Instantiate(smallSplatter, transform.position, Quaternion.identity);
+
     }
 
     private void CharacterHealth_OnCharacterDeath(object sender, CharacterHealth.CharacterDeathEventArgs e)
     {
         walkSoundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         int numOrgans;
-        numOrgans = e.isBrutal? Random.Range(5, 8):0;
+        numOrgans = e.isBrutal? Random.Range(2, 4):Random.Range(2, 4);
         for(int i = 0; i < numOrgans; i++)
         {
             Instantiate(organs[Random.Range(0, organs.Length)], transform.position, Quaternion.identity);

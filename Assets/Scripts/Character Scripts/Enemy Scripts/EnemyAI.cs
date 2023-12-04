@@ -74,6 +74,7 @@ public class EnemyAI : MonoBehaviour
     }
     public void TargetPlayer()
     {
+        SetAIStateStun(1f, AIState.move);
         target = GameHandler.instance.littlePlayerManager.gameObject;
     }
     public void TargetPlants()

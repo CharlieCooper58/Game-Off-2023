@@ -377,15 +377,15 @@ public class CharacterLocomotion : MonoBehaviour
             ApplyMiscForce(bouncePad.bounciness*bouncePad.transform.up, bouncePad.bounceDuration);
             AudioManager.instance.Play(mushroomBounceSoundEffect);
         }
-        else
-        {
-            KillPlane killPlane = other.GetComponent<KillPlane>();
-            if(killPlane != null)
-            {
-                WarpPosition(lastGroundContactPoint);
-                characterManager.characterHealth.TakeDamage(1);
-            }
-        }
+        //else
+        //{
+        //    KillPlane killPlane = other.GetComponent<KillPlane>();
+        //    if(killPlane != null)
+        //    {
+        //        WarpPosition(lastGroundContactPoint);
+        //        characterManager.characterHealth.TakeDamage(1);
+        //    }
+        //}
 
     }
 }
