@@ -192,6 +192,7 @@ MonoBehaviour:
   - {fileID: 8724449295435555802, guid: c258e1755fb2fd8488e8cf46372c496d, type: 3}
   - {fileID: 8724449295435555802, guid: b9095a53e79d68742b666d9a92dbf933, type: 3}
   splatter: {fileID: 5050555587078368133, guid: 1b8b5d345e8f16c48add7361d3ff249a, type: 3}
+  smallSplatter: {fileID: 5050555587078368133, guid: 9de744493e033f44fa5f5fdcb0f3f1de, type: 3}
 --- !u!114 &2078610911660304889
 MonoBehaviour:
   m_ObjectHideFlags: 0

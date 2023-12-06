@@ -223,10 +223,12 @@ MonoBehaviour:
       Data4: 1093174050
     Path: event:/SFX/Enemy Sounds/BugChatter3
   organs:
-  - {fileID: 8724449295435555802, guid: 0886f0f41df0a8c4da230f7ebb94493e, type: 3}
-  - {fileID: 8724449295435555802, guid: c258e1755fb2fd8488e8cf46372c496d, type: 3}
-  - {fileID: 8724449295435555802, guid: b9095a53e79d68742b666d9a92dbf933, type: 3}
+  - {fileID: 8724449295435555802, guid: f0c35ac1ef45e53418b5c4e02c7ba726, type: 3}
+  - {fileID: 8724449295435555802, guid: d6fe7b57d1ad3474e953989b56293ba6, type: 3}
+  - {fileID: 8724449295435555802, guid: 51003959b5f08fa488860b53de225a93, type: 3}
+  - {fileID: 8724449295435555802, guid: 55c54529d3de2bd4c845ee1ccbf3ac49, type: 3}
   splatter: {fileID: 5050555587078368133, guid: 1b8b5d345e8f16c48add7361d3ff249a, type: 3}
+  smallSplatter: {fileID: 5050555587078368133, guid: 9de744493e033f44fa5f5fdcb0f3f1de, type: 3}
 --- !u!114 &2795052294409986988
 MonoBehaviour:
   m_ObjectHideFlags: 0
